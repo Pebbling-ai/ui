@@ -93,9 +93,9 @@ const Hero = () => {
             >
               <a 
                 href="#get-access" 
-                className="flex items-center justify-center group w-full sm:w-auto text-center" 
+                className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
-                  backgroundColor: '#FE5C02',
+                  
                   borderRadius: '1440px',
                   boxSizing: 'border-box',
                   color: '#FFFFFF',
