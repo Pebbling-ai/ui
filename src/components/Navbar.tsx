@@ -61,11 +61,11 @@ const Navbar = () => {
           />
         </a>
 
-        {/* Desktop Navigation - Changed text color to white when not scrolled and updated font */}
+        {/* Desktop Navigation - Added hover-underline-animation class */}
         <nav className="hidden md:flex space-x-8">
           <a 
             href="#" 
-            className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -73,15 +73,15 @@ const Navbar = () => {
           >
             Pebbling Protocol
           </a>
-          <a href="#features" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Hibiscus</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Community</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Articles</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Docs</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network Status</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network</a>
+          <a href="#features" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Hibiscus</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Community</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Articles</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Docs</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network Status</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network</a>
         </nav>
 
-        {/* Mobile menu button - increased touch target */}
+        {/* Mobile menu button */}
         <button 
           className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-black" : "text-gray-700")}
           onClick={toggleMenu}
@@ -91,7 +91,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - improved for better touch experience and updated font */}
+      {/* Mobile Navigation - Added hover-underline-animation class */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
@@ -99,7 +99,7 @@ const Navbar = () => {
         <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
             href="#" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -111,7 +111,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#features" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -121,7 +121,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#details" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';

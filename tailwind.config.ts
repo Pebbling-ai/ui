@@ -96,6 +96,7 @@ export default {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
 				'grotesk': ['"Space Grotesk"', 'sans-serif'],
 				'brockmann': ['Brockmann', 'sans-serif'],
+				'baskerville': ['"Baskerville Classico Std Roman"', 'serif', 'system-ui'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

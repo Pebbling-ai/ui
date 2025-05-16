@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -18,6 +17,8 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import Features from "@/components/Features";
+
+// Apply Baskerville font to all headings site-wide
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
@@ -47,6 +48,15 @@ const Index = () => {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
+  }, []);
+
+  // Apply Baskerville font to all headings using a global effect
+  useEffect(() => {
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+      if (!heading.classList.contains('font-baskerville')) {
+        heading.classList.add('font-baskerville');
+      }
+    });
   }, []);
 
   useEffect(() => {

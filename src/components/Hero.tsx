@@ -67,7 +67,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1 z-10" ref={containerRef}>
         <div className="max-w-4xl mx-auto mb-8">
           <h1 
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight opacity-0 animate-fade-in" 
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight opacity-0 animate-fade-in font-baskerville" 
             style={{ animationDelay: "0.3s" }}
           >
             Leave it to Pebble
@@ -101,11 +101,29 @@ const Hero = () => {
               Request Access
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
+            
+            <a 
+              href="#learn-more" 
+              className="bg-white flex items-center justify-center group w-full sm:w-auto text-center" 
+              style={{
+                borderRadius: '1440px',
+                boxSizing: 'border-box',
+                color: '#000000',
+                cursor: 'pointer',
+                fontSize: '14px',
+                lineHeight: '20px',
+                padding: '16px 24px',
+                border: '1px solid #000000',
+              }}
+            >
+              Learn More
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
 
-        {/* Video container with square aspect ratio and centered play button */}
-        <div className="relative w-full rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
+        {/* Video container with reduced size */}
+        <div className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
             {!isPlaying ? (
               <>
@@ -134,9 +152,6 @@ const Hero = () => {
               />
             )}
           </div>
-          
-          
-         
         </div>
       </div>
     </section>

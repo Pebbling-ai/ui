@@ -10,6 +10,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Baskerville Classico Std Roman';
+  src: url('/BaskervilleClassicoStd-Roman.woff2') format('woff2'),
+       url('/BaskervilleClassicoStd-Roman.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -107,7 +116,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold;
+    @apply font-baskerville font-bold;
   }
 
   /* Smooth scrolling */
@@ -148,7 +157,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 font-baskerville;
   }
 
   .section-subtitle {
@@ -169,6 +178,29 @@
   
   .nav-link {
     @apply relative text-mono-800 hover:text-mono-900 py-2 transition-colors duration-300;
+  }
+  
+  /* Hover underline animation */
+  .hover-underline-animation {
+    position: relative;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 }
 
