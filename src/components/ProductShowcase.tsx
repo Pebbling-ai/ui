@@ -65,7 +65,7 @@ const ProductShowcase = () => {
             <CardFooter className="pt-4">
               <Button 
                 variant="ghost" 
-                className="text-[#3A5BA0] hover:bg-gray-50 group w-full justify-center sm:w-auto sm:justify-start"
+                className="text-black hover:bg-gray-50 group w-full justify-center sm:w-auto sm:justify-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
