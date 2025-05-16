@@ -72,9 +72,7 @@ const NetworkMetrics = () => {
     <section className="py-10 relative animate-on-scroll opacity-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
-          <div className="pulse-chip mx-auto mb-3">
-            <span>Network Metrics</span>
-          </div>
+         
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">Live Network Performance</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Real-time monitoring of Pebble AI agents across distributed networks over the last 24 hours.
