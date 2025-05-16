@@ -41,13 +41,13 @@ const ImageShowcaseSection = () => {
             variant="outline" 
             className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full"
           >
-            Payoff
+            Product Mockup
           </Badge>
           
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
             <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-display leading-tight mb-8 sm:mb-12">
             <span className="block bg-clip-text text-transparent bg-[url('/text-mask-image.jpg')] bg-cover bg-center">
-              Atlas works with your team, not instead of it. By handling repetitive tasks, improving safety conditions, and learning from every interaction, Atlas helps humans focus on what they do best: create, solve, and innovate.
+              See our AI agents in action, enhancing productivity and collaboration in real-world environments. Each agent learns and adapts with every interaction, making your team more efficient and effective.
             </span>
           </h2>
           </div>
