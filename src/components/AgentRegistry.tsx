@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -104,11 +103,10 @@ const AgentRegistry = () => {
           </p>
         </div>
 
-        <div className="relative max-w-2xl mx-auto mb-8 group">
+        <div className="relative max-w-2xl mx-auto mb-8 group" onClick={focusSearch}>
           <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
           <Search 
             className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-pulse-500 transition-colors duration-300" 
-            onClick={focusSearch}
           />
           <Input
             ref={searchInputRef}
