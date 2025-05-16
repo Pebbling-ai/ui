@@ -14,8 +14,8 @@ const MadeByHumans = () => {
             </div>
             
             <div className="mt-10">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl text-white font-light italic">
-                Made By AI & Human
+              <h2 className="text-4xl sm:text-5xl md:text-6xl text-white font-thin-serif font-normal italic tracking-wide">
+                Leave it to Manus
               </h2>
               <p className="text-white/80 mt-4 max-w-2xl">
                 A powerful collaboration between artificial intelligence and human creativity.

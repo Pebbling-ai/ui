@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.cdnfonts.com/css/alma-serif');
 
 @font-face {
@@ -117,7 +119,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-alma-serif font-bold;
+    @apply font-thin-serif font-normal tracking-wide;
+    letter-spacing: 0.01em;
   }
 
   /* Smooth scrolling */

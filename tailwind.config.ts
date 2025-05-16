@@ -111,6 +111,7 @@ export default {
 				'brockmann': ['Brockmann', 'sans-serif'],
 				'baskerville': ['"Baskerville Classico Std Roman"', 'serif', 'system-ui'],
 				'alma-serif': ['"Alma Serif Regular"', 'serif', 'system-ui'],
+				'thin-serif': ['"Baskerville"', '"Libre Baskerville"', '"Playfair Display"', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -179,4 +180,3 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-

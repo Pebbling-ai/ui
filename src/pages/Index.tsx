@@ -19,6 +19,7 @@ import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import Features from "@/components/Features";
 import ExampleUseCases from "@/components/ExampleUseCases";
+import MadeByHumans from "@/components/MadeByHumans";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
@@ -51,11 +52,11 @@ const Index = () => {
     };
   }, []);
 
-  // Apply Alma Serif font to all headings using a global effect
+  // Apply thin-serif font to all headings using a global effect
   useEffect(() => {
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
-      if (!heading.classList.contains('font-alma-serif')) {
-        heading.classList.add('font-alma-serif');
+      if (!heading.classList.contains('font-thin-serif')) {
+        heading.classList.add('font-thin-serif');
       }
     });
   }, []);
@@ -101,6 +102,7 @@ const Index = () => {
         <FAQSection />
         <Testimonials />
         <GitHubSection />
+        <MadeByHumans />
       </main>
       <Footer />
     </div>
