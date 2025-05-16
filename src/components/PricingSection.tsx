@@ -31,11 +31,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
       className
     )}
   >
-    {popular && (
-      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-pulse-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-        Popular Choice
-      </div>
-    )}
+    
     <CardContent className="p-6">
       <div className="mb-5">
         <h3 className="text-xl font-semibold mb-1">{name}</h3>
@@ -59,7 +55,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
       <Button 
         className={cn(
           "w-full",
-          popular ? "bg-pulse-500 hover:bg-pulse-600 text-black border-2 border-black rounded-md" : "bg-gray-800 hover:bg-gray-900"
+          popular ? "text-black border-2 border-black rounded-md" : "bg-gray-800 hover:bg-gray-900"
         )}
       >
         {cta}
