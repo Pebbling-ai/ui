@@ -59,7 +59,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
       <Button 
         className={cn(
           "w-full",
-          popular ? "bg-pulse-500 hover:bg-pulse-600" : "bg-gray-800 hover:bg-gray-900"
+          popular ? "bg-pulse-500 hover:bg-pulse-600" : "bg-gray-800 hover:bg-gray-900 text-black"
         )}
       >
         {cta}
