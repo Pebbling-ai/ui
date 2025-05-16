@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Code, Terminal, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -30,7 +31,7 @@ const IntegrationTab = ({
       className={cn(
         "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
         isActive
-          ? "bg-pulse-500 text-white"
+          ? "bg-pulse-500 text-white shadow-md"
           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
       )}
     >
@@ -112,6 +113,9 @@ RECEIVE {
     <section className="py-16 animate-on-scroll opacity-0" id="integration">
       <div className="section-container">
         <div className="text-center mb-12">
+          <div className="pulse-chip mx-auto mb-3">
+            <span>Integration</span>
+          </div>
           <h2 className="section-title mb-4">Seamless Integration</h2>
           <p className="section-subtitle mx-auto">
             Connect to the Hibiscus network with just a few lines of code using
@@ -119,7 +123,7 @@ RECEIVE {
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto transition-all duration-300">
+        <Card className="max-w-4xl mx-auto shadow-elegant hover:shadow-elegant-hover transition-all duration-300">
           <CardContent className="p-0">
             <div className="flex flex-col">
               <div className="flex flex-wrap justify-center gap-2 p-4 border-b">

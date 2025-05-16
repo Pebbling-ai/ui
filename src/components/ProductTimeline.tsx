@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Clock, Calendar, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -61,9 +62,10 @@ const TimelineItem = ({ date, title, description, icon, status, isLast = false }
 
 const ProductTimeline = () => {
   return (
-    <section className="py-16 pb-4 bg-white animate-on-scroll opacity-0" id="roadmap">
+    <section className="py-16 bg-white animate-on-scroll opacity-0" id="roadmap">
       <div className="section-container">
         <div className="text-center mb-12">
+         
           <h2 className="section-title mb-4">Product Launch Timeline</h2>
           <p className="section-subtitle mx-auto">
             Our step-by-step journey to revolutionize AI communication with Pebble

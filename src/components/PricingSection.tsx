@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -58,7 +59,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
       <Button 
         className={cn(
           "w-full",
-          popular ? "bg-pulse-500 hover:bg-pulse-600 text-white" : "bg-gray-800 hover:bg-gray-900 text-white"
+          popular ? "bg-pulse-500 hover:bg-pulse-600" : "bg-gray-800 hover:bg-gray-900"
         )}
       >
         {cta}
@@ -69,9 +70,10 @@ const PricingTier: React.FC<PricingTierProps> = ({
 
 const PricingSection = () => {
   return (
-    <section className="pt-8 pb-16 animate-on-scroll opacity-0" id="pricing">
+    <section className="py-16  animate-on-scroll opacity-0" id="pricing">
       <div className="section-container">
         <div className="text-center mb-12">
+         
           <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
           <p className="section-subtitle mx-auto">
             Choose the plan that best fits your needs. All plans include core protocol features.
@@ -136,7 +138,7 @@ const PricingSection = () => {
             We understand that every project has unique requirements. Our team is ready to create
             a tailored solution that perfectly matches your specific needs.
           </p>
-          <Button className="bg-gray-800 hover:bg-gray-900 text-white">
+          <Button className="bg-gray-800 hover:bg-gray-900">
             <DollarSign className="mr-2 h-4 w-4" />
             Get Custom Quote
           </Button>
