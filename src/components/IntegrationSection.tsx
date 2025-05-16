@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const CodeSnippet = ({ language, code }: { language: string; code: string }) => {
   return (
     <div className="rounded-lg bg-dark-900 p-4 overflow-auto max-w-full">
-      <pre className="text-gray-100 text-sm font-mono ">
+      <pre className="text-black text-sm font-mono ">
         <code>{code}</code>
       </pre>
     </div>
