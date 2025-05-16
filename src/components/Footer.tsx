@@ -49,16 +49,17 @@ const Footer = () => {
         
         {/* Main Link Sections */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-          {/* Pulse Section */}
+          {/* pebble Section */}
           <div>
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
+                 <img 
+            src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747414029/bl6hrupybi6hqqrbfkib.png" 
+            alt="Pulse Robot Logo" 
+            className="h-7 sm:h-8" 
+          />
               </div>
-              <h3 className="text-xl font-bold">Pulse</h3>
+              <h3 className="text-xl font-bold">pebble</h3>
             </div>
             <p className="text-gray-600 mb-6">
               Advanced agent communication protocol for the next generation of AI applications.
@@ -141,7 +142,7 @@ const Footer = () => {
         
         {/* Bottom Section */}
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">© {new Date().getFullYear()} Pulse Protocol. All rights reserved.</p>
+          <p className="text-gray-500 text-sm mb-4 md:mb-0">© {new Date().getFullYear()} pebble Protocol. All rights reserved.</p>
           
           <div className="flex items-center">
             <div className="relative mr-2">
