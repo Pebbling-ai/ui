@@ -123,7 +123,7 @@ const Hero = () => {
         </div>
 
         {/* Video container with reduced size */}
-        <div className="relative w-full max-w-3xl mx-auto rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
+        <div className="relative w-full max-w-3xl mx-auto overflow-hidden aspect-square mb-12 ">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
             {!isPlaying ? (
               <>
