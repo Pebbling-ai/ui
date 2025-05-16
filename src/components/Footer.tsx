@@ -31,11 +31,11 @@ const Footer = () => {
       <div className="section-container">
         {/* CTA Section */}
         <div className="mb-12  rounded-2xl p-8 relative overflow-hidden">
-          <div className="absolute right-0 bottom-0 opacity-20 pointer-events-none">
+          {/* <div className="absolute right-0 bottom-0 opacity-20 pointer-events-none">
             <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="156.5" cy="156.5" r="156.5" fill="#F97316" fillOpacity="0.2"/>
             </svg>
-          </div>
+          </div> */}
           
           <div className="relative flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-left">
