@@ -157,8 +157,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
       
       
     </section>
