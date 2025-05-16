@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import NetworkMetrics from "@/components/NetworkMetrics";
 import AgentRegistry from "@/components/AgentRegistry";
+import GitHubSection from "@/components/GitHubSection";
 import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
 import DetailsSection from "@/components/DetailsSection";
@@ -67,6 +68,7 @@ const Index = () => {
         <Hero />
         <NetworkMetrics />
         <AgentRegistry />
+        <GitHubSection />
         <HumanoidSection />
         <SpecsSection />
         <DetailsSection />
