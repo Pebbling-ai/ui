@@ -160,8 +160,7 @@ const Hero = () => {
       {/* Decorative elements */}
       <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
       
-      {/* Additional blur element to better ground the content */}
-      <div className="hidden lg:block absolute -bottom-16 left-0 right-0 h-32 bg-black/10 blur-3xl z-10"></div>
+      
     </section>
   );
 };
