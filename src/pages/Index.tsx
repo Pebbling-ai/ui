@@ -75,7 +75,7 @@ const Index = () => {
         <GitHubSection />
         <HumanoidSection />
         <SpecsSection />
-        <DetailsSection />
+        {/* <DetailsSection /> */}
         <ImageShowcaseSection />
         <Features />
         <ProductTimeline />
