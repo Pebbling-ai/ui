@@ -102,7 +102,7 @@ const Index = () => {
         <FAQSection />
         <Testimonials />
         <GitHubSection />
-        <MadeByHumans />
+        {/* <MadeByHumans /> */}
       </main>
       <Footer />
     </div>
