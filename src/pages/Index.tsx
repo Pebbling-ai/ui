@@ -11,6 +11,7 @@ import DetailsSection from "@/components/DetailsSection";
 import ImageShowcaseSection from "@/components/ImageShowcaseSection";
 import Features from "@/components/Features";
 import ProductTimeline from "@/components/ProductTimeline";
+import IntegrationSection from "@/components/IntegrationSection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import MadeByHumans from "@/components/MadeByHumans";
@@ -76,6 +77,7 @@ const Index = () => {
         <ImageShowcaseSection />
         <Features />
         <ProductTimeline />
+        <IntegrationSection />
         <Testimonials />
         <Newsletter />
         <MadeByHumans />
