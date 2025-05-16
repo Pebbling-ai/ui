@@ -45,9 +45,11 @@ const ImageShowcaseSection = () => {
           </Badge>
           
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-             <span className="block bg-clip-text text-transparent bg-[url('/text-mask-image.jpg')] bg-cover bg-center">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-display leading-tight mb-8 sm:mb-12">
+            <span className="block bg-clip-text text-transparent bg-[url('/text-mask-image.jpg')] bg-cover bg-center">
               Atlas works with your team, not instead of it. By handling repetitive tasks, improving safety conditions, and learning from every interaction, Atlas helps humans focus on what they do best: create, solve, and innovate.
             </span>
+          </h2>
           </div>
         </div>
         
