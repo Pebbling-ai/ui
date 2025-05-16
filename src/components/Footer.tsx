@@ -1,14 +1,34 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Github, Twitter, Linkedin, MessageCircle, ArrowRight, ExternalLink } from "lucide-react";
+import { Github, Twitter, Linkedin, MessageCircle, ArrowRight, ExternalLink, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "@/components/ui/use-toast";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
+  
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast({
+        title: "Please enter your email address",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Simulate subscription
+    toast({
+      title: "Thank you for subscribing!",
+      description: "You've been added to our newsletter."
+    });
+    setEmail("");
+  };
   
   return (
-    <footer className="w-full  pt-16 pb-8 border-t border-gray-200">
+    <footer className="w-full pt-16 pb-8 border-t border-gray-200">
       <div className="section-container">
         {/* CTA Section */}
         <div className="mb-12 bg-gradient-to-r from-pulse-500/10 to-pulse-600/10 rounded-2xl p-8 relative overflow-hidden">
@@ -117,7 +137,24 @@ const Footer = () => {
             © {currentYear} Pulse Protocol. All rights reserved.
           </p>
           
-          <div className="flex items-center">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+            {/* Newsletter Subscribe Form */}
+            <form onSubmit={handleSubscribe} className="flex gap-2 items-center">
+              <div className="relative">
+                <Mail size={16} className="absolute left-2.5 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                <input
+                  type="email"
+                  placeholder="Subscribe to newsletter"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="pl-9 py-2 pr-3 text-sm rounded-md border border-gray-200 focus:outline-none focus:ring-1 focus:ring-pulse-500 focus:border-pulse-500 min-w-[200px]"
+                />
+              </div>
+              <Button type="submit" variant="outline" size="sm" className="border-pulse-500 text-pulse-500 hover:bg-pulse-500 hover:text-white">
+                <Send size={14} />
+              </Button>
+            </form>
+            
             <p className="text-gray-500 text-xs">
               Built with ❤️ by{" "}
               <a href="https://x.com/rezaul_arif" target="_blank" rel="noopener noreferrer" className="text-pulse-500 hover:underline">
