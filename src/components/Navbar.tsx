@@ -84,8 +84,8 @@ const Navbar = () => {
           <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Community</a>
           <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Articles</a>
           <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Docs</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network Status</a>
           <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Pricing</a>
         </nav>
 
         {/* Desktop Signup Button */}
