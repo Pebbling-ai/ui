@@ -54,11 +54,7 @@ const Hero = () => {
     <section 
       className="overflow-hidden relative bg-cover" 
       id="hero" 
-      style={{
-        backgroundImage: 'url("/Header-background.webp")',
-        backgroundPosition: 'center 30%', 
-       
-      }}
+      
     >
       {/* Background blur gradient elements */}
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
