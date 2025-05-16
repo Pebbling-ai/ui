@@ -128,7 +128,7 @@ const Hero = () => {
             {!isPlaying ? (
               <>
                 <img
-                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747415130/uw95ahb13gzhhubkbcsr.png"
+                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747420581/gtp6paxjnunylrjljyzx.png"
                   alt="Manus Demo"
                   className="object-cover w-full h-full"
                   loading="eager"
@@ -144,7 +144,7 @@ const Hero = () => {
               </>
             ) : (
               <iframe
-                src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747414994/bqypsns7tlrbyrj9frfb.mp4"
+                src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747419984/ebzhckqpysiwxlaalbid.mp4"
                 title="Manus Introduction"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
