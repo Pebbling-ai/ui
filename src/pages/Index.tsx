@@ -99,7 +99,7 @@ const Index = () => {
         <ProductTimeline />
         <IntegrationSection />
         <PricingSection />
-        <ImageShowcaseSection />
+        {/* <ImageShowcaseSection /> */}
         <FAQSection />
         <Testimonials />
         <GitHubSection />
