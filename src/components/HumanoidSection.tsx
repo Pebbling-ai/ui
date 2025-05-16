@@ -120,7 +120,7 @@ const HumanoidSection = () => {
               <div
                 className="absolute inset-0 z-0 bg-gradient-to-b from-blue-900/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/lovable-uploads/f600c336-8ac9-467f-8f13-26d56b108750.png')",
+                  backgroundImage: "url('/background-section3.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
@@ -159,7 +159,7 @@ const HumanoidSection = () => {
               <div
                 className="absolute inset-0 z-0 bg-gradient-to-b from-blue-800/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/lovable-uploads/b2b397a6-2c82-4e49-9af8-2d06da77429f.png')",
+                  backgroundImage: "url('/background-section3.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
@@ -198,7 +198,7 @@ const HumanoidSection = () => {
               <div
                 className="absolute inset-0 z-0 bg-gradient-to-b from-blue-700/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/lovable-uploads/e11894e6-2058-493e-86d5-89d6608b2646.png')",
+                  backgroundImage: "url('/background-section3.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
