@@ -68,7 +68,7 @@ const Testimonials = () => {
           
         </div>
         
-        <h2 className="text-black text-5xl font-bogue font-bold mb-8 text-left  bg-clip-text >Founder's Note</h2>
+        <h2 className="text-black text-5xl font-bogue font-bold mb-8 text-left bg-clip-text">Founder's Note</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => <TestimonialCard key={index} content={testimonial.content} author={testimonial.author} role={testimonial.role} gradient={testimonial.gradient} backgroundImage={testimonial.backgroundImage} />)}
