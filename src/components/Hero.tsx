@@ -57,6 +57,7 @@ const Hero = () => {
       style={{
         backgroundImage: 'url("/Header-background.webp")',
         backgroundPosition: 'center 30%', 
+       
       }}
     >
       {/* Background blur gradient elements */}
@@ -66,8 +67,8 @@ const Hero = () => {
       <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#222222] opacity-30 blur-lg"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row items-center py-8 sm:py-12 lg:py-16">
-          <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
+          <div className="w-full lg:w-1/2">
             <div 
               className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.1s" }}
@@ -77,7 +78,7 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in font-display" 
+              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
             >
               Pebble: Where Code<br className="hidden sm:inline" />Meets Motion
@@ -85,7 +86,7 @@ const Hero = () => {
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left"
+              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
             >
               The humanoid companion that learns and adapts alongside you.
             </p>
@@ -105,7 +106,7 @@ const Hero = () => {
                   cursor: 'pointer',
                   fontSize: '14px',
                   lineHeight: '20px',
-                  padding: '12px 20px',
+                  padding: '16px 24px', // Slightly reduced padding for mobile
                   border: '1px solid white',
                 }}
               >
@@ -115,7 +116,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full lg:w-1/2 relative mt-3 lg:mt-0">
             <div className="relative z-10">
               {/* Video container with soft shadow at bottom for grounding effect */}
               <div className="relative">
@@ -125,34 +126,39 @@ const Hero = () => {
                   loop
                   muted={isMuted}
                   playsInline
-                  className="w-full h-auto"
+                  className="w-full h-auto "
                   style={{ 
-                    transformStyle: 'preserve-3d',
-                    objectFit: 'cover',
-                    objectPosition: 'center 20%',
-                    maxHeight: '950px',
-                    minHeight: '300px',
-                    height: '50vh',
-                    clipPath: 'inset(0 0 0 0)',
-                  }}
+                  transformStyle: 'preserve-3d',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 20%', // Changed from 'center center' to 'center 20%' to move the person up
+                  maxHeight: '950px',
+                  minHeight: '700px',
+                  clipPath: 'inset(0 0 0 0)', // Clips the video to avoid floating effect
+                }}
                 >
                   <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
                   Your browser does not support the video tag.
                 </video>
                 
+               
+                
                 {/* Mute/Unmute button */}
                 <button
                   onClick={toggleMute}
-                  className="absolute bottom-4 right-4 p-2 sm:p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
+                  className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
                   aria-label={isMuted ? "Unmute video" : "Mute video"}
                 >
-                  {isMuted ? <VolumeX size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" /> : <Volume2 size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />}
+                  {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+      
+      
     </section>
   );
 };

@@ -38,9 +38,9 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300 w-full",
+        "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-sm" 
+          ? "bg-white/80 backdrop-blur-md shadow-sm" 
           : "bg-transparent"
       )}
     >
@@ -57,15 +57,15 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747339698/softuynr4zwtrlwmkwxp.png" 
             alt="Pulse Robot Logo" 
-            className="h-6 sm:h-7 md:h-8" 
+            className="h-7 sm:h-8" 
           />
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-4 lg:space-x-8">
+        {/* Desktop Navigation - Changed text color to white when not scrolled and updated font */}
+        <nav className="hidden md:flex space-x-8">
           <a 
             href="#" 
-            className={cn("nav-link text-xs lg:text-sm font-medium", !isScrolled && "text-black")}
+            className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -73,17 +73,17 @@ const Navbar = () => {
           >
             Pebbling Protocol
           </a>
-          <a href="#features" className={cn("nav-link text-xs lg:text-sm font-medium", !isScrolled && "text-black")}>Hibiscus</a>
-          <a href="#details" className={cn("nav-link text-xs lg:text-sm font-medium", !isScrolled && "text-black")}>Community</a>
-          <a href="#details" className={cn("nav-link text-xs lg:text-sm font-medium", !isScrolled && "text-black")}>Articles</a>
-          <a href="#details" className={cn("nav-link text-xs lg:text-sm font-medium whitespace-nowrap", !isScrolled && "text-black")}>Docs</a>
-          <a href="#details" className={cn("nav-link text-xs lg:text-sm font-medium whitespace-nowrap", !isScrolled && "text-black")}>Network Status</a>
-          <a href="#details" className={cn("nav-link text-xs lg:text-sm font-medium", !isScrolled && "text-black")}>Network</a>
+          <a href="#features" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Hibiscus</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Community</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Articles</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Docs</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network Status</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network</a>
         </nav>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu button - increased touch target */}
         <button 
-          className={cn("md:hidden p-2 focus:outline-none", !isScrolled ? "text-black" : "text-gray-700")}
+          className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-black" : "text-gray-700")}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -91,15 +91,15 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - improved for better touch experience and updated font */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-6 items-center mt-8">
+        <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
             href="#" 
-            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -111,7 +111,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#features" 
-            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -121,7 +121,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#details" 
-            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
