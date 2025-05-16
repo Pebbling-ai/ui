@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
+import { ShieldCheck, Layers, Globe, Zap, Users, Database } from "lucide-react";
 
 const HumanoidSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -90,18 +91,18 @@ const HumanoidSection = () => {
     >
       <section className="w-full h-screen py-10 md:py-16 sticky top-0 overflow-hidden bg-white" id="why-humanoid">
         <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col">
-          <div className="mb-2 md:mb-3">
-            <div className="flex items-center gap-4 mb-2 md:mb-2 pt-8 sm:pt-6 md:pt-4">
+          <div className="mb-2 md:mb-3 text-center mx-auto">
+            <div className="flex items-center justify-center gap-4 mb-2 md:mb-2 pt-8 sm:pt-6 md:pt-4">
               <div className="pulse-chip opacity-0 animate-fade-in" style={{
                 animationDelay: "0.1s"
               }}>
                 <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">02</span>
-                <span>Humanoid</span>
+                <span>Key Features</span>
               </div>
             </div>
             
-            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
-              Why Humanoid
+            <h2 className="text-[#091D59] text-3xl sm:text-4xl md:text-5xl font-bogue font-bold mb-1 md:mb-2">
+              Platform Features
             </h2>
           </div>
           
@@ -117,27 +118,30 @@ const HumanoidSection = () => {
               }}
             >
               <div
-                className="absolute inset-0 z-0 bg-gradient-to-b from-pulse-900/40 to-dark-900/80"
+                className="absolute inset-0 z-0 bg-gradient-to-b from-blue-900/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/background-section1.png')",
+                  backgroundImage: "url('/lovable-uploads/f600c336-8ac9-467f-8f13-26d56b108750.png')",
                   backgroundSize: "cover",
-                  backgroundPosition: "top center",
+                  backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
                 }}
               ></div>
               
               <div className="absolute top-4 right-4 z-20">
-                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white">
-                  <span className="text-sm font-medium">The vision</span>
+                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm text-white">
+                  <span className="text-sm font-montserrat font-medium">Security</span>
                 </div>
               </div>
               
-              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
-                <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're giving AI a way to navigate the physical world
-                  </h3>
-                </div>
+              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
+                <ShieldCheck className="w-16 h-16 text-white mb-6" />
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
+                  Enterprise-Grade Security
+                </h3>
+                <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
+                  Our platform leverages advanced encryption, secure authentication protocols, and continuous 
+                  monitoring to ensure your data and AI interactions remain protected at all times.
+                </p>
               </div>
             </div>
             
@@ -153,9 +157,9 @@ const HumanoidSection = () => {
               }}
             >
               <div
-                className="absolute inset-0 z-0 bg-gradient-to-b from-pulse-900/40 to-dark-900/80"
+                className="absolute inset-0 z-0 bg-gradient-to-b from-blue-800/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/background-section2.png')",
+                  backgroundImage: "url('/lovable-uploads/b2b397a6-2c82-4e49-9af8-2d06da77429f.png')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
@@ -163,17 +167,20 @@ const HumanoidSection = () => {
               ></div>
               
               <div className="absolute top-4 right-4 z-20">
-                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white">
-                  <span className="text-sm font-medium">The vision</span>
+                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm text-white">
+                  <span className="text-sm font-montserrat font-medium">Scalability</span>
                 </div>
               </div>
               
-              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
-                <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're bringing adaptive intelligence to where humans work
-                  </h3>
-                </div>
+              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
+                <Layers className="w-16 h-16 text-white mb-6" />
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
+                  Seamless Scaling
+                </h3>
+                <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
+                  From startups to enterprises, our infrastructure automatically scales to meet your needs,
+                  ensuring optimal performance and reliability regardless of user volume or workload.
+                </p>
               </div>
             </div>
             
@@ -189,27 +196,30 @@ const HumanoidSection = () => {
               }}
             >
               <div
-                className="absolute inset-0 z-0 bg-gradient-to-b from-pulse-900/40 to-dark-900/80"
+                className="absolute inset-0 z-0 bg-gradient-to-b from-blue-700/40 to-dark-900/80"
                 style={{
-                  backgroundImage: "url('/background-section3.png')",
+                  backgroundImage: "url('/lovable-uploads/e11894e6-2058-493e-86d5-89d6608b2646.png')",
                   backgroundSize: "cover",
-                  backgroundPosition: "bottom center",
+                  backgroundPosition: "center",
                   backgroundBlendMode: "overlay"
                 }}
               ></div>
               
               <div className="absolute top-4 right-4 z-20">
-                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white">
-                  <span className="text-sm font-medium">The vision</span>
+                <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm text-white">
+                  <span className="text-sm font-montserrat font-medium">Global Network</span>
                 </div>
               </div>
               
-              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex items-center">
-                <div className="max-w-lg">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-display text-white font-bold leading-tight mb-4">
-                    We're creating companions, <span className="text-[#FC4D0A]">not replacements</span>
-                  </h3>
-                </div>
+              <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
+                <Globe className="w-16 h-16 text-white mb-6" />
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
+                  Worldwide Accessibility
+                </h3>
+                <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
+                  With servers strategically located across the globe, we ensure low-latency access and 
+                  high availability for users everywhere, <span className="text-blue-200">no matter where they are</span>.
+                </p>
               </div>
             </div>
           </div>
