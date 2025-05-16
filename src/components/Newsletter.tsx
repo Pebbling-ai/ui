@@ -34,7 +34,6 @@ const Newsletter = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
             <div className="pulse-chip">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-mono-700 text-white mr-2">05</span>
               <span>Newsletter</span>
             </div>
           </div>
