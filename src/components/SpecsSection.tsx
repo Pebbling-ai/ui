@@ -70,7 +70,7 @@ const SpecsSection = () => {
             title="Pebbling"
             description="Quantum-inspired intelligence that adapts to your workflow. Pebbling transcends traditional AI boundaries with fluid learning."
             features={[
-              "Height: 5'8"",
+              "Height: 5'8\"",
               "Capacity: 55lbs",
               "Weight: 140lbs",
               "Enterprise-grade security and permissions"
@@ -82,7 +82,7 @@ const SpecsSection = () => {
             title="Hibiscus"
             description="Evolutionary neural networks that bloom with every interaction. Hibiscus crafts bespoke cognitive solutions for enterprises."
             features={[
-              "Height: 5'10"",
+              "Height: 5'10\"",
               "Capacity: 60lbs",
               "Weight: 150lbs",
               "Advanced neural processing"
