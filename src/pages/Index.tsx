@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
@@ -28,7 +28,7 @@ const Index = () => {
             // Add staggered animation with a small delay based on position
             setTimeout(() => {
               entry.target.classList.add("animate-fade-in");
-              entry.target.style.opacity = "1";
+              entry.target.classList.remove("opacity-0");
             }, 150); // Small delay for a smoother reveal
             observer.unobserve(entry.target);
           }
@@ -75,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8 bg-white"> {/* Added bg-white */}
+      <main className="space-y-4 sm:space-y-8 bg-white"> 
         <Hero />
         <CompactNetworkMetrics />
         <ProductShowcase />

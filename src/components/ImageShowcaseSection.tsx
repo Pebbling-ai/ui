@@ -8,48 +8,45 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
 
 const VideoCard = ({ thumbnail, title, description }: { thumbnail: string, title: string, description: string }) => (
-  <Card className="overflow-hidden rounded-xl shadow-elegant bg-white">
+  <Card className="overflow-hidden rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 bg-white">
     <div className="relative">
       <img 
         src={thumbnail} 
         alt={title} 
         className="w-full h-64 object-cover"
       />
-      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-        <div className="w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center hover:bg-white/50 transition-all cursor-pointer">
-          <Play className="h-6 w-6 text-white fill-white" />
+      <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white/90 transition-all cursor-pointer">
+          <Play className="h-6 w-6 text-[#3A5BA0]" />
         </div>
       </div>
     </div>
     <CardContent className="p-6 bg-white">
-      <h3 className="text-xl font-display font-semibold mb-2">{title}</h3>
-      <p className="text-gray-700 text-sm">{description}</p>
+      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
     </CardContent>
   </Card>
 );
 
 const ImageShowcaseSection = () => {
   return (
-    <section className="w-full pt-0 pb-8 sm:pb-12 bg-white" id="showcase">
-      <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="flex flex-col items-center justify-center mb-8">
-          <Badge 
-            variant="outline" 
-            className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full animate-on-scroll"
-          >
+    <section className="w-full py-24 bg-white" id="showcase">
+      <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center justify-center mb-16">
+          <span className="text-sm font-medium uppercase tracking-wider text-[#3A5BA0] mb-4 animate-on-scroll">
             Product Mockup
-          </Badge>
+          </span>
           
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-display leading-tight mb-8 sm:mb-12">
-            <span className="block bg-clip-text text-transparent bg-[url('/text-mask-image.jpg')] bg-cover bg-center">
-              See our AI agents in action, enhancing productivity and collaboration in real-world environments. Each agent learns and adapts with every interaction, making your team more efficient and effective.
-            </span>
-          </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
+              See our AI agents in action
+            </h2>
+            <p className="text-lg text-gray-600">
+              Each agent learns and adapts with every interaction, making your team more efficient and effective.
+            </p>
           </div>
         </div>
         
@@ -78,9 +75,9 @@ const ImageShowcaseSection = () => {
                 />
               </CarouselItem>
             </CarouselContent>
-            <div className="flex justify-center mt-6">
-              <CarouselPrevious className="static mx-2 translate-y-0" />
-              <CarouselNext className="static mx-2 translate-y-0" />
+            <div className="flex justify-center mt-8">
+              <CarouselPrevious className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50" />
+              <CarouselNext className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50" />
             </div>
           </Carousel>
         </div>
