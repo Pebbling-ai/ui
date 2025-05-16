@@ -20,7 +20,7 @@ const ProductShowcase = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Pebble Product Card */}
-          <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
+          <Card className="border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-300 hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <CardHeader className="pb-0">
               <div className="flex justify-between items-start">
                 <div>
@@ -65,7 +65,7 @@ const ProductShowcase = () => {
             <CardFooter className="pt-4">
               <Button 
                 variant="ghost" 
-                className="text-black hover:bg-gray-50 group w-full justify-center sm:w-auto sm:justify-start"
+                className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -74,7 +74,7 @@ const ProductShowcase = () => {
           </Card>
           
           {/* Hibiscus Product Card */}
-          <Card className="border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white overflow-hidden">
+          <Card className="border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-300 hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <CardHeader className="pb-0">
               <div className="flex justify-between items-start">
                 <div>
@@ -119,7 +119,7 @@ const ProductShowcase = () => {
             <CardFooter className="pt-4">
               <Button 
                 variant="ghost" 
-                className="text-black hover:bg-gray-50 group w-full justify-center sm:w-auto sm:justify-start"
+                className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />

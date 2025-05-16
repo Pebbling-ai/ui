@@ -11,15 +11,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 
 const VideoCard = ({ thumbnail, title, description }: { thumbnail: string, title: string, description: string }) => (
-  <Card className="overflow-hidden rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 bg-white">
+  <Card className="overflow-hidden rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-300 hover:scale-[1.03] transition-all duration-300 bg-white">
     <div className="relative">
       <img 
         src={thumbnail} 
         alt={title} 
         className="w-full h-64 object-cover"
       />
-      <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-        <div className="w-16 h-16 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white/90 transition-all cursor-pointer">
+      <div className="absolute inset-0 bg-black/10 hover:bg-black/20 transition-all flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center hover:bg-white/90 hover:scale-110 transition-all cursor-pointer">
           <Play className="h-6 w-6 text-[#3A5BA0]" />
         </div>
       </div>
@@ -73,8 +73,8 @@ const ImageShowcaseSection = () => {
               </CarouselItem>
             </CarouselContent>
             <div className="flex justify-center mt-8">
-              <CarouselPrevious className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50" />
-              <CarouselNext className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50" />
+              <CarouselPrevious className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300" />
+              <CarouselNext className="static mx-2 translate-y-0 border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-300" />
             </div>
           </Carousel>
         </div>
