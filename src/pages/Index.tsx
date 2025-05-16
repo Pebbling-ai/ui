@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import NetworkMetrics from "@/components/NetworkMetrics";
+import AgentRegistry from "@/components/AgentRegistry";
 import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
 import DetailsSection from "@/components/DetailsSection";
@@ -65,6 +66,7 @@ const Index = () => {
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
         <NetworkMetrics />
+        <AgentRegistry />
         <HumanoidSection />
         <SpecsSection />
         <DetailsSection />
