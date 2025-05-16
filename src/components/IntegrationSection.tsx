@@ -110,7 +110,7 @@ RECEIVE {
   };
 
   return (
-    <section className="py-16 bg-gray-50 animate-on-scroll opacity-0" id="integration">
+    <section className="py-16  animate-on-scroll opacity-0" id="integration">
       <div className="section-container">
         <div className="text-center mb-12">
           <div className="pulse-chip mx-auto mb-3">
