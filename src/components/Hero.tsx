@@ -2,7 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { Volume, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause } from "lucide-react";
+import { Button } from "./ui/button";
 import LottieAnimation from "./LottieAnimation";
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [lottieData, setLottieData] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -43,10 +44,15 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
-  const toggleMute = () => {
+  const togglePlayPause = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
     }
   };
   
@@ -59,8 +65,8 @@ const Hero = () => {
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] blur-3xl rounded-full"></div>
       
       {/* Center aligned content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1" ref={containerRef}>
-        <div className="max-w-4xl mx-auto mb-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1 z-10" ref={containerRef}>
+        <div className="max-w-4xl mx-auto mb-8">
           <h1 
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight opacity-0 animate-fade-in" 
             style={{ animationDelay: "0.3s" }}
@@ -98,36 +104,32 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div>
-      
-      {/* Video container positioned at the bottom */}
-      <div className="relative w-full max-w-6xl mx-auto rounded-t-3xl overflow-hidden">
-        <div className="relative mx-auto">
+
+        {/* Video container with square aspect ratio and centered play button */}
+        <div className="relative w-full max-w-2xl mx-auto rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
           <video 
             ref={videoRef}
             autoPlay
             loop
-            muted={isMuted}
+            muted
             playsInline
-            className="w-full h-auto rounded-t-3xl"
-            style={{ 
-              transformStyle: 'preserve-3d',
-              objectFit: 'cover',
-              objectPosition: 'center 20%',
-              maxHeight: '70vh',
-            }}
+            className="w-full h-full object-cover"
           >
             <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
           
-          {/* Mute/Unmute button */}
+          {/* Play/Pause button */}
           <button
-            onClick={toggleMute}
-            className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
-            aria-label={isMuted ? "Unmute video" : "Mute video"}
+            onClick={togglePlayPause}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 rounded-full bg-white/80 hover:bg-white/90 transition-colors duration-200 flex items-center justify-center z-20 shadow-md"
+            aria-label={isPlaying ? "Pause video" : "Play video"}
           >
-            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+            {isPlaying ? (
+              <Pause size={36} className="text-black" />
+            ) : (
+              <Play size={36} className="text-black ml-1" />
+            )}
           </button>
         </div>
       </div>
