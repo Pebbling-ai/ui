@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className=" text-white py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 md:flex md:justify-between md:items-center">
           <div className="max-w-lg">
