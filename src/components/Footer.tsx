@@ -30,7 +30,7 @@ const Footer = () => {
     <footer className="w-full pt-16 pb-8 border-t border-gray-200">
       <div className="section-container">
         {/* CTA Section */}
-        <div className="mb-12 bg-gradient-to-r from-pulse-500/10 to-pulse-600/10 rounded-2xl p-8 relative overflow-hidden">
+        <div className="mb-12  rounded-2xl p-8 relative overflow-hidden">
           <div className="absolute right-0 bottom-0 opacity-20 pointer-events-none">
             <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="156.5" cy="156.5" r="156.5" fill="#F97316" fillOpacity="0.2"/>
@@ -43,7 +43,7 @@ const Footer = () => {
               <p className="text-gray-600 max-w-md">Start building powerful agent communication systems with our protocol today.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
+              <Button className=" text-white px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
                 Let's Pebble <ArrowRight size={16} />
               </Button>
               <Button variant="outline" className="border-pulse-500 text-pulse-500 hover:bg-pulse-500/10 px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
