@@ -57,7 +57,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-white py-16 md:pt-20 md:pb-8 flex flex-col"
+      className="overflow-hidden relative bg-white py-16 md:pt-24 md:pb-8 flex flex-col"
       id="hero" 
     >
       {/* Background blur gradient elements */}
