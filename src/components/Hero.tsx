@@ -113,7 +113,7 @@ const Hero = () => {
               className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.3s" }}
             >
-              Atlas: Where Code<br className="hidden sm:inline" />Meets Motion
+              Pebble: Where Code<br className="hidden sm:inline" />Meets Motion
             </h1>
             
             <p 
@@ -165,7 +165,7 @@ const Hero = () => {
                 <img 
                   ref={imageRef} 
                   src="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png" 
-                  alt="Atlas Robot" 
+                  alt="Pebble Robot" 
                   className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
                   style={{ transformStyle: 'preserve-3d' }} 
                 />

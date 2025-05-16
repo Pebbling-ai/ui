@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import NetworkMetrics from "@/components/NetworkMetrics";
 import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
 import DetailsSection from "@/components/DetailsSection";
@@ -63,6 +64,7 @@ const Index = () => {
       <Navbar />
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
+        <NetworkMetrics />
         <HumanoidSection />
         <SpecsSection />
         <DetailsSection />
