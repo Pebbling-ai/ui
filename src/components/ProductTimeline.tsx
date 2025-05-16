@@ -53,10 +53,10 @@ const TimelineItem = ({ date, title, description, icon, status, isLast = false, 
         isLast ? "pb-0" : "",
         "group"
       )}>
-        <time className="text-sm text-gray-500 mb-1">{date}</time>
+        <time className="text-sm text-black mb-1">{date}</time>
         <h3 className={cn(
           "text-lg font-semibold mb-2 transition-colors duration-300 group-hover:text-pulse-500",
-          status === "upcoming" && "text-gray-500"
+          status === "upcoming" && "text-black"
         )}>
           {title}
         </h3>
