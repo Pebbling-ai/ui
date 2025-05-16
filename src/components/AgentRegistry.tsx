@@ -131,8 +131,8 @@ const AgentRegistry = () => {
                 </div>
               </div>
 
-              {/* Website content - Increased height and width for better visibility */}
-              <div className="bg-white rounded-b-md p-6 macbook-screen" style={{ height: "550px", overflowY: "auto" }}>
+              {/* Website content - Modified height to fit content without scrolling */}
+              <div className="bg-white rounded-b-md p-6 macbook-screen" style={{ height: "auto", minHeight: "550px" }}>
                 {/* Registry content (adapted from original) */}
                 <div className="relative max-w-3xl mx-auto mb-8 group" onClick={focusSearch}>
                   <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
