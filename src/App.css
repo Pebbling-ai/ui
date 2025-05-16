@@ -1,3 +1,4 @@
+
 #root {
   max-width: 100%;
   margin: 0 auto;
@@ -81,24 +82,24 @@
 /* Mobile optimizations */
 @media (max-width: 640px) {
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   
   .button-primary, .button-secondary {
-    padding: 0.75rem 1.25rem;
+    padding: 0.625rem 1rem;
     font-size: 0.875rem;
     width: 100%; /* Full width buttons on mobile */
   }
   
   /* Enhanced padding for mobile */
   .section-container {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 0.75rem;
   }
   
   /* Better touch targets for mobile */
   .nav-link, button, a {
-    min-height: 44px;
+    min-height: 42px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -106,12 +107,12 @@
   
   /* Adjust text sizes for mobile */
   .section-title {
-    font-size: 1.75rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.2 !important;
   }
   
   .section-subtitle {
-    font-size: 1rem !important;
+    font-size: 0.875rem !important;
   }
 }
 
@@ -119,8 +120,8 @@
 .robot-image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease;
 }
 
@@ -131,45 +132,73 @@
 .feature-item {
   background-color: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
 }
 
 .feature-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 /* Enhanced mobile optimizations */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .robot-image-container {
-    border-radius: 16px;
+    border-radius: 10px;
   }
   
   .feature-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   /* Optimize spacing in card layouts */
   .card, .feature-card {
-    padding: 1.25rem;
+    padding: 1rem;
   }
   
   /* Better form inputs on mobile */
   input, textarea, select {
     font-size: 16px !important; /* Prevents iOS zoom on focus */
-    padding: 0.75rem !important;
+    padding: 0.625rem !important;
   }
   
   /* Fix for mobile overflow issues */
-  .overflow-hidden {
+  body, html {
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
   
   /* Make rounded corners more subtle on mobile */
   .rounded-3xl {
-    border-radius: 1rem !important;
+    border-radius: 0.75rem !important;
+  }
+  
+  /* Smaller padding for mobile */
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+  
+  /* Adjust gaps for mobile */
+  .gap-8 {
+    gap: 1.5rem;
+  }
+  
+  .gap-6 {
+    gap: 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 481px) and (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

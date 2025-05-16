@@ -28,7 +28,7 @@ const Index = () => {
             // Add staggered animation with a small delay based on position
             setTimeout(() => {
               entry.target.classList.add("animate-fade-in");
-              entry.target.style.opacity = "1";
+              entry.target.classList.add("opacity-100");
             }, 150); // Small delay for a smoother reveal
             observer.unobserve(entry.target);
           }
@@ -75,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+      <main className="space-y-4 sm:space-y-8 overflow-hidden"> {/* Added overflow-hidden to prevent horizontal scroll */}
         <Hero />
         <CompactNetworkMetrics />
         <ProductShowcase />
