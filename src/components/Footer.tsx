@@ -19,7 +19,7 @@ const Footer = () => {
                   className="h-10 sm:h-12" 
                 />
              
-              <h3 className="text-xl font-bold">pebble</h3>
+              
             </div>
             <p className="text-gray-600 mb-6">
               Advanced agent communication protocol for the next generation of AI applications.
