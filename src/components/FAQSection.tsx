@@ -57,7 +57,7 @@ const FAQSection = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem value={`item-${index}`} key={index} className="border-b border-gray-200">
-                <AccordionTrigger className="text-left py-6 hover:text-pulse-500 text-lg font-medium">
+                <AccordionTrigger className="text-left py-6 text-lg font-medium">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 pb-6 text-left">
@@ -68,7 +68,7 @@ const FAQSection = () => {
           </Accordion>
           
           <div className="mt-12 text-center">
-            <div className="inline-flex items-center gap-2 text-pulse-600 hover:text-pulse-700 transition-colors">
+            <div className="inline-flex items-center gap-2 text-black transition-colors">
               <MessageCircle size={20} />
               <a href="#contact" className="font-medium">
                 Still have questions? Contact our support team
