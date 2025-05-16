@@ -62,7 +62,7 @@ const TestimonialCard = ({
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  return <section className="py-8 bg-white relative" id="testimonials" ref={sectionRef}>
+  return <section className="py-16 bg-white relative" id="testimonials" ref={sectionRef}>
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="flex items-center gap-4 mb-6">
           

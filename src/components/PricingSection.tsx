@@ -59,7 +59,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
       <Button 
         className={cn(
           "w-full",
-          popular ? "bg-pulse-500 hover:bg-pulse-600 text-black border-2 border-black rounded-md" : "bg-gray-800 hover:bg-gray-900 "
+          popular ? "bg-pulse-500 hover:bg-pulse-600 text-white border-2 border-black rounded-md" : "bg-gray-800 hover:bg-gray-900"
         )}
       >
         {cta}
@@ -70,7 +70,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 
 const PricingSection = () => {
   return (
-    <section className="py-16  animate-on-scroll opacity-0" id="pricing">
+    <section className="py-16 animate-on-scroll opacity-0" id="pricing">
       <div className="section-container">
         <div className="text-center mb-12">
          
@@ -80,7 +80,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <PricingTier 
             name="Developer"
             price="Free"

@@ -72,7 +72,7 @@ const ProductTimeline = () => {
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto mt-12">
+        <div className="max-w-3xl mx-auto">
           <div className="space-y-0">
             <TimelineItem 
               date="May 2024"

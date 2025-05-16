@@ -75,7 +75,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8 bg-white"> 
+      <main className="space-y-0 bg-white"> 
         <Hero />
         <CompactNetworkMetrics />
         <ProductShowcase />

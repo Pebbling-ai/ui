@@ -121,7 +121,7 @@ RECEIVE {
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto shadow-elegant hover:shadow-elegant-hover transition-all duration-300">
+        <Card className="max-w-4xl mx-auto">
           <CardContent className="p-0">
             <div className="flex flex-col">
               <div className="flex flex-wrap justify-center gap-2 p-4 border-b">
