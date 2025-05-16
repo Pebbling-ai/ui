@@ -141,8 +141,7 @@ const Hero = () => {
                   Your browser does not support the video tag.
                 </video>
                 
-                {/* Subtle gradient overlay at bottom of video to help ground it */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
+               
                 
                 {/* Mute/Unmute button */}
                 <button
