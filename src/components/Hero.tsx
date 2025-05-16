@@ -57,10 +57,10 @@ const Hero = () => {
       
     >
       {/* Background blur gradient elements */}
-      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
+      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%]  blur-3xl rounded-full"></div>
       
       {/* Bottom blur effect - to create a smooth transition between sections */}
-      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#222222] opacity-30 blur-lg"></div>
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 "></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
