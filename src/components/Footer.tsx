@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#get-started" 
-                className="bg-gray-800 hover:bg-gray-700 flex items-center justify-center group w-full sm:w-auto text-center" 
+                className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
                   borderRadius: '4px',
                   color: '#FFFFFF',
@@ -53,7 +53,7 @@ const Footer = () => {
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <span className="text-xl font-semibold">Pulse</span>
+              <span className="text-black text-xl font-semibold">Pebble</span>
             </div>
             <p className="text-gray-400 text-sm mb-6">
               Advanced agent communication protocol for the next generation of AI applications.
