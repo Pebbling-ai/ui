@@ -61,7 +61,7 @@ const TimelineItem = ({ date, title, description, icon, status, isLast = false, 
           {title}
         </h3>
         <p className={cn(
-          "text-gray-600",
+          "text-black",
           status === "upcoming" && "text-gray-400"
         )}>
           {description}
@@ -88,8 +88,8 @@ const ProductTimeline = () => {
               date="April 2024"
               title="Research & Planning"
               description="Initial research phase and protocol design specifications, establishing the foundation for Pebble's capabilities."
-              icon={<Sparkles className="h-5 w-5" />}
-              status="completed"
+              icon={<Clock className="h-5 w-5" />}
+              status="upcoming"
               isFirst={true}
             />
             
@@ -97,8 +97,8 @@ const ProductTimeline = () => {
               date="May 2024"
               title="Alpha Release"
               description="Private release to select partners. Initial implementation of mTLS security and core protocol features."
-              icon={<Star className="h-5 w-5" />}
-              status="completed"
+              icon={<Clock className="h-5 w-5" />}
+              status="upcoming"
             />
             
             <TimelineItem 
@@ -106,7 +106,7 @@ const ProductTimeline = () => {
               title="Beta Launch"
               description="Public beta with expanded features including framework adapters and improved developer tools."
               icon={<Clock className="h-5 w-5" />}
-              status="current"
+              status="upcoming"
             />
             
             <TimelineItem 
