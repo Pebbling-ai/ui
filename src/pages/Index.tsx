@@ -1,23 +1,20 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
+import ProductShowcase from "@/components/ProductShowcase";
 import NetworkMetrics from "@/components/NetworkMetrics";
 import AgentRegistry from "@/components/AgentRegistry";
 import GitHubSection from "@/components/GitHubSection";
 import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
 import ImageShowcaseSection from "@/components/ImageShowcaseSection";
-import Features from "@/components/Features";
 import ProductTimeline from "@/components/ProductTimeline";
 import IntegrationSection from "@/components/IntegrationSection";
 import FAQSection from "@/components/FAQSection";
 import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
-import MadeByHumans from "@/components/MadeByHumans";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -72,7 +69,7 @@ const Index = () => {
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
         <CompactNetworkMetrics />
-       
+        <ProductShowcase />
         <AgentRegistry />{/*Live preview*/}
         <HumanoidSection />{/*Features*/}
         <GitHubSection />
