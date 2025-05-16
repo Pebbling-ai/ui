@@ -111,6 +111,7 @@ const PricingSection = () => {
             ]}
             popular={true}
             className="md:scale-105 z-10"
+            cta="Upgrade Now"
           />
           
           <PricingTier 
