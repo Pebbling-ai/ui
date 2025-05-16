@@ -36,10 +36,7 @@ const ImageShowcaseSection = () => {
     <section className="w-full py-24 bg-white" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center mb-16">
-          <span className="text-sm font-medium uppercase tracking-wider text-[#3A5BA0] mb-4 animate-on-scroll">
-            Product Mockup
-          </span>
-          
+         
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
               See our AI agents in action
