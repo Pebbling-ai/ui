@@ -113,7 +113,7 @@ const Hero = () => {
             loop
             
             playsInline
-            className="w-full h-[400px] object-cover"
+            className="w-full h-full object-cover"
           >
             <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
             Your browser does not support the video tag.
