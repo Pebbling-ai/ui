@@ -29,7 +29,7 @@ const Footer = () => {
               
               <a 
                 href="#docs" 
-                className="bg-transparent border border-gray-600 hover:border-gray-400 flex items-center justify-center group w-full sm:w-auto text-center" 
+                className="bg-gradient-to-r from-gray-700 to-zinc-900 border border-gray-600 hover:border-gray-400 flex items-center justify-center group w-full sm:w-auto text-center" 
                 style={{
                   borderRadius: '4px',
                   color: '#FFFFFF',
