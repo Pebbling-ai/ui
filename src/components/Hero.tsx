@@ -128,7 +128,7 @@ const Hero = () => {
             {!isPlaying ? (
               <>
                 <img
-                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747408741/z0pfa4s8fnhvlsjrxxhx.png"
+                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747415130/uw95ahb13gzhhubkbcsr.png"
                   alt="Manus Demo"
                   className="object-cover w-full h-full"
                   loading="eager"
