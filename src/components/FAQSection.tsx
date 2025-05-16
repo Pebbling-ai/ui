@@ -46,9 +46,7 @@ const FAQSection = () => {
     <section className="py-16 bg-white animate-on-scroll opacity-0" id="faq">
       <div className="section-container">
         <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-3">
-            <span>FAQ</span>
-          </div>
+         
           <h2 className="section-title mb-4">Frequently Asked Questions</h2>
           <p className="section-subtitle mx-auto">
             Everything you need to know about the Hibiscus agent communication protocol
