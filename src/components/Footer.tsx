@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="w-full bg-gray-50 pt-16 pb-8 border-t border-gray-200">
+    <footer className="w-full  pt-16 pb-8 border-t border-gray-200">
       <div className="section-container">
         {/* CTA Section */}
         <div className="mb-12 bg-gradient-to-r from-pulse-500/10 to-pulse-600/10 rounded-2xl p-8 relative overflow-hidden">
