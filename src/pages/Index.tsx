@@ -70,21 +70,22 @@ const Index = () => {
       <Navbar />
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
-        <NetworkMetrics />
-        <AgentRegistry />
+       
+        <AgentRegistry />{/*Live preview*/}
+        <HumanoidSection />{/*Features*/}
         <GitHubSection />
-        <HumanoidSection />
+         <NetworkMetrics />{/*Built for scale*/}
+         <ProductTimeline />{/*Changelog*/}
+        <IntegrationSection />
+        <PricingSection />
+        <ImageShowcaseSection />{/*Payoff Section*/}
+         <FAQSection />
+         <Testimonials />
+        <Newsletter />
         <SpecsSection />
         {/* <DetailsSection /> */}
-        <ImageShowcaseSection />
-        <Features />
-        <ProductTimeline />
-        <IntegrationSection />
-        <FAQSection />
-        <PricingSection />
-        <Testimonials />
-        <Newsletter />
-        <MadeByHumans />
+        {/* <Features /> */}
+       {/* <MadeByHumans /> */}
       </main>
       <Footer />
     </div>
