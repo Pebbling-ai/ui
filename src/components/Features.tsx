@@ -102,9 +102,7 @@ const Features = () => {
     <section className="py-24 relative bg-white" id="features" ref={sectionRef}>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-sm font-medium uppercase tracking-wider text-[#3A5BA0] mb-4 inline-block fade-in-element">
-            Features
-          </span>
+         
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 fade-in-element">
             Advanced Intelligence, <br className="hidden sm:block" />Human-Like Intuition
           </h2>
