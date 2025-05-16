@@ -113,9 +113,7 @@ RECEIVE {
     <section className="py-16 animate-on-scroll opacity-0" id="integration">
       <div className="section-container">
         <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-3">
-            <span>Integration</span>
-          </div>
+         
           <h2 className="section-title mb-4">Seamless Integration</h2>
           <p className="section-subtitle mx-auto">
             Connect to the Hibiscus network with just a few lines of code using
