@@ -155,12 +155,7 @@ const Footer = () => {
               </Button>
             </form>
             
-            <p className="text-gray-500 text-xs">
-              Built with ❤️ by{" "}
-              <a href="https://x.com/rezaul_arif" target="_blank" rel="noopener noreferrer" className="text-pulse-500 hover:underline">
-                Rezaul Arif
-              </a>
-            </p>
+            
           </div>
         </div>
       </div>
