@@ -65,9 +65,7 @@ const ProductTimeline = () => {
     <section className="py-16 bg-white animate-on-scroll opacity-0" id="roadmap">
       <div className="section-container">
         <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-3">
-            <span>Roadmap</span>
-          </div>
+         
           <h2 className="section-title mb-4">Product Launch Timeline</h2>
           <p className="section-subtitle mx-auto">
             Our step-by-step journey to revolutionize AI communication with Pebble
