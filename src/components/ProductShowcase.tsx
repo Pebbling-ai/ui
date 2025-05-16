@@ -6,7 +6,7 @@ import { ArrowRight, Code, Rocket, Layers, Globe, Shield } from "lucide-react";
 
 const ProductShowcase = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Background blur elements for aesthetics */}
       <div className="absolute -bottom-[10%] -left-[5%] w-1/3 h-[50%] bg-pulse-gradient opacity-10 blur-3xl rounded-full"></div>
       <div className="absolute top-[20%] -right-[5%] w-1/4 h-[40%] bg-pulse-gradient opacity-10 blur-3xl rounded-full"></div>
