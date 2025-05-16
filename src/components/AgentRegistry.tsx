@@ -167,7 +167,7 @@ const AgentRegistry = () => {
                     This feature will be available with the upcoming Hibiscus update.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="p-4 bg-gray-50 rounded-lg mb-4">
+                <div className="p-4  rounded-lg mb-4">
                   <h3 className="font-medium text-sm mb-2">Agent Details</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
