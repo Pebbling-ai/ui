@@ -2,13 +2,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { Volume, VolumeX } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [lottieData, setLottieData] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     // Check if mobile on mount and when window resizes
@@ -22,51 +24,6 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  useEffect(() => {
-    fetch('/loop-header.lottie')
-      .then(response => response.json())
-      .then(data => setLottieData(data))
-      .catch(error => console.error("Error loading Lottie animation:", error));
-  }, []);
-
-  useEffect(() => {
-    // Skip effect on mobile
-    if (isMobile) return;
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current || !imageRef.current) return;
-      
-      const {
-        left,
-        top,
-        width,
-        height
-      } = containerRef.current.getBoundingClientRect();
-      const x = (e.clientX - left) / width - 0.5;
-      const y = (e.clientY - top) / height - 0.5;
-
-      imageRef.current.style.transform = `perspective(1000px) rotateY(${x * 2.5}deg) rotateX(${-y * 2.5}deg) scale3d(1.02, 1.02, 1.02)`;
-    };
-    
-    const handleMouseLeave = () => {
-      if (!imageRef.current) return;
-      imageRef.current.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)`;
-    };
-    
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseleave", handleMouseLeave);
-    }
-    
-    return () => {
-      if (container) {
-        container.removeEventListener("mousemove", handleMouseMove);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      }
-    };
-  }, [isMobile]);
-  
   useEffect(() => {
     // Skip parallax on mobile
     if (isMobile) return;
@@ -85,6 +42,13 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
   
   return (
     <section 
@@ -149,30 +113,34 @@ const Hero = () => {
           </div>
           
           <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
-            {lottieData ? (
-              <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0.9s" }}>
-                <LottieAnimation 
-                  animationPath={lottieData} 
-                  className="w-full h-auto max-w-lg mx-auto"
-                  loop={true}
-                  autoplay={true}
-                />
+            <div className="relative z-10 animate-fade-in rounded-lg overflow-hidden" style={{ animationDelay: "0.9s" }}>
+              <div className="relative">
+                <video 
+                  ref={videoRef}
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png"
+                >
+                  <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                <button 
+                  onClick={toggleMute}
+                  className="absolute bottom-4 right-4 bg-black/50 p-2 rounded-full hover:bg-black/70 transition-colors z-20"
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-5 h-5 text-white" />
+                  ) : (
+                    <Volume className="w-5 h-5 text-white" />
+                  )}
+                </button>
               </div>
-            ) : (
-              <>
-              <div className="absolute inset-0 bg-dark-900 rounded-2xl sm:rounded-3xl -z-10 shadow-xl"></div>
-              <div className="relative transition-all duration-500 ease-out overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-                <img 
-                  ref={imageRef} 
-                  src="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png" 
-                  alt="Pebble Robot" 
-                  className="w-full h-auto object-cover transition-transform duration-500 ease-out" 
-                  style={{ transformStyle: 'preserve-3d' }} 
-                />
-                <div className="absolute inset-0" style={{ backgroundImage: 'url("/hero-image.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay', opacity: 0.5 }}></div>
-              </div>
-              </>
-            )}
+            </div>
           </div>
         </div>
       </div>
