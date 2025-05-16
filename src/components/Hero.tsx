@@ -52,103 +52,85 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-cover" 
+      className="overflow-hidden relative bg-white py-16 lg:py-24 flex flex-col min-h-screen" 
       id="hero" 
-      
     >
       {/* Background blur gradient elements */}
-      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%]  blur-3xl rounded-full"></div>
+      <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] blur-3xl rounded-full"></div>
       
-      {/* Bottom blur effect - to create a smooth transition between sections */}
-      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 "></div>
-      
-      <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
-          <div className="w-full lg:w-1/2">
-            
-            
-            <h1 
-              className="section-title text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.3s" }}
-            >
-              Pebble: Where Code<br className="hidden sm:inline" />Meets Motion
-            </h1>
-            
-            <p 
-              style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-base sm:text-lg text-left"
-            >
-              The humanoid companion that learns and adapts alongside you.
-            </p>
-            
-            <div 
-              className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.7s" }}
-            >
-              <a 
-                href="#get-access" 
-                className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
-                style={{
-                  
-                  borderRadius: '1440px',
-                  boxSizing: 'border-box',
-                  color: '#FFFFFF',
-                  cursor: 'pointer',
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                  padding: '16px 24px', // Slightly reduced padding for mobile
-                  border: '1px solid white',
-                }}
-              >
-                Request Access
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
+      {/* Center aligned content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1" ref={containerRef}>
+        <div className="max-w-4xl mx-auto mb-16">
+          <h1 
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight opacity-0 animate-fade-in" 
+            style={{ animationDelay: "0.3s" }}
+          >
+            Leave it to Pebble
+          </h1>
           
-          <div className="w-full lg:w-1/2 relative mt-3 lg:mt-0">
-            <div className="relative z-10">
-              {/* Video container with soft shadow at bottom for grounding effect */}
-              <div className="relative">
-                <video 
-                  ref={videoRef}
-                  autoPlay
-                  loop
-                  muted={isMuted}
-                  playsInline
-                  className="w-full h-auto "
-                  style={{ 
-                  transformStyle: 'preserve-3d',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center 20%', // Changed from 'center center' to 'center 20%' to move the person up
-                  maxHeight: '950px',
-                  minHeight: '700px',
-                  clipPath: 'inset(0 0 0 0)', // Clips the video to avoid floating effect
-                }}
-                >
-                  <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
-                
-               
-                
-                {/* Mute/Unmute button */}
-                <button
-                  onClick={toggleMute}
-                  className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                >
-                  {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
-                </button>
-              </div>
-            </div>
+          <p 
+            style={{ animationDelay: "0.5s" }} 
+            className="mt-4 sm:mt-6 mb-8 text-gray-600 opacity-0 animate-fade-in text-base sm:text-xl md:text-2xl max-w-3xl mx-auto"
+          >
+            Pebble is a general AI agent that bridges minds and actions: it doesn't just think, it delivers results. Pebble excels at various tasks in work and life, getting everything done while you rest.
+          </p>
+          
+          <div 
+            className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" 
+            style={{ animationDelay: "0.7s" }}
+          >
+            <a 
+              href="#get-access" 
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
+              style={{
+                borderRadius: '1440px',
+                boxSizing: 'border-box',
+                color: '#FFFFFF',
+                cursor: 'pointer',
+                fontSize: '14px',
+                lineHeight: '20px',
+                padding: '16px 24px',
+                border: '1px solid white',
+              }}
+            >
+              Request Access
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </div>
       
-      
-      
+      {/* Video container positioned at the bottom */}
+      <div className="relative w-full max-w-6xl mx-auto rounded-t-3xl overflow-hidden">
+        <div className="relative mx-auto">
+          <video 
+            ref={videoRef}
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            className="w-full h-auto rounded-t-3xl"
+            style={{ 
+              transformStyle: 'preserve-3d',
+              objectFit: 'cover',
+              objectPosition: 'center 20%',
+              maxHeight: '70vh',
+            }}
+          >
+            <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+          
+          {/* Mute/Unmute button */}
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
+          >
+            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+          </button>
+        </div>
+      </div>
     </section>
   );
 };
