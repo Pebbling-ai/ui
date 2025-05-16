@@ -55,31 +55,35 @@ const Navbar = () => {
           aria-label="Pulse Robot"
         >
           <img 
-            src="/logo.svg" 
+            src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747339698/softuynr4zwtrlwmkwxp.png" 
             alt="Pulse Robot Logo" 
             className="h-7 sm:h-8" 
           />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Changed text color to white when not scrolled and updated font */}
         <nav className="hidden md:flex space-x-8">
           <a 
             href="#" 
-            className="nav-link"
+            className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
             }}
           >
-            Home
+            Pebbling Protocol
           </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
+          <a href="#features" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Hibiscus</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Community</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Articles</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Docs</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Network Status</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Network</a>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
         <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
+          className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-white" : "text-gray-700")}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -87,7 +91,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - improved for better touch experience */}
+      {/* Mobile Navigation - improved for better touch experience and updated font */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
@@ -95,7 +99,7 @@ const Navbar = () => {
         <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
             href="#" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -107,7 +111,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#features" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -117,7 +121,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#details" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
