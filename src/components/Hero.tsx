@@ -60,7 +60,11 @@ const Hero = () => {
         padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
       }}
     >
+      {/* Background blur gradient elements */}
       <div className="absolute -top-[10%] -right-[5%] w-1/2 h-[70%] bg-pulse-gradient opacity-20 blur-3xl rounded-full"></div>
+      
+      {/* Bottom blur effect - to create a smooth transition between sections */}
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#222222] opacity-30 blur-lg"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center">
@@ -114,41 +118,51 @@ const Hero = () => {
           
           <div className="w-full lg:w-1/2 relative mt-3 lg:mt-0">
             <div className="relative z-10">
-              <video 
-                ref={videoRef}
-                autoPlay
-                loop
-                muted={isMuted}
-                playsInline
-                className="w-full h-auto"
-                style={{ 
-                  transformStyle: 'preserve-3d',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center 20%', // Changed from 'center center' to 'center 20%' to move the person up
-                  maxHeight: '950px',
-                  minHeight: '700px',
-                  clipPath: 'inset(0 0 0 0)', // Clips the video to avoid floating effect
-                }}
-              >
-                <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
-              
-              {/* Mute/Unmute button */}
-              <button
-                onClick={toggleMute}
-                className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
-                aria-label={isMuted ? "Unmute video" : "Mute video"}
-              >
-                {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
-              </button>
+              {/* Video container with soft shadow at bottom for grounding effect */}
+              <div className="relative">
+                <video 
+                  ref={videoRef}
+                  autoPlay
+                  loop
+                  muted={isMuted}
+                  playsInline
+                  className="w-full h-auto rounded-lg"
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 20%',
+                    maxHeight: '650px',
+                    minHeight: '500px',
+                    clipPath: 'inset(0 0 0 0)',
+                  }}
+                >
+                  <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Subtle gradient overlay at bottom of video to help ground it */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
+                
+                {/* Mute/Unmute button */}
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                  {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
+      {/* Decorative elements */}
       <div className="hidden lg:block absolute bottom-0 left-1/4 w-64 h-64 bg-pulse-100/30 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
+      
+      {/* Additional blur element to better ground the content */}
+      <div className="hidden lg:block absolute -bottom-16 left-0 right-0 h-32 bg-black/10 blur-3xl z-10"></div>
     </section>
   );
 };
