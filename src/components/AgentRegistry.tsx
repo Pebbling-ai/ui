@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Search, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -121,8 +120,8 @@ const AgentRegistry = () => {
   
   const statusIcons = {
     verified: <Check size={16} className="text-green-600" />,
-    pending: <motion.div animate={{ opacity: [0.5, 1, 0.5] }} transition={{ repeat: Infinity, duration: 2 }} className="w-4 h-4 rounded-full bg-amber-400" />,
-    beta: <motion.div className="text-blue-600 text-xs font-bold">β</motion.div>,
+    pending: <div className="w-4 h-4 rounded-full bg-amber-400 animate-pulse"></div>,
+    beta: <div className="text-blue-600 text-xs font-bold">β</div>,
   };
 
   return (
@@ -173,7 +172,7 @@ const AgentRegistry = () => {
           {/* Right column: Agents display in iPhone frame */}
           <div className="lg:col-span-8">
             <div className="relative mx-auto">
-              {/* iPhone Frame */}
+              {/* iPhone Frame - Better mobile optimization */}
               <div className="relative mx-auto bg-black rounded-[38px] shadow-xl h-[600px] max-w-[300px] sm:max-w-[320px] overflow-hidden border-[14px] border-black">
                 {/* iPhone Notch */}
                 <div className="absolute top-0 inset-x-0 h-6 w-[40%] mx-auto bg-black rounded-b-3xl z-50"></div>
