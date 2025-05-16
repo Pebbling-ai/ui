@@ -9,7 +9,7 @@ const GitHubSection = () => {
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
          
-          <h2 className="text-2xl sm:text-3xl font-bold mb-2">Proudly Open Source</h2>
+          <h2 className="section-title mb-2">Proudly Open Source</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Pebble is built with transparency and collaboration in mind. Join our growing community of contributors on GitHub.
           </p>
