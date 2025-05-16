@@ -6,7 +6,7 @@ const GradientTextSection = () => {
     <section className="w-full py-16 bg-white" id="product-info">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold leading-tight text-center mb-16">
             <span className="text-blue-700">Pebbling</span> works with{" "}
             <span className="text-slate-600">your team</span>,{" "}
             <span className="text-orange-500">not instead of it</span>. By{" "}
@@ -18,7 +18,7 @@ const GradientTextSection = () => {
             <span className="text-orange-600">create, solve, and innovate</span>.
           </h2>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold leading-tight text-center">
             <span className="text-blue-700">Hibiscus</span> delivers{" "}
             <span className="text-orange-500">evolutionary AI</span> that{" "}
             <span className="text-slate-600">adapts to your environment</span>. With{" "}
