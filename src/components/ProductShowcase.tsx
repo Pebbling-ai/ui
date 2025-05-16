@@ -65,13 +65,13 @@ const ProductShowcase = () => {
                   </div>
                   
                   <div className="w-full md:w-2/5 relative">
-                    <div className="aspect-square overflow-hidden rounded-2xl bg-gradient-to-b from-pulse-50 to-transparent p-4 relative">
+                    <div className="aspect-square overflow-hidden rounded-2xl  p-4 relative">
                       <img 
                         src="/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png" 
                         alt="Pebble Humanoid" 
                         className="object-contain w-full h-full"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent rounded-2xl"></div>
+                      <div className="absolute inset-0  rounded-2xl"></div>
                     </div>
                   </div>
                 </div>
