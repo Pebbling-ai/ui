@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -103,8 +104,8 @@ const AgentRegistry = () => {
           </p>
         </div>
 
-        {/* MacBook frame container */}
-        <div className="relative max-w-5xl mx-auto mb-12">
+        {/* MacBook frame container - increased max-width */}
+        <div className="relative max-w-6xl mx-auto mb-12">
           {/* MacBook body */}
           <div className="bg-gray-800 rounded-2xl shadow-2xl pt-8 px-8 pb-10">
             {/* MacBook screen bezel */}
@@ -130,10 +131,10 @@ const AgentRegistry = () => {
                 </div>
               </div>
 
-              {/* Website content - Fixed height to prevent resizing */}
-              <div className="bg-white rounded-b-md p-4 macbook-screen" style={{ height: "450px", overflowY: "auto" }}>
+              {/* Website content - Increased height and width for better visibility */}
+              <div className="bg-white rounded-b-md p-6 macbook-screen" style={{ height: "550px", overflowY: "auto" }}>
                 {/* Registry content (adapted from original) */}
-                <div className="relative max-w-2xl mx-auto mb-8 group" onClick={focusSearch}>
+                <div className="relative max-w-3xl mx-auto mb-8 group" onClick={focusSearch}>
                   <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
                   <Search 
                     className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-pulse-500 transition-colors duration-300" 
@@ -148,7 +149,7 @@ const AgentRegistry = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
                   {filteredAgents.map(agent => (
                     <HoverCard key={agent.id}>
                       <HoverCardTrigger asChild>
@@ -217,12 +218,12 @@ const AgentRegistry = () => {
               </div>
             </div>
             
-            {/* MacBook keyboard area (simplified) */}
-            <div className="bg-gray-700 h-4 rounded-b-lg mx-auto w-1/2"></div>
+            {/* MacBook keyboard area (simplified) - made wider */}
+            <div className="bg-gray-700 h-5 rounded-b-lg mx-auto w-3/5"></div>
           </div>
           
           {/* MacBook bottom reflection/shadow */}
-          <div className="bg-gray-900/20 h-3 w-10/12 mx-auto rounded-b-full blur-sm"></div>
+          <div className="bg-gray-900/20 h-4 w-11/12 mx-auto rounded-b-full blur-sm"></div>
         </div>
 
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
