@@ -126,7 +126,7 @@ const Hero = () => {
                   loop
                   muted={isMuted}
                   playsInline
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto "
                   style={{ 
                     transformStyle: 'preserve-3d',
                     height: '100%',
