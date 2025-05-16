@@ -62,7 +62,6 @@ const AgentRegistry = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedAgent, setSelectedAgent] = useState<null | typeof agents[0]>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const filteredAgents = agents.filter(agent => 
     agent.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -84,18 +83,19 @@ const AgentRegistry = () => {
     <section className="py-12 relative animate-on-scroll opacity-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
+         
           <h2 className="section-title font-bold mb-2">Hibiscus Registry</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Search and discover AI agents across the Pebble network ecosystem.
           </p>
         </div>
 
-        <div className="relative max-w-2xl mx-auto mb-8 group">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-gray-600 transition-colors" />
+        <div className="relative max-w-2xl mx-auto mb-8">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
             type="text"
             placeholder="Search by agent name, type, or capabilities..."
-            className="pl-10 py-6 text-lg border-2 focus:ring-2 focus:ring-blue-300 focus:border-blue-300 transition-all duration-300"
+            className="pl-10 py-6 text-lg"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -105,21 +105,11 @@ const AgentRegistry = () => {
           {filteredAgents.map(agent => (
             <Card 
               key={agent.id} 
-              className={`transform transition-all duration-300 cursor-pointer border-2 ${
-                hoveredCard === agent.id 
-                  ? 'shadow-xl border-blue-300 scale-[1.02]'
-                  : 'shadow-md hover:shadow-xl hover:border-blue-200'
-              }`}
+              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:border-pulse-300"
               onClick={() => handleAgentClick(agent)}
-              onMouseEnter={() => setHoveredCard(agent.id)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
-              <CardHeader className="flex flex-row items-center gap-3 relative">
-                <div className={`p-3 rounded-lg transition-all duration-300 ${
-                  hoveredCard === agent.id 
-                    ? 'bg-blue-50 scale-110' 
-                    : 'bg-gray-100'
-                }`}>
+              <CardHeader className="flex flex-row items-center gap-3">
+                <div className="p-2 bg-gray-100 rounded-lg">
                   {agent.icon}
                 </div>
                 <div>
@@ -133,35 +123,18 @@ const AgentRegistry = () => {
                 }`}>
                   {agent.status}
                 </div>
-                {hoveredCard === agent.id && (
-                  <span className="absolute -right-2 -top-2 w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs animate-pulse">
-                    +
-                  </span>
-                )}
               </CardHeader>
               <CardContent>
                 <div className="space-y-1">
                   <p className="text-xs text-gray-500">Capabilities:</p>
                   <div className="flex flex-wrap gap-1">
                     {agent.capabilities.map((capability, idx) => (
-                      <span 
-                        key={idx} 
-                        className={`text-xs px-2 py-1 rounded-full transition-colors duration-300 ${
-                          hoveredCard === agent.id 
-                            ? 'bg-blue-100 text-blue-800' 
-                            : 'bg-gray-100'
-                        }`}
-                      >
+                      <span key={idx} className="text-xs bg-gray-100 px-2 py-1 rounded-full">
                         {capability}
                       </span>
                     ))}
                   </div>
                 </div>
-                {hoveredCard === agent.id && (
-                  <div className="mt-4 p-2 bg-blue-50 rounded-md text-blue-700 text-sm border border-blue-100 transition-all duration-300 animate-fade-in">
-                    Click to integrate with your Pebble network
-                  </div>
-                )}
               </CardContent>
             </Card>
           ))}
@@ -177,12 +150,12 @@ const AgentRegistry = () => {
         </div>
 
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogContent className="sm:max-w-md border-2 border-blue-200">
+          <DialogContent className="sm:max-w-md">
             {selectedAgent && (
               <>
                 <DialogHeader>
                   <DialogTitle className="flex items-center gap-2">
-                    <div className="p-3 bg-blue-50 rounded-lg">
+                    <div className="p-2 bg-gray-100 rounded-lg">
                       {selectedAgent.icon}
                     </div>
                     {selectedAgent.name}
@@ -191,7 +164,7 @@ const AgentRegistry = () => {
                     This feature will be available with the upcoming Hibiscus update.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="p-4 rounded-lg mb-4 border border-gray-100">
+                <div className="p-4  rounded-lg mb-4">
                   <h3 className="font-medium text-sm mb-2">Agent Details</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
@@ -206,7 +179,7 @@ const AgentRegistry = () => {
                       <span className="text-sm text-gray-500 block mb-1">Capabilities:</span>
                       <div className="flex flex-wrap gap-1">
                         {selectedAgent.capabilities.map((capability, idx) => (
-                          <span key={idx} className="text-xs bg-blue-50 text-blue-700 border border-blue-100 px-2 py-1 rounded-full">
+                          <span key={idx} className="text-xs bg-white border px-2 py-1 rounded-full">
                             {capability}
                           </span>
                         ))}
@@ -214,8 +187,8 @@ const AgentRegistry = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                  <p className="text-sm text-blue-800">
+                <div className="p-4 bg-pulse-50 border border-pulse-100 rounded-lg">
+                  <p className="text-sm text-pulse-800">
                     <span className="font-medium">Coming Soon:</span> Hibiscus will enable direct agent 
                     integration, letting you deploy and manage agents across your network with full mTLS security.
                   </p>
