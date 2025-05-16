@@ -106,7 +106,7 @@ const Hero = () => {
         </div>
 
         {/* Video container with square aspect ratio and centered play button */}
-        <div className="relative w-full max-w-2xl mx-auto rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
+        <div className="relative w-full rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
           <video 
             ref={videoRef}
             autoPlay
