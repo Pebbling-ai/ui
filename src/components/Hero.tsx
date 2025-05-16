@@ -57,7 +57,7 @@ const Hero = () => {
       style={{
         backgroundImage: 'url("/Header-background.webp")',
         backgroundPosition: 'center 30%', 
-        padding: isMobile ? '100px 12px 40px' : '120px 20px 60px'
+        padding: isMobile ? '100px 12px 40px' : '120px 20px '
       }}
     >
       {/* Background blur gradient elements */}
