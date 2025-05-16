@@ -32,7 +32,7 @@ const IntegrationTab = ({
         "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
         isActive
           ? "bg-pulse-500 text-white shadow-md"
-          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+          : "bg-gray-100 text-black "
       )}
     >
       {icon}
@@ -157,7 +157,7 @@ RECEIVE {
         </Card>
 
         <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white p-6 rounded-xl text-black shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white p-6 rounded-xl text-black transition-all duration-300 hover:-translate-y-1">
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Minimal Configuration</h3>
             <p className="text-gray-600">
               Get started quickly with sensible defaults and minimal configuration requirements
