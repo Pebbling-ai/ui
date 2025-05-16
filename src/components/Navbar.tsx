@@ -65,7 +65,7 @@ const Navbar = () => {
         <nav className="hidden md:flex space-x-8">
           <a 
             href="#" 
-            className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}
+            className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -73,17 +73,17 @@ const Navbar = () => {
           >
             Pebbling Protocol
           </a>
-          <a href="#features" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Hibiscus</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Community</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Articles</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Docs</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Network Status</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-white")}>Network</a>
+          <a href="#features" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Hibiscus</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Community</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Articles</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Docs</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network Status</a>
+          <a href="#details" className={cn("nav-link font-montserrat font-medium", !isScrolled && "text-black")}>Network</a>
         </nav>
 
         {/* Mobile menu button - increased touch target */}
         <button 
-          className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-white" : "text-gray-700")}
+          className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-black" : "text-gray-700")}
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
