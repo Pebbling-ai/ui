@@ -96,10 +96,10 @@ const Navbar = () => {
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <nav className="flex flex-col space-y-4 items-center mt-8">
+        <nav className="flex flex-col space-y-6 items-center mt-8">
           <a 
             href="#" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -107,68 +107,27 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Pebbling Protocol
+            Home
           </a>
           <a 
             href="#features" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
-            Hibiscus
+            About
           </a>
           <a 
             href="#details" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-lg font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
           >
-            Community
-          </a>
-          <a 
-            href="#details" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Articles
-          </a>
-          <a 
-            href="#details" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Docs
-          </a>
-          <a 
-            href="#details" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Network Status
-          </a>
-          <a 
-            href="#details" 
-            className="text-base font-medium py-2 px-4 w-full text-center rounded-lg hover:bg-gray-100"
-
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            Network
+            Contact
           </a>
         </nav>
       </div>
