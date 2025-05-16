@@ -6,11 +6,13 @@ const CTASection = () => {
   return (
     <section className="w-full py-20 relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-gray-400 rounded-3xl p-12 md:p-16">
+        <div className="rounded-3xl p-12 md:p-16" style={{ 
+          background: "linear-gradient(to right, #222222, #000000)" 
+        }}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-center">
             <div className="max-w-xl mb-8 md:mb-0">
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-black">Ready to connect your agents?</h2>
-              <p className="text-gray-700 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Ready to connect your agents?</h2>
+              <p className="text-gray-300 mb-6">
                 Start building powerful agent communication systems with our protocol today.
               </p>
             </div>
@@ -28,7 +30,7 @@ const CTASection = () => {
               
               <a 
                 href="#docs" 
-                className="bg-transparent text-black flex items-center justify-center group text-center border border-gray-600 rounded-md hover:bg-gray-300 transition-all" 
+                className="bg-transparent text-white flex items-center justify-center group text-center border border-gray-300 rounded-md hover:bg-gray-800 transition-all" 
                 style={{
                   padding: '12px 24px',
                 }}
