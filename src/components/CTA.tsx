@@ -39,9 +39,7 @@ const CTA = () => {
           <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-pulse-100/30 rounded-full translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
           <div className="absolute bottom-0 left-0 w-24 sm:w-32 h-24 sm:h-32 bg-gray-100/50 rounded-full -translate-x-1/2 translate-y-1/2 blur-2xl"></div>
           
-          <div className="pulse-chip mx-auto mb-4 sm:mb-6">
-            <span>Limited Availability</span>
-          </div>
+          
           
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Be Among the First to <br className="hidden sm:inline" />
