@@ -41,7 +41,7 @@ const ImageShowcaseSection = () => {
             variant="outline" 
             className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full"
           >
-            Product Mockup
+            Payoff
           </Badge>
           
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
