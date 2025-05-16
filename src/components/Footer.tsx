@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 md:flex md:justify-between md:items-center">
           <div className="max-w-lg">
-            <h3 className="text-2xl font-bold mb-4">Ready to connect your agents?</h3>
+            <h3 className="text-black text-2xl font-bold mb-4">Ready to connect your agents?</h3>
             <p className="text-gray-400 mb-6">
               Start building powerful agent communication systems with our protocol today.
             </p>
