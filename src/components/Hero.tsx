@@ -112,36 +112,38 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 relative mt-6 lg:mt-0">
-            <div className="relative z-10 animate-fade-in rounded-lg overflow-hidden" style={{ animationDelay: "0.9s" }}>
-              <div className="relative">
-                <video 
-                  ref={videoRef}
-                  className="w-full h-auto"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png"
-                >
-                  <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
-                  Your browser does not support the video tag.
-                </video>
-                
-                <button 
-                  onClick={toggleMute}
-                  className="absolute bottom-4 right-4 bg-black/50 p-2 rounded-full hover:bg-black/70 transition-colors z-20"
-                  aria-label={isMuted ? "Unmute video" : "Mute video"}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5 text-white" />
-                  ) : (
-                    <Volume className="w-5 h-5 text-white" />
-                  )}
-                </button>
-              </div>
+          <div className="w-full lg:w-1/2 relative mt-3 lg:mt-0">
+            <div className="relative z-10">
+              <video 
+                ref={videoRef}
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                className="w-full h-auto"
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 20%', // Changed from 'center center' to 'center 20%' to move the person up
+                  maxHeight: '950px',
+                  minHeight: '700px',
+                  clipPath: 'inset(0 0 0 0)', // Clips the video to avoid floating effect
+                }}
+              >
+                <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              
+              {/* Mute/Unmute button */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-6 right-6 p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+              >
+                {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+              </button>
             </div>
-          </div>
         </div>
       </div>
       
