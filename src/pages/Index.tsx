@@ -89,7 +89,7 @@ const Index = () => {
         <ImageShowcaseSection />
         <FAQSection />
         <Testimonials />
-        <Newsletter />
+        {/* <Newsletter /> */}
       </main>
       <Footer />
     </div>
