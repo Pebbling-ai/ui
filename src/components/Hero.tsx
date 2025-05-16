@@ -67,7 +67,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1 z-10" ref={containerRef}>
         <div className="max-w-4xl mx-auto mb-8">
           <h1 
-            className="font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight opacity-0 animate-fade-in font-baskerville" 
+            className="section-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight opacity-0 animate-fade-in font-baskerville" 
             style={{ animationDelay: "0.3s" }}
           >
             Leave it to Pebble
