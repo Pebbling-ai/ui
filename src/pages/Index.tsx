@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -17,6 +18,7 @@ import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import Features from "@/components/Features";
+import ExampleUseCases from "@/components/ExampleUseCases";
 
 // Apply Baskerville font to all headings site-wide
 const Index = () => {
@@ -88,10 +90,10 @@ const Index = () => {
       <main className="space-y-0 bg-white"> 
         <Hero />
         <CompactNetworkMetrics />
+        <ExampleUseCases />
         <ProductShowcase />
         <AgentRegistry />
         <Features/>
-        
         <NetworkMetrics />
         <ProductTimeline />
         <IntegrationSection />

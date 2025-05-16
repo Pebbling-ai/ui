@@ -57,7 +57,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-white py-16 lg:py-24 flex flex-col min-h-screen" 
+      className="overflow-hidden relative bg-white py-16 md:pt-20 md:pb-8 flex flex-col"
       id="hero" 
     >
       {/* Background blur gradient elements */}
@@ -123,7 +123,7 @@ const Hero = () => {
         </div>
 
         {/* Video container with reduced size */}
-        <div className="relative w-full h-fit max-w-3xl mx-auto overflow-hidden aspect-square mb-12 ">
+        <div className="relative w-full h-fit max-w-3xl mx-auto overflow-hidden mb-4">
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
             {!isPlaying ? (
               <>
