@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 flex items-center justify-center mr-2">
                  <img 
-                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747414029/bl6hrupybi6hqqrbfkib.png" 
+                  src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/fajr9stliyz17xsez5nt.png" 
                   alt="Pulse Robot Logo" 
                   className="h-10 sm:h-12" 
                 />
