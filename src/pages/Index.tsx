@@ -20,6 +20,7 @@ import Footer from "@/components/Footer";
 import Features from "@/components/Features";
 import ExampleUseCases from "@/components/ExampleUseCases";
 import MadeByHumans from "@/components/MadeByHumans";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
@@ -104,6 +105,9 @@ const Index = () => {
         <Testimonials />
         
         {/* <MadeByHumans /> */}
+        
+        {/* Add the new CTA section right before the footer */}
+        <CTASection />
       </main>
       <Footer />
     </div>

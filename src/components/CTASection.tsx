@@ -2,7 +2,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-const CTA = () => {
+const CTASection = () => {
   return (
     <section className="w-full py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black opacity-95 z-0"></div>
@@ -49,4 +49,4 @@ const CTA = () => {
   );
 };
 
-export default CTA;
+export default CTASection;
