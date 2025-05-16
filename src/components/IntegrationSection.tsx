@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Code, Terminal, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -6,8 +5,17 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const CodeSnippet = ({ language, code }: { language: string; code: string }) => {
   return (
-    <div className="rounded-lg bg-dark-900 p-4 overflow-auto max-w-full">
-      <pre className="text-black text-sm font-mono ">
+    <div className="rounded-lg p-4 overflow-auto max-w-full macbook-screen">
+      <div className="flex items-center justify-between bg-gray-800 py-2 px-4 rounded-t-lg border-b border-gray-700 mb-2">
+        <div className="flex space-x-2">
+          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+        </div>
+        <div className="text-xs text-gray-400 font-mono">{language}.{language === 'javascript' ? 'js' : language === 'python' ? 'py' : 'mcp'}</div>
+        <div className="w-4"></div>
+      </div>
+      <pre className="text-white text-sm font-mono bg-gray-900 p-4 rounded-b-lg">
         <code>{code}</code>
       </pre>
     </div>
@@ -113,7 +121,6 @@ RECEIVE {
     <section className="py-16 animate-on-scroll opacity-0" id="integration">
       <div className="section-container">
         <div className="text-center mb-12">
-         
           <h2 className="section-title mb-4">Seamless Integration</h2>
           <p className="section-subtitle mx-auto">
             Connect to the Hibiscus network with just a few lines of code using
@@ -121,7 +128,7 @@ RECEIVE {
           </p>
         </div>
 
-        <Card className="max-w-4xl mx-auto">
+        <Card className="max-w-4xl mx-auto overflow-hidden shadow-lg border-0 bg-gradient-to-b from-gray-100 to-gray-200">
           <CardContent className="p-0">
             <div className="flex flex-col">
               <div className="flex flex-wrap justify-center gap-2 p-4 border-b">
@@ -144,7 +151,7 @@ RECEIVE {
                   onClick={() => setActiveTab("mcp")}
                 />
               </div>
-              <div className="p-5">
+              <div className="p-5 bg-gray-100">
                 <CodeSnippet
                   language={activeTab}
                   code={codeSnippets[activeTab]}

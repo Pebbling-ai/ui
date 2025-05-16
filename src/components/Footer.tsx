@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Github, Twitter, Linkedin, MessageCircle, ArrowRight, ExternalLink, Mail, Send } from "lucide-react";
+import { Github, Twitter, Linkedin, MessageCircle, ArrowRight, ExternalLink, Mail, Send, FileText, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 
@@ -43,9 +42,14 @@ const Footer = () => {
               <h3 className="text-2xl font-semibold mb-2">Ready to connect your agents?</h3>
               <p className="text-gray-600 max-w-md">Start building powerful agent communication systems with our protocol today.</p>
             </div>
-            <Button className="bg-pulse-500 hover:bg-pulse-600 text-white px-6 py-3 h-auto flex items-center gap-2">
-              Get Started <ArrowRight size={16} />
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="bg-pulse-500 hover:bg-pulse-600 text-white px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
+                Let's Pebble <ArrowRight size={16} />
+              </Button>
+              <Button variant="outline" className="border-pulse-500 text-pulse-500 hover:bg-pulse-500/10 px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
+                Docs <FileText size={16} />
+              </Button>
+            </div>
           </div>
         </div>
         

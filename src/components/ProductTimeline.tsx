@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Clock, Calendar, Star } from "lucide-react";
+import { Clock, Calendar, Star, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface TimelineItemProps {
@@ -10,12 +10,23 @@ interface TimelineItemProps {
   icon: React.ReactNode;
   status: "completed" | "current" | "upcoming";
   isLast?: boolean;
+  isFirst?: boolean;
 }
 
-const TimelineItem = ({ date, title, description, icon, status, isLast = false }: TimelineItemProps) => {
+const TimelineItem = ({ date, title, description, icon, status, isLast = false, isFirst = false }: TimelineItemProps) => {
   return (
     <div className="flex gap-4 md:gap-6">
       <div className="flex flex-col items-center">
+        {isFirst && (
+          <div 
+            className={cn(
+              "w-0.5 h-8 mb-2",
+              status === "completed" ? "bg-pulse-500" : 
+              status === "current" ? "bg-gradient-to-t from-pulse-500 to-gray-300" : 
+              "bg-gray-300"
+            )}
+          />
+        )}
         <div 
           className={cn(
             "flex items-center justify-center w-10 h-10 rounded-full z-10",
@@ -65,7 +76,6 @@ const ProductTimeline = () => {
     <section className="py-16 bg-white animate-on-scroll opacity-0" id="roadmap">
       <div className="section-container">
         <div className="text-center mb-12">
-         
           <h2 className="section-title mb-4">Product Launch Timeline</h2>
           <p className="section-subtitle mx-auto">
             Our step-by-step journey to revolutionize AI communication with Pebble
@@ -74,6 +84,15 @@ const ProductTimeline = () => {
         
         <div className="max-w-3xl mx-auto">
           <div className="space-y-0">
+            <TimelineItem 
+              date="April 2024"
+              title="Research & Planning"
+              description="Initial research phase and protocol design specifications, establishing the foundation for Pebble's capabilities."
+              icon={<Sparkles className="h-5 w-5" />}
+              status="completed"
+              isFirst={true}
+            />
+            
             <TimelineItem 
               date="May 2024"
               title="Alpha Release"

@@ -241,3 +241,18 @@
     opacity: 1 !important;
   }
 }
+
+/* MacBook Screen Styling */
+.macbook-screen {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: perspective(1000px) rotateX(2deg);
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+}
+
+.macbook-screen:hover {
+  transform: perspective(1000px) rotateX(0);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2), 0 15px 15px -5px rgba(0, 0, 0, 0.1);
+}
