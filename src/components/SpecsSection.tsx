@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -20,9 +21,9 @@ const ProductCard = ({
   description: string; 
   features: string[];
 }) => (
-  <div className="bg-gradient-to-br from-pulse-100 to-pulse-200/70 rounded-2xl p-8 hover:shadow-elegant-hover transition-all duration-300">
-    <h3 className="text-2xl font-semibold mb-3">{title}</h3>
-    <p className="text-gray-700 mb-8 text-lg">{description}</p>
+  <div className="bg-gradient-to-br from-[#F97316] via-[#F97316]/70 to-[#0EA5E9]/90 rounded-2xl p-8 hover:shadow-elegant-hover transition-all duration-300">
+    <h3 className="text-2xl font-semibold mb-3 text-white">{title}</h3>
+    <p className="text-white/90 mb-8 text-lg">{description}</p>
     
     <div className="mb-8 bg-white/80 backdrop-blur-sm p-6 rounded-xl">
       {features.map((feature, index) => (
@@ -30,7 +31,7 @@ const ProductCard = ({
       ))}
     </div>
     
-    <button className="flex items-center text-sm font-medium bg-pulse-500 text-white px-4 py-2 rounded-full transition-colors hover:bg-pulse-600">
+    <button className="flex items-center text-sm font-medium bg-white/90 text-dark-900 px-4 py-2 rounded-full transition-colors hover:bg-white">
       Learn more about {title}
       <ArrowUpRight className="ml-2 h-4 w-4" />
     </button>
@@ -55,7 +56,7 @@ const SpecsSection = () => {
         {/* Title section */}
         <div className="max-w-3xl mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
-            Precision engineering meets adaptive intelligence
+            The details
           </h2>
           <p className="text-lg text-gray-600">
             Our cutting-edge AI platforms are designed to transform how you interact with technology
