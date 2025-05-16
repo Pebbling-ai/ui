@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import { Play, Pause } from "lucide-react";
+import { ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "./ui/button";
 import LottieAnimation from "./LottieAnimation";
-import { Play } from 'lucide-react'
+import Image from "next/image";
+
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -108,35 +107,35 @@ const Hero = () => {
         {/* Video container with square aspect ratio and centered play button */}
         <div className="relative w-full rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
            <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
-      {!isPlaying ? (
-        <>
-          <Image
-            src="https://files.manuscdn.com/webapp/_next/static/media/indexVideo.d4cf4280.webp"
-            alt="Manus Demo"
-            width={1200}
-            height={675}
-            className="object-cover w-full h-full"
-            priority
-          />
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <button
-              onClick={() => setIsPlaying(true)}
-              className="w-14 h-14 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
-            >
-              <Play className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
-            </button>
+            {!isPlaying ? (
+              <>
+                <Image
+                  src="https://files.manuscdn.com/webapp/_next/static/media/indexVideo.d4cf4280.webp"
+                  alt="Manus Demo"
+                  width={1200}
+                  height={675}
+                  className="object-cover w-full h-full"
+                  priority
+                />
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <button
+                    onClick={() => setIsPlaying(true)}
+                    className="w-14 h-14 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+                  >
+                    <Play className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
+                  </button>
+                </div>
+              </>
+            ) : (
+              <iframe
+                src="https://www.youtube.com/embed/K27diMbCsuw?autoplay=1"
+                title="Manus Introduction"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full border-0"
+              />
+            )}
           </div>
-        </>
-      ) : (
-        <iframe
-          src="https://www.youtube.com/embed/K27diMbCsuw?autoplay=1"
-          title="Manus Introduction"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="absolute top-0 left-0 w-full h-full border-0"
-        />
-      )}
-    </div>
           
           {/* Play/Pause button */}
           <button
