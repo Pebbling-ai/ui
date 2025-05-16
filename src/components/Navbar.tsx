@@ -98,7 +98,7 @@ const Navbar = () => {
               lineHeight: '20px',
             }}
           >
-            Sign Up
+            Access Hibiscus
           </Button>
         </div>
 
