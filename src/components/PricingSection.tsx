@@ -73,9 +73,7 @@ const PricingSection = () => {
     <section className="py-16  animate-on-scroll opacity-0" id="pricing">
       <div className="section-container">
         <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-3">
-            <span>Pricing</span>
-          </div>
+         
           <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
           <p className="section-subtitle mx-auto">
             Choose the plan that best fits your needs. All plans include core protocol features.
