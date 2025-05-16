@@ -1,9 +1,9 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Play, Pause } from "lucide-react";
 import { Button } from "./ui/button";
 import LottieAnimation from "./LottieAnimation";
-import Image from "next/image";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -106,16 +106,14 @@ const Hero = () => {
 
         {/* Video container with square aspect ratio and centered play button */}
         <div className="relative w-full rounded-xl overflow-hidden aspect-square mb-12 shadow-lg">
-           <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
             {!isPlaying ? (
               <>
-                <Image
+                <img
                   src="https://files.manuscdn.com/webapp/_next/static/media/indexVideo.d4cf4280.webp"
                   alt="Manus Demo"
-                  width={1200}
-                  height={675}
                   className="object-cover w-full h-full"
-                  priority
+                  loading="eager"
                 />
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <button
