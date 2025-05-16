@@ -37,7 +37,7 @@ const CompactNetworkMetrics = () => {
   const data = generateLineData();
 
   return (
-    <section className="py-6 bg-gradient-to-b from-transparent to-gray-50">
+    <section className="py-6 ">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
