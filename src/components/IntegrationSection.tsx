@@ -157,19 +157,19 @@ RECEIVE {
         </Card>
 
         <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white p-6 rounded-xl text-black shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Minimal Configuration</h3>
             <p className="text-gray-600">
               Get started quickly with sensible defaults and minimal configuration requirements
             </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white p-6 rounded-xl text-black shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Cross-Platform Support</h3>
             <p className="text-gray-600">
               Support for all major programming languages and platforms ensures compatibility with your stack
             </p>
           </div>
-          <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <div className="bg-white p-6 rounded-xl text-black shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <h3 className="font-semibold text-lg mb-2 text-gray-800">Enterprise-Ready</h3>
             <p className="text-gray-600">
               Built with security and scalability in mind for both startups and enterprise applications
