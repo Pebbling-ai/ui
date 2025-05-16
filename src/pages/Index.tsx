@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
 import NetworkMetrics from "@/components/NetworkMetrics";
 import AgentRegistry from "@/components/AgentRegistry";
 import GitHubSection from "@/components/GitHubSection";
@@ -70,6 +71,7 @@ const Index = () => {
       <Navbar />
       <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
         <Hero />
+        <CompactNetworkMetrics />
        
         <AgentRegistry />{/*Live preview*/}
         <HumanoidSection />{/*Features*/}
