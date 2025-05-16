@@ -46,34 +46,34 @@ const NetworkMetrics = () => {
       title: "Active Agents",
       value: "1,284",
       change: "+12.3%",
-      icon: <Network className="h-4 w-4 text-pulse-500" />
+      icon: <Network className="h-4 w-4 text-mono-500" />
     },
     {
       title: "Avg. Latency",
       value: "24ms",
       change: "-8.1%",
-      icon: <Activity className="h-4 w-4 text-green-500" />
+      icon: <Activity className="h-4 w-4 text-mono-500" />
     },
     {
       title: "Requests/min",
       value: "2,941",
       change: "+23.6%",
-      icon: <Zap className="h-4 w-4 text-amber-500" />
+      icon: <Zap className="h-4 w-4 text-mono-500" />
     },
     {
       title: "Memory Usage",
       value: "64%",
       change: "+3.2%",
-      icon: <Database className="h-4 w-4 text-blue-500" />
+      icon: <Database className="h-4 w-4 text-mono-500" />
     }
   ];
 
   return (
-    <section className="py-10  relative animate-on-scroll opacity-0">
+    <section className="py-10 relative animate-on-scroll opacity-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <div className="pulse-chip mx-auto mb-3">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">02</span>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-mono-700 text-white mr-2">02</span>
             <span>Network Metrics</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">Live Network Performance</h2>
@@ -92,7 +92,7 @@ const NetworkMetrics = () => {
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">{stat.value}</div>
-                <div className={`text-xs ${stat.change.startsWith('+') ? 'text-green-500' : 'text-red-500'} flex items-center`}>
+                <div className={`text-xs ${stat.change.startsWith('+') ? 'text-mono-600' : 'text-mono-500'} flex items-center`}>
                   {stat.change}
                   <span className="ml-1">from yesterday</span>
                 </div>
@@ -111,8 +111,8 @@ const NetworkMetrics = () => {
             <CardContent className="h-80">
               <ChartContainer
                 config={{
-                  agents: { color: "#FE5C02" },
-                  grid: { color: "#e5e7eb" },
+                  agents: { color: "#525252" }, // Mono-600
+                  grid: { color: "#e5e5e5" }, // Mono-200
                 }}
               >
                 <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
@@ -124,7 +124,7 @@ const NetworkMetrics = () => {
                   />
                   <YAxis tick={{ fontSize: 12 }} />
                   <ChartTooltip content={<ChartTooltipContent />} />
-                  <Area type="monotone" dataKey="agents" stroke="#FE5C02" fill="#FE5C02" fillOpacity={0.2} />
+                  <Area type="monotone" dataKey="agents" stroke="#525252" fill="#525252" fillOpacity={0.2} />
                 </AreaChart>
               </ChartContainer>
             </CardContent>
@@ -138,9 +138,9 @@ const NetworkMetrics = () => {
             <CardContent className="h-80">
               <ChartContainer
                 config={{
-                  latency: { color: "#10b981" },
-                  requests: { color: "#f59e0b" },
-                  memory: { color: "#3b82f6" },
+                  latency: { color: "#737373" }, // Mono-500
+                  requests: { color: "#404040" }, // Mono-700
+                  memory: { color: "#262626" }, // Mono-800
                 }}
               >
                 <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
@@ -153,9 +153,9 @@ const NetworkMetrics = () => {
                   <YAxis tick={{ fontSize: 12 }} />
                   <Tooltip />
                   <Legend />
-                  <Bar dataKey="latency" name="Latency (ms)" fill="#10b981" />
-                  <Bar dataKey="requests" name="Requests" fill="#f59e0b" />
-                  <Bar dataKey="memory" name="Memory (%)" fill="#3b82f6" />
+                  <Bar dataKey="latency" name="Latency (ms)" fill="#737373" />
+                  <Bar dataKey="requests" name="Requests" fill="#404040" />
+                  <Bar dataKey="memory" name="Memory (%)" fill="#262626" />
                 </BarChart>
               </ChartContainer>
             </CardContent>

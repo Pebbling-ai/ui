@@ -37,37 +37,37 @@ const CompactNetworkMetrics = () => {
   const data = generateLineData();
 
   return (
-    <section className="py-6 ">
+    <section className="py-6">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <Network className="h-5 w-5 text-pulse-500" />
+            <Network className="h-5 w-5 text-mono-600" />
             <h3 className="text-lg font-medium">Live Network Matrices</h3>
           </div>
           <div className="text-sm text-gray-500">
-            <span className="font-semibold text-pulse-500">1,284</span> Active Agents
+            <span className="font-semibold text-mono-700">1,284</span> Active Agents
           </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Agents Activity Chart */}
-          <Card className="hover:shadow-sm transition-shadow duration-300 border-pulse-100">
+          <Card className="hover:shadow-sm transition-shadow duration-300 border-mono-100">
             <CardContent className="p-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium text-gray-500">Active Agents</span>
-                <span className="text-xs font-bold text-pulse-500">+12.3%</span>
+                <span className="text-xs font-bold text-mono-700">+12.3%</span>
               </div>
               <div className="h-32">
                 <ChartContainer
                   config={{
-                    agents: { color: "#FE5C02" },
+                    agents: { color: "#404040" }, // Mono-700
                   }}
                 >
                   <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
                     <defs>
                       <linearGradient id="agentGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#FE5C02" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#FE5C02" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#404040" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#404040" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
                     <XAxis dataKey="time" tick={false} axisLine={false} />
@@ -76,7 +76,7 @@ const CompactNetworkMetrics = () => {
                     <Area 
                       type="monotone" 
                       dataKey="agents" 
-                      stroke="#FE5C02" 
+                      stroke="#404040" 
                       strokeWidth={2} 
                       fill="url(#agentGradient)" 
                     />
@@ -87,16 +87,16 @@ const CompactNetworkMetrics = () => {
           </Card>
 
           {/* Latency Chart */}
-          <Card className="hover:shadow-sm transition-shadow duration-300 border-pulse-100">
+          <Card className="hover:shadow-sm transition-shadow duration-300 border-mono-100">
             <CardContent className="p-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium text-gray-500">Avg. Latency</span>
-                <span className="text-xs font-bold text-green-500">-8.1%</span>
+                <span className="text-xs font-bold text-mono-500">-8.1%</span>
               </div>
               <div className="h-32">
                 <ChartContainer
                   config={{
-                    latency: { color: "#10b981" },
+                    latency: { color: "#737373" }, // Mono-500
                   }}
                 >
                   <LineChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
@@ -106,7 +106,7 @@ const CompactNetworkMetrics = () => {
                     <Line 
                       type="monotone" 
                       dataKey="latency" 
-                      stroke="#10b981" 
+                      stroke="#737373" 
                       strokeWidth={2}
                       dot={false}
                     />
@@ -117,16 +117,16 @@ const CompactNetworkMetrics = () => {
           </Card>
 
           {/* Requests Chart */}
-          <Card className="hover:shadow-sm transition-shadow duration-300 border-pulse-100">
+          <Card className="hover:shadow-sm transition-shadow duration-300 border-mono-100">
             <CardContent className="p-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-medium text-gray-500">Requests/min</span>
-                <span className="text-xs font-bold text-amber-500">+23.6%</span>
+                <span className="text-xs font-bold text-mono-600">+23.6%</span>
               </div>
               <div className="h-32">
                 <ChartContainer
                   config={{
-                    requests: { color: "#f59e0b" },
+                    requests: { color: "#525252" }, // Mono-600
                   }}
                 >
                   <LineChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
@@ -136,7 +136,7 @@ const CompactNetworkMetrics = () => {
                     <Line 
                       type="monotone" 
                       dataKey="requests" 
-                      stroke="#f59e0b" 
+                      stroke="#525252" 
                       strokeWidth={2} 
                       dot={false}
                     />

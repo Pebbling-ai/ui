@@ -1,9 +1,11 @@
 
 import React, { useState } from "react";
 import { toast } from "@/components/ui/use-toast";
+
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
@@ -25,12 +27,14 @@ const Newsletter = () => {
       setIsSubmitting(false);
     }, 1000);
   };
-  return <section id="newsletter" className="bg-white py-0">
+  
+  return (
+    <section id="newsletter" className="bg-white py-0">
       <div className="section-container opacity-0 animate-on-scroll">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-6">
             <div className="pulse-chip">
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">05</span>
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-mono-700 text-white mr-2">05</span>
               <span>Newsletter</span>
             </div>
           </div>
@@ -42,14 +46,27 @@ const Newsletter = () => {
           
           <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 items-start md:items-center">
             <div className="relative flex-grow">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email address" className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pulse-500 text-gray-700 bg-white" required />
+              <input 
+                type="email" 
+                value={email} 
+                onChange={e => setEmail(e.target.value)} 
+                placeholder="Email address" 
+                className="w-full px-6 py-4 rounded-full border border-mono-200 focus:outline-none focus:ring-2 focus:ring-mono-400 text-mono-700 bg-white" 
+                required 
+              />
             </div>
-            <button type="submit" disabled={isSubmitting} className="bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4">
+            <button 
+              type="submit" 
+              disabled={isSubmitting} 
+              className="bg-mono-800 hover:bg-mono-900 text-white font-medium py-4 px-10 rounded-full transition-all duration-300 md:ml-4"
+            >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Newsletter;

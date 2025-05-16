@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					"blue": "#3A5BA0",
+					"blue": "#333333", // Changed to dark gray from blue
 					"gray": {
 						"50": "#F9FAFB",
 						"100": "#F3F4F6",
@@ -77,6 +77,19 @@ export default {
 						"800": "#1F2937",
 						"900": "#111827",
 					}
+				},
+				// Adding a monochromatic palette
+				mono: {
+					"50": "#FAFAFA",
+					"100": "#F5F5F5",
+					"200": "#E5E5E5",
+					"300": "#D4D4D4",
+					"400": "#A3A3A3",
+					"500": "#737373",
+					"600": "#525252",
+					"700": "#404040",
+					"800": "#262626",
+					"900": "#171717",
 				}
 			},
 			fontFamily: {
