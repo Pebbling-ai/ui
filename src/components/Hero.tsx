@@ -52,7 +52,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-cover" 
+      className="overflow-hidden relative bg-cover pt-16 md:pt-20" 
       id="hero" 
       style={{
         backgroundImage: 'url("/Header-background.webp")',
@@ -66,10 +66,10 @@ const Hero = () => {
       <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#222222] opacity-30 blur-lg"></div>
       
       <div className="container px-4 sm:px-6 lg:px-8" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row items-center py-8 sm:py-12 lg:py-16">
-          <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div className="flex flex-col lg:flex-row items-center py-6 sm:py-8 lg:py-12">
+          <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
             <div 
-              className="pulse-chip mb-3 sm:mb-6 opacity-0 animate-fade-in" 
+              className="pulse-chip mb-2 sm:mb-4 opacity-0 animate-fade-in" 
               style={{ animationDelay: "0.1s" }}
             >
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">01</span>
@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
             
             <h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight opacity-0 animate-fade-in font-display" 
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight opacity-0 animate-fade-in font-display" 
               style={{ animationDelay: "0.3s" }}
             >
               Pebble: Where Code<br className="hidden sm:inline" />Meets Motion
@@ -85,7 +85,7 @@ const Hero = () => {
             
             <p 
               style={{ animationDelay: "0.5s" }} 
-              className="mt-3 sm:mt-6 mb-4 sm:mb-8 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left"
+              className="mt-2 sm:mt-4 mb-4 sm:mb-6 leading-relaxed opacity-0 animate-fade-in text-gray-950 font-normal text-sm sm:text-base md:text-lg text-left"
             >
               The humanoid companion that learns and adapts alongside you.
             </p>
@@ -105,7 +105,7 @@ const Hero = () => {
                   cursor: 'pointer',
                   fontSize: '14px',
                   lineHeight: '20px',
-                  padding: '12px 20px',
+                  padding: '10px 18px',
                   border: '1px solid white',
                 }}
               >
@@ -130,9 +130,9 @@ const Hero = () => {
                     transformStyle: 'preserve-3d',
                     objectFit: 'cover',
                     objectPosition: 'center 20%',
-                    maxHeight: '950px',
-                    minHeight: '300px',
-                    height: '50vh',
+                    maxHeight: '700px',
+                    minHeight: '250px',
+                    height: isMobile ? '30vh' : '40vh',
                     clipPath: 'inset(0 0 0 0)',
                   }}
                 >
@@ -143,10 +143,10 @@ const Hero = () => {
                 {/* Mute/Unmute button */}
                 <button
                   onClick={toggleMute}
-                  className="absolute bottom-4 right-4 p-2 sm:p-3 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
+                  className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 p-2 bg-black/70 hover:bg-black/90 rounded-full transition-colors duration-200 text-white z-20"
                   aria-label={isMuted ? "Unmute video" : "Mute video"}
                 >
-                  {isMuted ? <VolumeX size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" /> : <Volume2 size={16} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />}
+                  {isMuted ? <VolumeX size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5" /> : <Volume2 size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5" />}
                 </button>
               </div>
             </div>
