@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { Volume, VolumeX } from "lucide-react";
+import { Volume, Volume2, VolumeX } from "lucide-react";
 import LottieAnimation from "./LottieAnimation";
 
 const Hero = () => {
@@ -144,6 +144,7 @@ const Hero = () => {
                 {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
               </button>
             </div>
+          </div>
         </div>
       </div>
       
