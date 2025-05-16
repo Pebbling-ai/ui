@@ -97,11 +97,12 @@ const Index = () => {
         <Features/>
         <NetworkMetrics />
         <ProductTimeline />
+        <GitHubSection />
         <IntegrationSection />
         <PricingSection />
         <FAQSection />
         <Testimonials />
-        <GitHubSection />
+        
         {/* <MadeByHumans /> */}
       </main>
       <Footer />
