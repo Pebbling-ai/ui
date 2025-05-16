@@ -27,7 +27,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
   <Card 
     className={cn(
       "relative transition-all duration-300 hover:-translate-y-1",
-      popular ? "border-pulse-500 shadow-lg" : "border-gray-200",
+      popular ? "border-black shadow-lg" : "border-gray-200",
       className
     )}
   >
