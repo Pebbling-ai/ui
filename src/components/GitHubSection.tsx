@@ -22,7 +22,7 @@ const GitHubSection = () => {
           <Card className="overflow-hidden border-2 border-gray-200 hover:border-pulse-300 transition-all duration-300 bg-white">
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row items-center">
-                <div className="bg-gray-100 p-8 w-full md:w-1/3 flex justify-center items-center">
+                <div className=" p-8 w-full md:w-1/3 flex justify-center items-center">
                   <Github className="h-24 w-24 text-gray-800" />
                 </div>
                 <div className="p-8 w-full md:w-2/3">
@@ -32,11 +32,11 @@ const GitHubSection = () => {
                   </p>
                   
                   <div className="flex flex-wrap gap-4 mb-6">
-                    <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
+                    <div className="flex items-center gap-2  px-4 py-2 rounded-full">
                       <Star className="h-5 w-5 text-amber-500" />
                       <span className="font-medium">4 Stars</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
+                    <div className="flex items-center gap-2  px-4 py-2 rounded-full">
                       <Users className="h-5 w-5 text-blue-500" />
                       <span className="font-medium">5 Contributors</span>
                     </div>
