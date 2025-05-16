@@ -43,7 +43,7 @@ const Footer = () => {
               <p className="text-gray-600 max-w-md">Start building powerful agent communication systems with our protocol today.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-pulse-500 hover:bg-pulse-600 text-white px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
+              <Button className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
                 Let's Pebble <ArrowRight size={16} />
               </Button>
               <Button variant="outline" className="border-pulse-500 text-pulse-500 hover:bg-pulse-500/10 px-6 py-3 h-auto flex items-center gap-2 whitespace-nowrap">
