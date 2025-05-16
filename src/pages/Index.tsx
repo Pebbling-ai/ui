@@ -17,7 +17,7 @@ import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
-
+import Features from "@/components/Features";
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
@@ -80,7 +80,7 @@ const Index = () => {
         <CompactNetworkMetrics />
         <ProductShowcase />
         <AgentRegistry />
-        <HumanoidSection />
+        <Features/>
         <GitHubSection />
         <NetworkMetrics />
         <ProductTimeline />
