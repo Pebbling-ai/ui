@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { ShieldCheck, Layers, Globe, Zap, Users, Database } from "lucide-react";
+import { Shield, Layers, Globe, Zap, Database } from "lucide-react";
 
 const HumanoidSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -134,13 +134,12 @@ const HumanoidSection = () => {
               </div>
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
-                <ShieldCheck className="w-16 h-16 text-white mb-6" />
+                <Shield className="w-16 h-16 text-white mb-6" />
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
-                  Enterprise-Grade Security
+                  Security First
                 </h3>
                 <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
-                  Our platform leverages advanced encryption, secure authentication protocols, and continuous 
-                  monitoring to ensure your data and AI interactions remain protected at all times.
+                  Built on mutual TLS (mTLS) for end-to-end trust, ensuring your agent communications remain secure and authenticated.
                 </p>
               </div>
             </div>
@@ -168,18 +167,17 @@ const HumanoidSection = () => {
               
               <div className="absolute top-4 right-4 z-20">
                 <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm text-white">
-                  <span className="text-sm font-montserrat font-medium">Scalability</span>
+                  <span className="text-sm font-montserrat font-medium">Framework</span>
                 </div>
               </div>
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
                 <Layers className="w-16 h-16 text-white mb-6" />
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
-                  Seamless Scaling
+                  Framework-Agnostic
                 </h3>
                 <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
-                  From startups to enterprises, our infrastructure automatically scales to meet your needs,
-                  ensuring optimal performance and reliability regardless of user volume or workload.
+                  Adapters bridge internal APIs across ecosystems, allowing you to integrate with any existing technology stack.
                 </p>
               </div>
             </div>
@@ -207,18 +205,17 @@ const HumanoidSection = () => {
               
               <div className="absolute top-4 right-4 z-20">
                 <div className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-500/20 backdrop-blur-sm text-white">
-                  <span className="text-sm font-montserrat font-medium">Global Network</span>
+                  <span className="text-sm font-montserrat font-medium">Stateful</span>
                 </div>
               </div>
               
               <div className="relative z-10 p-5 sm:p-6 md:p-8 h-full flex flex-col items-center justify-center text-center">
-                <Globe className="w-16 h-16 text-white mb-6" />
+                <Database className="w-16 h-16 text-white mb-6" />
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bogue italic text-white font-bold leading-tight mb-4">
-                  Worldwide Accessibility
+                  Stateful by Default
                 </h3>
                 <p className="text-lg font-montserrat text-white/90 max-w-lg mx-auto">
-                  With servers strategically located across the globe, we ensure low-latency access and 
-                  high availability for users everywhere, <span className="text-blue-200">no matter where they are</span>.
+                  Maintain agent memory and cognition across requests, enabling complex multi-step reasoning and contextual awareness.
                 </p>
               </div>
             </div>
