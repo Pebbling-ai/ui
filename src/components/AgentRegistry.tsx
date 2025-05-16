@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -131,8 +130,8 @@ const AgentRegistry = () => {
                 </div>
               </div>
 
-              {/* Website content */}
-              <div className="bg-white rounded-b-md p-4 macbook-screen overflow-hidden">
+              {/* Website content - Fixed height to prevent resizing */}
+              <div className="bg-white rounded-b-md p-4 macbook-screen" style={{ height: "450px", overflowY: "auto" }}>
                 {/* Registry content (adapted from original) */}
                 <div className="relative max-w-2xl mx-auto mb-8 group" onClick={focusSearch}>
                   <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
