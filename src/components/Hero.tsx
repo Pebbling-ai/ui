@@ -128,14 +128,14 @@ const Hero = () => {
                   playsInline
                   className="w-full h-auto "
                   style={{ 
-                    transformStyle: 'preserve-3d',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 20%',
-                    maxHeight: '650px',
-                    minHeight: '500px',
-                    clipPath: 'inset(0 0 0 0)',
-                  }}
+                  transformStyle: 'preserve-3d',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center 20%', // Changed from 'center center' to 'center 20%' to move the person up
+                  maxHeight: '950px',
+                  minHeight: '700px',
+                  clipPath: 'inset(0 0 0 0)', // Clips the video to avoid floating effect
+                }}
                 >
                   <source src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm" type="video/webm" />
                   Your browser does not support the video tag.
