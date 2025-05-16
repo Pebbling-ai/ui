@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -81,6 +82,20 @@ const Navbar = () => {
           <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network</a>
         </nav>
 
+        {/* Desktop Signup Button */}
+        <div className="hidden md:block">
+          <Button 
+            className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
+            style={{
+              padding: '16px 24px',
+              fontSize: '14px',
+              lineHeight: '20px',
+            }}
+          >
+            Sign Up
+          </Button>
+        </div>
+
         {/* Mobile menu button */}
         <button 
           className={cn("md:hidden p-3 focus:outline-none", !isScrolled ? "text-black" : "text-gray-700")}
@@ -129,6 +144,19 @@ const Navbar = () => {
           >
             Contact
           </a>
+          
+          {/* Mobile Signup Button */}
+          <Button 
+            className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full"
+            style={{
+              padding: '16px 24px',
+              fontSize: '14px',
+              lineHeight: '20px',
+              marginTop: '12px'
+            }}
+          >
+            Sign Up
+          </Button>
         </nav>
       </div>
     </header>
