@@ -128,7 +128,7 @@ const PricingSection = () => {
         <div className="mt-12 max-w-2xl mx-auto text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
           <div className="flex items-center justify-center gap-2 mb-4 text-pulse-600">
             <Info size={24} />
-            <h3 className="text-xl font-medium">Need a custom solution?</h3>
+            <h3 className="text-black text-xl font-medium">Need a custom solution?</h3>
           </div>
           <p className="text-gray-600 mb-4">
             We understand that every project has unique requirements. Our team is ready to create
