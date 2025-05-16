@@ -90,8 +90,9 @@ const Index = () => {
       <main className="space-y-0 bg-white"> 
         <Hero />
         <CompactNetworkMetrics />
-        <ExampleUseCases />
+        
         <ProductShowcase />
+        <ExampleUseCases />
         <AgentRegistry />
         <Features/>
         <NetworkMetrics />
