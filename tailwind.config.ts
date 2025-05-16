@@ -90,6 +90,19 @@ export default {
 					"700": "#404040",
 					"800": "#262626",
 					"900": "#171717",
+				},
+				// Adding pulse colors for registry section
+				pulse: {
+					"50": "#F5F3FF",
+					"100": "#EDE9FE",
+					"200": "#DDD6FE",
+					"300": "#C4B5FD",
+					"400": "#A78BFA",
+					"500": "#8B5CF6",
+					"600": "#7C3AED",
+					"700": "#6D28D9",
+					"800": "#5B21B6",
+					"900": "#4C1D95",
 				}
 			},
 			fontFamily: {
@@ -97,6 +110,7 @@ export default {
 				'grotesk': ['"Space Grotesk"', 'sans-serif'],
 				'brockmann': ['Brockmann', 'sans-serif'],
 				'baskerville': ['"Baskerville Classico Std Roman"', 'serif', 'system-ui'],
+				'alma-serif': ['"Alma Serif Regular"', 'serif', 'system-ui'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -106,6 +120,8 @@ export default {
 			boxShadow: {
 				'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
 				'card': '0 2px 10px rgba(0, 0, 0, 0.08)',
+				'hover': '0 10px 25px rgba(0, 0, 0, 0.15)',
+				'pulse': '0 10px 25px rgba(139, 92, 246, 0.25)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -139,6 +155,14 @@ export default {
 				'micro-bounce': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-2px)' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: 1 },
+					'50%': { opacity: 0.8 }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' }
 				}
 			},
 			animation: {
@@ -147,9 +171,12 @@ export default {
 				'fade-in': 'fade-in 0.7s ease-out forwards',
 				'fade-in-right': 'fade-in-right 0.7s ease-out forwards',
 				'fade-in-left': 'fade-in-left 0.7s ease-out forwards',
-				'micro-bounce': 'micro-bounce 1s ease-in-out infinite'
+				'micro-bounce': 'micro-bounce 1s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'float': 'float 4s ease-in-out infinite',
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

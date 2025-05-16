@@ -20,7 +20,6 @@ import Footer from "@/components/Footer";
 import Features from "@/components/Features";
 import ExampleUseCases from "@/components/ExampleUseCases";
 
-// Apply Baskerville font to all headings site-wide
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
   useEffect(() => {
@@ -52,11 +51,11 @@ const Index = () => {
     };
   }, []);
 
-  // Apply Baskerville font to all headings using a global effect
+  // Apply Alma Serif font to all headings using a global effect
   useEffect(() => {
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
-      if (!heading.classList.contains('font-baskerville')) {
-        heading.classList.add('font-baskerville');
+      if (!heading.classList.contains('font-alma-serif')) {
+        heading.classList.add('font-alma-serif');
       }
     });
   }, []);
@@ -99,11 +98,9 @@ const Index = () => {
         <ProductTimeline />
         <IntegrationSection />
         <PricingSection />
-        {/* <ImageShowcaseSection /> */}
         <FAQSection />
         <Testimonials />
         <GitHubSection />
-        {/* <Newsletter /> */}
       </main>
       <Footer />
     </div>

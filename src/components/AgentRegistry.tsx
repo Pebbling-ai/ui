@@ -1,8 +1,9 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { toast } from "sonner";
 import { Search, User, Network, Database, Activity, Zap } from "lucide-react";
 
@@ -14,7 +15,8 @@ const agents = [
     type: "Analytics",
     status: "Active",
     capabilities: ["Data processing", "Statistical analysis", "Visualization"],
-    icon: <Database className="h-6 w-6 text-blue-500" />
+    icon: <Database className="h-6 w-6 text-blue-500" />,
+    description: "Specialized in processing large datasets and extracting valuable insights through advanced statistical methods."
   },
   {
     id: "agent-2",
@@ -22,7 +24,8 @@ const agents = [
     type: "Security",
     status: "Active",
     capabilities: ["Threat detection", "Traffic analysis", "Authentication"],
-    icon: <Network className="h-6 w-6 text-green-500" />
+    icon: <Network className="h-6 w-6 text-green-500" />,
+    description: "Monitors network traffic in real-time to identify and neutralize potential security threats before they cause damage."
   },
   {
     id: "agent-3",
@@ -30,7 +33,8 @@ const agents = [
     type: "Monitoring",
     status: "Idle",
     capabilities: ["Resource tracking", "Performance optimization", "Anomaly detection"],
-    icon: <Activity className="h-6 w-6 text-pulse-500" />
+    icon: <Activity className="h-6 w-6 text-pulse-500" />,
+    description: "Tracks system resources and performance metrics to identify bottlenecks and optimize overall system performance."
   },
   {
     id: "agent-4",
@@ -38,7 +42,8 @@ const agents = [
     type: "Support",
     status: "Active",
     capabilities: ["Query response", "Knowledge retrieval", "Task automation"],
-    icon: <User className="h-6 w-6 text-amber-500" />
+    icon: <User className="h-6 w-6 text-amber-500" />,
+    description: "Assists users by providing instant responses to queries, retrieving relevant information, and automating routine tasks."
   },
   {
     id: "agent-5",
@@ -46,7 +51,8 @@ const agents = [
     type: "Utilities",
     status: "Standby",
     capabilities: ["Energy management", "Load balancing", "Consumption analysis"],
-    icon: <Zap className="h-6 w-6 text-purple-500" />
+    icon: <Zap className="h-6 w-6 text-purple-500" />,
+    description: "Optimizes energy usage through intelligent load balancing and in-depth consumption analysis to reduce costs."
   },
   {
     id: "agent-6",
@@ -54,7 +60,8 @@ const agents = [
     type: "Integration",
     status: "Active",
     capabilities: ["Data synchronization", "Format conversion", "Schema mapping"],
-    icon: <Database className="h-6 w-6 text-indigo-500" />
+    icon: <Database className="h-6 w-6 text-indigo-500" />,
+    description: "Manages data synchronization between different systems, handling format conversions and schema mappings automatically."
   }
 ];
 
@@ -62,6 +69,8 @@ const AgentRegistry = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedAgent, setSelectedAgent] = useState<null | typeof agents[0]>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [hoveredAgent, setHoveredAgent] = useState<string | null>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const filteredAgents = agents.filter(agent => 
     agent.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -79,23 +88,33 @@ const AgentRegistry = () => {
     });
   };
 
+  const focusSearch = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   return (
-    <section className="py-12 relative animate-on-scroll opacity-0">
+    <section className="py-12 relative animate-on-scroll opacity-0 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
-         
           <h2 className="section-title font-bold mb-2 text-black">Hibiscus Registry</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Search and discover AI agents across the Pebble network ecosystem.
           </p>
         </div>
 
-        <div className="relative max-w-2xl mx-auto mb-8">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+        <div className="relative max-w-2xl mx-auto mb-8 group">
+          <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
+          <Search 
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-pulse-500 transition-colors duration-300" 
+            onClick={focusSearch}
+          />
           <Input
+            ref={searchInputRef}
             type="text"
             placeholder="Search by agent name, type, or capabilities..."
-            className="pl-10 py-6 text-lg"
+            className="pl-10 py-6 text-lg border-gray-200 hover:border-pulse-300 focus:border-pulse-400 focus:ring focus:ring-pulse-100 transition-all duration-300"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -103,40 +122,59 @@ const AgentRegistry = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAgents.map(agent => (
-            <Card 
-              key={agent.id} 
-              className="hover:shadow-lg transition-shadow duration-300 cursor-pointer hover:border-pulse-300"
-              onClick={() => handleAgentClick(agent)}
-            >
-              <CardHeader className="flex flex-row items-center gap-3">
-                <div className="p-2 bg-gray-100 rounded-lg">
-                  {agent.icon}
+            <HoverCard key={agent.id}>
+              <HoverCardTrigger asChild>
+                <Card 
+                  className={`registry-card ${hoveredAgent === agent.id ? 'registry-card-active animate-float' : ''}`}
+                  onClick={() => handleAgentClick(agent)}
+                  onMouseEnter={() => setHoveredAgent(agent.id)}
+                  onMouseLeave={() => setHoveredAgent(null)}
+                >
+                  <CardHeader className="flex flex-row items-center gap-3">
+                    <div className={`p-2 bg-gray-100 rounded-lg transition-all duration-300 ${hoveredAgent === agent.id ? 'bg-pulse-100 animate-pulse-slow' : ''}`}>
+                      {agent.icon}
+                    </div>
+                    <div>
+                      <CardTitle className="text-lg">{agent.name}</CardTitle>
+                      <p className="text-sm text-gray-500">{agent.type}</p>
+                    </div>
+                    <div className={`ml-auto px-2 py-1 rounded-full text-xs font-medium transition-colors duration-300 ${
+                      agent.status === "Active" ? "bg-green-100 text-green-800" : 
+                      agent.status === "Idle" ? "bg-amber-100 text-amber-800" : 
+                      "bg-gray-100 text-gray-800"
+                    } ${hoveredAgent === agent.id && agent.status === "Active" ? "bg-green-200 text-green-900" : ""}`}>
+                      {agent.status}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-1">
+                      <p className="text-xs text-gray-500">Capabilities:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {agent.capabilities.map((capability, idx) => (
+                          <span 
+                            key={idx} 
+                            className={`text-xs bg-gray-100 px-2 py-1 rounded-full transition-colors duration-300 ${
+                              hoveredAgent === agent.id ? 'bg-pulse-50 text-pulse-700' : ''
+                            }`}
+                          >
+                            {capability}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80 p-0 overflow-hidden">
+                <div className="p-4 bg-gradient-to-r from-gray-50 to-white">
+                  <h4 className="font-medium text-sm mb-1">{agent.name}</h4>
+                  <p className="text-xs text-gray-600">{agent.description}</p>
                 </div>
-                <div>
-                  <CardTitle className="text-lg">{agent.name}</CardTitle>
-                  <p className="text-sm text-gray-500">{agent.type}</p>
+                <div className="bg-gray-50 p-2 text-xs text-center text-gray-500">
+                  Click to view integration details
                 </div>
-                <div className={`ml-auto px-2 py-1 rounded-full text-xs font-medium ${
-                  agent.status === "Active" ? "bg-green-100 text-green-800" : 
-                  agent.status === "Idle" ? "bg-amber-100 text-amber-800" : 
-                  "bg-gray-100 text-gray-800"
-                }`}>
-                  {agent.status}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-1">
-                  <p className="text-xs text-gray-500">Capabilities:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {agent.capabilities.map((capability, idx) => (
-                      <span key={idx} className="text-xs bg-gray-100 px-2 py-1 rounded-full">
-                        {capability}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              </HoverCardContent>
+            </HoverCard>
           ))}
 
           {filteredAgents.length === 0 && (
@@ -164,7 +202,7 @@ const AgentRegistry = () => {
                     This feature will be available with the upcoming Hibiscus update.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="p-4  rounded-lg mb-4">
+                <div className="p-4 rounded-lg mb-4 bg-gradient-to-r from-gray-50 to-white">
                   <h3 className="font-medium text-sm mb-2">Agent Details</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between">
@@ -179,11 +217,15 @@ const AgentRegistry = () => {
                       <span className="text-sm text-gray-500 block mb-1">Capabilities:</span>
                       <div className="flex flex-wrap gap-1">
                         {selectedAgent.capabilities.map((capability, idx) => (
-                          <span key={idx} className="text-xs bg-white border px-2 py-1 rounded-full">
+                          <span key={idx} className="text-xs bg-white border border-gray-100 px-2 py-1 rounded-full">
                             {capability}
                           </span>
                         ))}
                       </div>
+                    </div>
+                    <div className="pt-2">
+                      <span className="text-sm text-gray-500 block mb-1">Description:</span>
+                      <p className="text-sm">{selectedAgent.description}</p>
                     </div>
                   </div>
                 </div>
