@@ -144,7 +144,7 @@ const Hero = () => {
               </>
             ) : (
               <iframe
-                src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747408070/fpsf4faxdlydrxhpu0f6.mp4"
+                src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747414994/bqypsns7tlrbyrj9frfb.mp4"
                 title="Manus Introduction"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
