@@ -15,13 +15,13 @@ const testimonials: TestimonialProps[] = [
     author: "Raahul Dutta",
     role: "Founder & CTO",
     gradient: "from-blue-700 via-indigo-800 to-purple-900",
-    backgroundImage: "https://res.cloudinary.com/dhjzu51mb/image/upload/v1747393977/kphhpiqhd1s2aimpjlkn.png"
+    backgroundImage: "https://res.cloudinary.com/dhjzu51mb/image/upload/v1747394689/gzljl8zsuvfvnucimjyl.png"
   }, {
     content: "We built this platform with a vision to transform how developers create and collaborate. Our journey began with a simple idea, but has grown into something much more powerful through the support of our amazing community.",
     author: "Claude Daha",
     role: "Co-Founder & CEO",
     gradient: "from-indigo-900 via-purple-800 to-orange-500",
-    backgroundImage: "https://res.cloudinary.com/dhjzu51mb/image/upload/v1747393977/kphhpiqhd1s2aimpjlkn.png"
+    backgroundImage: "https://res.cloudinary.com/dhjzu51mb/image/upload/v1747394689/gzljl8zsuvfvnucimjyl.png"
   }
   // }, {
   //   content: "Atlas adapted to our lab protocols faster than any system we've used. It's like having another researcher who never gets tired and maintains perfect precision.",
