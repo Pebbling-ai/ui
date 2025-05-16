@@ -84,7 +84,7 @@ const AgentRegistry = () => {
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <div className="pulse-chip mx-auto mb-3">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">03</span>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full text-white mr-2">03</span>
             <span>Agent Registry</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2">Hibiscus Registry</h2>
