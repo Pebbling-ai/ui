@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -103,86 +104,126 @@ const AgentRegistry = () => {
           </p>
         </div>
 
-        <div className="relative max-w-2xl mx-auto mb-8 group" onClick={focusSearch}>
-          <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
-          <Search 
-            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-pulse-500 transition-colors duration-300" 
-          />
-          <Input
-            ref={searchInputRef}
-            type="text"
-            placeholder="Search by agent name, type, or capabilities..."
-            className="pl-10 py-6 text-lg border-gray-200 hover:border-pulse-300 focus:border-pulse-400 focus:ring focus:ring-pulse-100 transition-all duration-300"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredAgents.map(agent => (
-            <HoverCard key={agent.id}>
-              <HoverCardTrigger asChild>
-                <Card 
-                  className={`registry-card ${hoveredAgent === agent.id ? 'registry-card-active animate-float' : ''}`}
-                  onClick={() => handleAgentClick(agent)}
-                  onMouseEnter={() => setHoveredAgent(agent.id)}
-                  onMouseLeave={() => setHoveredAgent(null)}
-                >
-                  <CardHeader className="flex flex-row items-center gap-3">
-                    <div className={`p-2 bg-gray-100 rounded-lg transition-all duration-300 ${hoveredAgent === agent.id ? 'bg-pulse-100 animate-pulse-slow' : ''}`}>
-                      {agent.icon}
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{agent.name}</CardTitle>
-                      <p className="text-sm text-gray-500">{agent.type}</p>
-                    </div>
-                    <div className={`ml-auto px-2 py-1 rounded-full text-xs font-medium transition-colors duration-300 ${
-                      agent.status === "Active" ? "bg-green-100 text-green-800" : 
-                      agent.status === "Idle" ? "bg-amber-100 text-amber-800" : 
-                      "bg-gray-100 text-gray-800"
-                    } ${hoveredAgent === agent.id && agent.status === "Active" ? "bg-green-200 text-green-900" : ""}`}>
-                      {agent.status}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-1">
-                      <p className="text-xs text-gray-500">Capabilities:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {agent.capabilities.map((capability, idx) => (
-                          <span 
-                            key={idx} 
-                            className={`text-xs bg-gray-100 px-2 py-1 rounded-full transition-colors duration-300 ${
-                              hoveredAgent === agent.id ? 'bg-pulse-50 text-pulse-700' : ''
-                            }`}
-                          >
-                            {capability}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-80 p-0 overflow-hidden">
-                <div className="p-4 bg-gradient-to-r from-gray-50 to-white">
-                  <h4 className="font-medium text-sm mb-1">{agent.name}</h4>
-                  <p className="text-xs text-gray-600">{agent.description}</p>
+        {/* MacBook frame container */}
+        <div className="relative max-w-5xl mx-auto mb-12">
+          {/* MacBook body */}
+          <div className="bg-gray-800 rounded-2xl shadow-2xl pt-8 px-8 pb-10">
+            {/* MacBook screen bezel */}
+            <div className="bg-gray-900 rounded-t-lg p-2 mb-1">
+              {/* Browser toolbar */}
+              <div className="bg-gray-100 h-10 rounded-t-md flex items-center px-4">
+                {/* Browser controls */}
+                <div className="flex space-x-2 mr-4">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
                 </div>
-                <div className="bg-gray-50 p-2 text-xs text-center text-gray-500">
-                  Click to view integration details
+                {/* URL bar */}
+                <div className="flex-1 bg-white rounded-md h-6 mx-4 flex items-center px-3">
+                  <Search className="w-3 h-3 text-gray-400 mr-2" />
+                  <span className="text-xs text-gray-800 font-medium">hibiscus.com</span>
                 </div>
-              </HoverCardContent>
-            </HoverCard>
-          ))}
+                {/* Browser menu icons */}
+                <div className="flex space-x-2">
+                  <div className="w-4 h-4 rounded-sm bg-gray-300"></div>
+                  <div className="w-4 h-4 rounded-sm bg-gray-300"></div>
+                  <div className="w-4 h-4 rounded-sm bg-gray-300"></div>
+                </div>
+              </div>
 
-          {filteredAgents.length === 0 && (
-            <div className="col-span-full text-center py-12">
-              <h3 className="text-lg font-medium text-gray-500">
-                No agents found matching "{searchTerm}"
-              </h3>
-              <p className="text-gray-400">Try searching with different terms</p>
+              {/* Website content */}
+              <div className="bg-white rounded-b-md p-4 macbook-screen overflow-hidden">
+                {/* Registry content (adapted from original) */}
+                <div className="relative max-w-2xl mx-auto mb-8 group" onClick={focusSearch}>
+                  <div className="absolute inset-0 bg-pulse-200 opacity-0 group-hover:opacity-10 rounded-md transition-opacity duration-300"></div>
+                  <Search 
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-pulse-500 transition-colors duration-300" 
+                  />
+                  <Input
+                    ref={searchInputRef}
+                    type="text"
+                    placeholder="Search by agent name, type, or capabilities..."
+                    className="pl-10 py-6 text-lg border-gray-200 hover:border-pulse-300 focus:border-pulse-400 focus:ring focus:ring-pulse-100 transition-all duration-300"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredAgents.map(agent => (
+                    <HoverCard key={agent.id}>
+                      <HoverCardTrigger asChild>
+                        <Card 
+                          className={`registry-card ${hoveredAgent === agent.id ? 'registry-card-active animate-float' : ''}`}
+                          onClick={() => handleAgentClick(agent)}
+                          onMouseEnter={() => setHoveredAgent(agent.id)}
+                          onMouseLeave={() => setHoveredAgent(null)}
+                        >
+                          <CardHeader className="flex flex-row items-center gap-3">
+                            <div className={`p-2 bg-gray-100 rounded-lg transition-all duration-300 ${hoveredAgent === agent.id ? 'bg-pulse-100 animate-pulse-slow' : ''}`}>
+                              {agent.icon}
+                            </div>
+                            <div>
+                              <CardTitle className="text-lg">{agent.name}</CardTitle>
+                              <p className="text-sm text-gray-500">{agent.type}</p>
+                            </div>
+                            <div className={`ml-auto px-2 py-1 rounded-full text-xs font-medium transition-colors duration-300 ${
+                              agent.status === "Active" ? "bg-green-100 text-green-800" : 
+                              agent.status === "Idle" ? "bg-amber-100 text-amber-800" : 
+                              "bg-gray-100 text-gray-800"
+                            } ${hoveredAgent === agent.id && agent.status === "Active" ? "bg-green-200 text-green-900" : ""}`}>
+                              {agent.status}
+                            </div>
+                          </CardHeader>
+                          <CardContent>
+                            <div className="space-y-1">
+                              <p className="text-xs text-gray-500">Capabilities:</p>
+                              <div className="flex flex-wrap gap-1">
+                                {agent.capabilities.map((capability, idx) => (
+                                  <span 
+                                    key={idx} 
+                                    className={`text-xs bg-gray-100 px-2 py-1 rounded-full transition-colors duration-300 ${
+                                      hoveredAgent === agent.id ? 'bg-pulse-50 text-pulse-700' : ''
+                                    }`}
+                                  >
+                                    {capability}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </HoverCardTrigger>
+                      <HoverCardContent className="w-80 p-0 overflow-hidden">
+                        <div className="p-4 bg-gradient-to-r from-gray-50 to-white">
+                          <h4 className="font-medium text-sm mb-1">{agent.name}</h4>
+                          <p className="text-xs text-gray-600">{agent.description}</p>
+                        </div>
+                        <div className="bg-gray-50 p-2 text-xs text-center text-gray-500">
+                          Click to view integration details
+                        </div>
+                      </HoverCardContent>
+                    </HoverCard>
+                  ))}
+
+                  {filteredAgents.length === 0 && (
+                    <div className="col-span-full text-center py-12">
+                      <h3 className="text-lg font-medium text-gray-500">
+                        No agents found matching "{searchTerm}"
+                      </h3>
+                      <p className="text-gray-400">Try searching with different terms</p>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
-          )}
+            
+            {/* MacBook keyboard area (simplified) */}
+            <div className="bg-gray-700 h-4 rounded-b-lg mx-auto w-1/2"></div>
+          </div>
+          
+          {/* MacBook bottom reflection/shadow */}
+          <div className="bg-gray-900/20 h-3 w-10/12 mx-auto rounded-b-full blur-sm"></div>
         </div>
 
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
