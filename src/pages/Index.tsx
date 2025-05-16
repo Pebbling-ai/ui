@@ -73,27 +73,23 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="space-y-4 sm:space-y-8"> {/* Reduced space on mobile */}
+      <main className="space-y-4 sm:space-y-8 bg-white"> {/* Added bg-white */}
         <Hero />
         <CompactNetworkMetrics />
         <ProductShowcase />
-        <AgentRegistry />{/*Live preview*/}
-        <HumanoidSection />{/*Features*/}
+        <AgentRegistry />
+        <HumanoidSection />
         <GitHubSection />
-         <NetworkMetrics />{/*Built for scale*/}
-         <ProductTimeline />{/*Changelog*/}
+        <NetworkMetrics />
+        <ProductTimeline />
         <IntegrationSection />
         <PricingSection />
-        <ImageShowcaseSection />{/*Payoff Section*/}
-         <FAQSection />
-         <Testimonials />
+        <ImageShowcaseSection />
+        <FAQSection />
+        <Testimonials />
         <Newsletter />
-        {/* <SpecsSection /> */}
-        {/* <DetailsSection /> */}
-        {/* <Features /> */}
-       {/* <MadeByHumans /> */}
       </main>
       <Footer />
     </div>

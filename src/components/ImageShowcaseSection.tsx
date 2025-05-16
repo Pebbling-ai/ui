@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
 
 const VideoCard = ({ thumbnail, title, description }: { thumbnail: string, title: string, description: string }) => (
-  <Card className="overflow-hidden rounded-xl shadow-elegant">
+  <Card className="overflow-hidden rounded-xl shadow-elegant bg-white">
     <div className="relative">
       <img 
         src={thumbnail} 
@@ -25,7 +25,7 @@ const VideoCard = ({ thumbnail, title, description }: { thumbnail: string, title
         </div>
       </div>
     </div>
-    <CardContent className="p-6">
+    <CardContent className="p-6 bg-white">
       <h3 className="text-xl font-display font-semibold mb-2">{title}</h3>
       <p className="text-gray-700 text-sm">{description}</p>
     </CardContent>
