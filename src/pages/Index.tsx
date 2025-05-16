@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -7,7 +6,7 @@ import AgentRegistry from "@/components/AgentRegistry";
 import GitHubSection from "@/components/GitHubSection";
 import HumanoidSection from "@/components/HumanoidSection";
 import SpecsSection from "@/components/SpecsSection";
-import DetailsSection from "@/components/DetailsSection";
+import GradientTextSection from "@/components/GradientTextSection";
 import ImageShowcaseSection from "@/components/ImageShowcaseSection";
 import Features from "@/components/Features";
 import ProductTimeline from "@/components/ProductTimeline";
@@ -75,6 +74,7 @@ const Index = () => {
         <GitHubSection />
         <HumanoidSection />
         <SpecsSection />
+        <GradientTextSection />
         {/* <DetailsSection /> */}
         <ImageShowcaseSection />
         <Features />
