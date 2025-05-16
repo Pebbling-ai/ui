@@ -81,7 +81,7 @@ const Index = () => {
         <ProductShowcase />
         <AgentRegistry />
         <Features/>
-        <GitHubSection />
+        
         <NetworkMetrics />
         <ProductTimeline />
         <IntegrationSection />
@@ -89,6 +89,7 @@ const Index = () => {
         <ImageShowcaseSection />
         <FAQSection />
         <Testimonials />
+        <GitHubSection />
         {/* <Newsletter /> */}
       </main>
       <Footer />
