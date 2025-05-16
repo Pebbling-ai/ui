@@ -126,7 +126,7 @@ const Hero = () => {
               </>
             ) : (
               <iframe
-                src="https://www.youtube.com/embed/K27diMbCsuw?autoplay=1"
+                src="https://res.cloudinary.com/dhjzu51mb/video/upload/v1747336196/me23zatatqnomdco9s85.webm"
                 title="Manus Introduction"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -135,18 +135,8 @@ const Hero = () => {
             )}
           </div>
           
-          {/* Play/Pause button */}
-          <button
-            onClick={togglePlayPause}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 rounded-full bg-white/80 hover:bg-white/90 transition-colors duration-200 flex items-center justify-center z-20 shadow-md"
-            aria-label={isPlaying ? "Pause video" : "Play video"}
-          >
-            {isPlaying ? (
-              <Pause size={36} className="text-black" />
-            ) : (
-              <Play size={36} className="text-black ml-1" />
-            )}
-          </button>
+          
+         
         </div>
       </div>
     </section>
