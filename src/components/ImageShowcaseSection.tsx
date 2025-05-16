@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
 
 const VideoCard = ({ thumbnail, title, description }: { thumbnail: string, title: string, description: string }) => (
@@ -35,14 +36,23 @@ const ImageShowcaseSection = () => {
   return (
     <section className="w-full pt-0 pb-8 sm:pb-12 bg-white" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 mb-3 sm:mb-4">
-            Experience the Future Today
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8">
-            Our cutting-edge humanoid robot is designed to transform how we interact 
-            with technology in everyday environments.
-          </p>
+        <div className="flex flex-col items-center justify-center mb-8">
+          <Badge 
+            variant="outline" 
+            className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full"
+          >
+            Product Mockup
+          </Badge>
+          
+          <div className="max-w-3xl mx-auto text-center animate-on-scroll">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 mb-3 sm:mb-4">
+              Experience the Future Today
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-8">
+              Our cutting-edge humanoid robot is designed to transform how we interact 
+              with technology in everyday environments.
+            </p>
+          </div>
         </div>
         
         <div className="mx-auto max-w-5xl animate-on-scroll">
