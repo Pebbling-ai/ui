@@ -32,7 +32,7 @@ const IntegrationTab = ({
         "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300",
         isActive
           ? "bg-pulse-500 text-white shadow-md"
-          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+          : "bg-gray-100 text-black hover:bg-gray-200"
       )}
     >
       {icon}
