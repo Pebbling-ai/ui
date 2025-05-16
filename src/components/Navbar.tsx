@@ -58,11 +58,11 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747414029/bl6hrupybi6hqqrbfkib.png" 
             alt="Pulse Robot Logo" 
-            className="h-12 sm:h-14" 
+            className="h-12 sm:h-14" // Further increased from h-10 sm:h-12 to h-12 sm:h-14
           />
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Added hover-underline-animation class */}
         <nav className="hidden md:flex space-x-8">
           <a 
             href="#" 
@@ -106,22 +106,12 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - Fixed the close button functionality */}
+      {/* Mobile Navigation - Added hover-underline-animation class */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
-        <div className="absolute top-0 right-0 p-4">
-          <button 
-            onClick={toggleMenu} 
-            className="p-2 focus:outline-none"
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-        </div>
-        
-        <nav className="flex flex-col space-y-6 items-center mt-8">
+        <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
             href="#" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
@@ -132,7 +122,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Pebbling Protocol
+            Home
           </a>
           <a 
             href="#features" 
@@ -142,7 +132,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Hibiscus
+            About
           </a>
           <a 
             href="#details" 
@@ -152,7 +142,7 @@ const Navbar = () => {
               document.body.style.overflow = '';
             }}
           >
-            Community
+            Contact
           </a>
           
           {/* Mobile Signup Button */}
@@ -163,10 +153,6 @@ const Navbar = () => {
               fontSize: '14px',
               lineHeight: '20px',
               marginTop: '12px'
-            }}
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
             }}
           >
             Sign Up
