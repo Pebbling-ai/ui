@@ -52,11 +52,11 @@ const Index = () => {
     };
   }, []);
 
-  // Apply thin-serif font to all headings using a global effect
+  // Apply Satoshi font to all headings using a global effect
   useEffect(() => {
     document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
-      if (!heading.classList.contains('font-thin-serif')) {
-        heading.classList.add('font-thin-serif');
+      if (!heading.classList.contains('font-satoshi')) {
+        heading.classList.add('font-satoshi');
       }
     });
   }, []);
