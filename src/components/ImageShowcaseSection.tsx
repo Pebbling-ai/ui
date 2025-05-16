@@ -39,7 +39,7 @@ const ImageShowcaseSection = () => {
         <div className="flex flex-col items-center justify-center mb-8">
           <Badge 
             variant="outline" 
-            className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full"
+            className="mb-6 bg-pulse-50/50 text-pulse-600 hover:bg-pulse-50 border-pulse-200 px-4 py-1.5 text-sm font-medium rounded-full animate-on-scroll"
           >
             Product Mockup
           </Badge>
@@ -56,21 +56,21 @@ const ImageShowcaseSection = () => {
         <div className="mx-auto max-w-5xl animate-on-scroll">
           <Carousel className="mx-auto">
             <CarouselContent>
-              <CarouselItem>
+              <CarouselItem className="animate-on-scroll">
                 <VideoCard 
                   thumbnail="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
                   title="Next Gen Interaction"
                   description="See how our robots seamlessly interact with humans in collaborative environments"
                 />
               </CarouselItem>
-              <CarouselItem>
+              <CarouselItem className="animate-on-scroll">
                 <VideoCard 
                   thumbnail="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
                   title="Office Assistant Demo"
                   description="Witness productivity enhancements through intelligent task management"
                 />
               </CarouselItem>
-              <CarouselItem>
+              <CarouselItem className="animate-on-scroll">
                 <VideoCard 
                   thumbnail="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
                   title="Adaptive Learning"

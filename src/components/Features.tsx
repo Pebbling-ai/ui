@@ -18,7 +18,10 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
+            setTimeout(() => {
+              entry.target.classList.add("animate-fade-in");
+              entry.target.style.opacity = "1";
+            }, 100 * index); // Staggered delay based on index
             observer.unobserve(entry.target);
           }
         });
@@ -27,6 +30,8 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
     );
     
     if (cardRef.current) {
+      // Set initial state
+      cardRef.current.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700");
       observer.observe(cardRef.current);
     }
     
@@ -35,17 +40,16 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
         observer.unobserve(cardRef.current);
       }
     };
-  }, []);
+  }, [index]);
   
   return (
     <div 
       ref={cardRef}
       className={cn(
-        "feature-card glass-card opacity-0 p-4 sm:p-6",
+        "feature-card glass-card p-4 sm:p-6",
         "lg:hover:bg-gradient-to-br lg:hover:from-white lg:hover:to-pulse-50",
         "transition-all duration-300"
       )}
-      style={{ animationDelay: `${0.1 * index}s` }}
     >
       <div className="rounded-full bg-pulse-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-pulse-500 mb-4 sm:mb-5">
         {icon}
@@ -68,6 +72,7 @@ const Features = () => {
             elements.forEach((el, index) => {
               setTimeout(() => {
                 el.classList.add("animate-fade-in");
+                (el as HTMLElement).style.opacity = "1";
               }, index * 100);
             });
             observer.unobserve(entry.target);
@@ -78,6 +83,12 @@ const Features = () => {
     );
     
     if (sectionRef.current) {
+      // Set initial state for fade-in elements
+      const elements = sectionRef.current.querySelectorAll(".fade-in-element");
+      elements.forEach(el => {
+        el.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700");
+      });
+      
       observer.observe(sectionRef.current);
     }
     
@@ -92,13 +103,13 @@ const Features = () => {
     <section className="py-12 sm:py-16 md:py-20 pb-0 relative bg-gray-50" id="features" ref={sectionRef}>
       <div className="section-container">
         <div className="text-center mb-10 sm:mb-16">
-          <div className="pulse-chip mx-auto mb-3 sm:mb-4 opacity-0 fade-in-element">
+          <div className="pulse-chip mx-auto mb-3 sm:mb-4 fade-in-element">
             <span>Features</span>
           </div>
-          <h2 className="section-title mb-3 sm:mb-4 opacity-0 fade-in-element">
+          <h2 className="section-title mb-3 sm:mb-4 fade-in-element">
             Advanced Intelligence, <br className="hidden sm:block" />Human-Like Intuition
           </h2>
-          <p className="section-subtitle mx-auto opacity-0 fade-in-element">
+          <p className="section-subtitle mx-auto fade-in-element">
             Built with cutting-edge technology to understand, learn, and adapt to your unique needs.
           </p>
         </div>

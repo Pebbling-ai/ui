@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -24,16 +25,24 @@ const Index = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
+            // Add staggered animation with a small delay based on position
+            setTimeout(() => {
+              entry.target.classList.add("animate-fade-in");
+              entry.target.style.opacity = "1";
+            }, 150); // Small delay for a smoother reveal
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     );
     
     const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach((el) => observer.observe(el));
+    elements.forEach((el) => {
+      // Set initial state (invisible)
+      el.classList.add("opacity-0", "translate-y-10", "transition-all", "duration-700", "ease-out");
+      observer.observe(el);
+    });
     
     return () => {
       elements.forEach((el) => observer.unobserve(el));
