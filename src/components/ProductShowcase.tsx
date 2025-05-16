@@ -9,9 +9,7 @@ const ProductShowcase = () => {
     <section className="py-24 relative overflow-hidden bg-white">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-sm font-medium uppercase tracking-wider text-[#3A5BA0] mb-4 inline-block">
-            Our Products
-          </span>
+          
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6">
             Next Generation AI Integration
           </h2>
