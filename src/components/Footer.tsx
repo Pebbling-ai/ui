@@ -52,7 +52,7 @@ const Footer = () => {
           {/* pebble Section */}
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center mr-2">
+              <div className="w-8 h-8  flex items-center justify-center mr-2">
                  <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747414029/bl6hrupybi6hqqrbfkib.png" 
             alt="Pulse Robot Logo" 
