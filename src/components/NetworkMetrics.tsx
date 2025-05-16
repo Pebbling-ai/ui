@@ -69,7 +69,7 @@ const NetworkMetrics = () => {
   ];
 
   return (
-    <section className="py-10 bg-gray-50 relative animate-on-scroll opacity-0">
+    <section className="py-10  relative animate-on-scroll opacity-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <div className="pulse-chip mx-auto mb-3">
