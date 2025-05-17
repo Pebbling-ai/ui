@@ -69,6 +69,12 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           <Link 
+            to="/product" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Product
+          </Link>
+          <Link 
             to="/" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
@@ -151,6 +157,13 @@ const Navbar = () => {
         </button>
 
         <nav className="flex flex-col space-y-6 items-center mt-8">
+          <Link 
+            to="/product" 
+            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
+            onClick={handleMobileMenuItemClick}
+          >
+            Product
+          </Link>
           <Link 
             to="/" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
