@@ -43,7 +43,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-28">
+      <main className="">
         <section className="py-16 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             
