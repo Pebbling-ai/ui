@@ -43,17 +43,91 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="w-full">
+      <main className="w-full section-container">
         <section className="py-7 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
+            <div className="text-center mb-12">
+         
+          <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
+          <p className="section-subtitle mx-auto">
+            Choose the plan that best fits your needs. All plans include core protocol features.
+          </p>
+        </div>
+
             
-            
-            <PricingSection />
+            <div className="bg-white py-16 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Developer Plan */}
+          <div className="border rounded-3xl p-8 shadow-md bg-white flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold text-black">Get Started</h3>
+              <span className="inline-block mt-2 mb-4 px-3 py-1 text-xs bg-neutral-100 rounded-full text-black">Developer</span>
+              <h2 className="text-4xl font-bold text-black mb-1">Free</h2>
+              <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                <li>✔ Up to 100 MAUs</li>
+                <li>✔ 1 self-hosted runtime</li>
+                <hr className="my-4" />
+                <li>✔ Core CopilotKit</li>
+                <li>✔ CoAgents</li>
+                <li>✔ Cloud hosted</li>
+                <li>✔ Discord community support</li>
+              </ul>
+            </div>
+            <button className="mt-8 bg-black text-white py-3 px-6 rounded-full font-medium hover:bg-gray-900 transition">
+              Start for Free
+            </button>
+          </div>
+
+          {/* Pro Plan */}
+          <div className="border rounded-3xl p-8 shadow-md bg-white flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold text-black">Pro</h3>
+              <span className="inline-block mt-2 mb-4 px-3 py-1 text-xs bg-neutral-100 rounded-full text-black">Teams</span>
+              <h2 className="text-4xl font-bold text-black mb-1">$249 <span className="text-base font-normal">/ month</span></h2>
+              <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                <li>✔ Up to 100 MAUs</li>
+                <li>✔ 3 self-hosted runtimes</li>
+                <hr className="my-4" />
+                <li>✔ Everything in Developer plus:</li>
+                <li>✔ Team accounts</li>
+                <li>✔ Onboarding consultation, dedicated Slack support and SLA</li>
+              </ul>
+            </div>
+            <button className="mt-8 bg-black text-white py-3 px-6 rounded-full font-medium hover:bg-gray-900 transition">
+              Build With Your Team
+            </button>
+          </div>
+
+          {/* Enterprise Plan */}
+          <div className="border rounded-3xl p-8 shadow-md bg-white flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold text-black">Enterprise</h3>
+              <span className="inline-block mt-2 mb-4 px-3 py-1 text-xs bg-neutral-100 rounded-full text-black">Scale</span>
+              <h2 className="text-4xl font-bold text-black mb-1">Contact Us</h2>
+              <ul className="mt-6 space-y-3 text-sm text-gray-700">
+                <li>✔ Custom plans</li>
+                <hr className="my-4" />
+                <li>✔ Everything in Pro plus:</li>
+                <li>✔ SSO</li>
+                <li>✔ On-prem Cloud</li>
+                <li>✔ Internationalization</li>
+                <li>✔ Accessibility support</li>
+                <li>✔ Onboarding consultation, dedicated Slack support and SLA</li>
+              </ul>
+            </div>
+            <button className="mt-8 border border-black text-black py-3 px-6 rounded-full font-medium hover:bg-black hover:text-white transition">
+              Get a Custom Plan
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
             
             <div className="mt-24 animate-on-scroll opacity-0">
               <div className="text-center mb-14">
                 <div className="flex items-center justify-center gap-2 mb-3">
-                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">FEATURES BREAKDOWN</span>
+                  <span className=" text-gray-800 px-3 py-1 rounded-full text-sm font-medium">FEATURES BREAKDOWN</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">Compare Plans</h2>
               </div>
@@ -63,7 +137,7 @@ const PricingPage = () => {
 
                 <table className="w-full border-collapse">
                   <thead>
-  <tr className="bg-[#f8f5f0]">
+  <tr className="">
     <th className="py-6 px-6 text-left font-bold text-xl text-black">Features</th>
 
     {/* Developer Column */}
