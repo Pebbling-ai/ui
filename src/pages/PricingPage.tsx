@@ -41,7 +41,7 @@ const PricingPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-white">
       <Navbar />
       <main className="w-full section-container">
         <section className="py-7 animate-on-scroll opacity-0">
@@ -219,7 +219,9 @@ const PricingPage = () => {
           </div>
         </section>
         
-        <section className="w-full mt-10 bg-gradient-to-r from-gray-700 to-zinc-900 py-20 px-4 text-center text-white">
+        
+      </main>
+      <section className="w-full mt-10 bg-gradient-to-r from-gray-700 to-zinc-900 py-20 px-4 text-center text-white">
   <div className="max-w-3xl mx-auto">
     <div className="flex justify-center items-center gap-2 text-gray-400 mb-3">
       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -242,7 +244,6 @@ const PricingPage = () => {
     </div>
   </div>
 </section>
-      </main>
       <Footer />
     </div>
   );
