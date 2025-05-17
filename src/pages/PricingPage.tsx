@@ -129,7 +129,7 @@ const PricingPage = () => {
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <span className=" text-gray-800 px-3 py-1 rounded-full text-sm font-medium">FEATURES BREAKDOWN</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Compare Plans</h2>
+                <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">Compare Plans</h2>
               </div>
               
               <div className="overflow-x-auto">
@@ -218,6 +218,7 @@ const PricingPage = () => {
 
           </div>
         </section>
+        
         <section className="w-full mt-10 bg-gradient-to-r from-gray-700 to-zinc-900 py-20 px-4 text-center text-white">
   <div className="max-w-3xl mx-auto">
     <div className="flex justify-center items-center gap-2 text-gray-400 mb-3">
