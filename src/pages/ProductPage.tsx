@@ -1,12 +1,70 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Check, ArrowRight, Play, Users, Target, Zap, Globe } from "lucide-react";
+import { ChevronRight, Check, ArrowRight, Play, Users, Target, Zap, Globe, MessageSquare } from "lucide-react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import DeviceFeatureShowcase from "@/components/DeviceFeatureShowcase";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const ProductPage = () => {
+  // References for chat bubbles to apply scroll animations
+  const chatRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // Add scroll observation for animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            entry.target.classList.remove('opacity-0');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    chatRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      chatRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  // Chat messages for the Story section
+  const chatMessages = [
+    {
+      type: 'question',
+      text: "What is Pebble and how does it help with AI agent communication?",
+    },
+    {
+      type: 'answer',
+      text: "Pebble is our foundation product that enables seamless communication between AI agents. It provides a standardized protocol for agents to exchange information, coordinate tasks, and collaborate on complex problems.",
+    },
+    {
+      type: 'question',
+      text: "How is Hibiscus different from the free version?",
+    },
+    {
+      type: 'answer',
+      text: "Hibiscus is our premium offering that builds upon Pebble's foundation. It includes advanced features like neural network visualization, custom agent development, and enterprise-grade security. Hibiscus also offers dedicated support and higher usage limits for organizations with demanding AI needs.",
+    },
+    {
+      type: 'question',
+      text: "Can you explain the technology behind your products?",
+    },
+    {
+      type: 'answer',
+      text: "Our technology is built on a novel approach to agent communication that prioritizes context-awareness and intent preservation. We've developed proprietary algorithms that enable agents to understand not just the content of messages, but the underlying goals and constraints. This dramatically improves the quality and efficiency of multi-agent systems.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -63,129 +121,66 @@ const ProductPage = () => {
           </div>
         </section>
       
-        {/* Story Section */}
+        {/* Interactive Chat Story Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto mb-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600">
-                From concept to reality, discover how our vision is reshaping the technological landscape.
+                Learn about our journey and mission through this interactive conversation
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Beginning with a Vision</h3>
-                <p className="text-gray-600 mb-6">
-                  Our journey began with a simple idea: to create technology that empowers rather than complicates. 
-                  Founded in 2020, we set out to build solutions that seamlessly integrate into everyday workflows.
-                </p>
-                <p className="text-gray-600 mb-6">
-                  After years of research and development, we launched our first prototype, demonstrating the potential 
-                  for AI-driven automation to transform industries.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
-                    <Target className="h-6 w-6 text-gray-700" />
-                  </div>
-                  <p className="font-medium">Committed to innovation and excellence</p>
+            <div className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-6 md:p-10 shadow-sm">
+              <ScrollArea className="h-[500px] pr-4">
+                <div className="space-y-8">
+                  {chatMessages.map((message, index) => (
+                    <div 
+                      key={index}
+                      ref={(el) => chatRefs.current[index] = el}
+                      className={`flex ${message.type === 'question' ? 'justify-start' : 'justify-end'} opacity-0 transition-opacity duration-500`}
+                    >
+                      <div 
+                        className={`max-w-[80%] rounded-2xl p-4 shadow-sm ${
+                          message.type === 'question' 
+                            ? 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 rounded-tl-none' 
+                            : 'bg-gradient-to-r from-gray-800 to-black text-white rounded-tr-none'
+                        }`}
+                      >
+                        <div className="flex items-center mb-2">
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
+                            message.type === 'question' 
+                              ? 'bg-gray-300 text-gray-700' 
+                              : 'bg-gray-700 text-white'
+                          }`}>
+                            {message.type === 'question' ? 'Q' : 'A'}
+                          </div>
+                          <span className="font-medium">
+                            {message.type === 'question' ? 'User' : 'Pebble Team'}
+                          </span>
+                        </div>
+                        <p>{message.text}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div>
-                <img
-                  src="/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png"
-                  alt="Company Origins"
-                  className="rounded-lg shadow-lg w-full"
-                />
-              </div>
+                <div className="mt-8 text-center">
+                  <p className="text-sm text-gray-500 italic">Our conversation with users guides our development</p>
+                </div>
+              </ScrollArea>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-24">
-              <div className="order-2 md:order-1">
-                <img
-                  src="/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png"
-                  alt="Mission and Values"
-                  className="rounded-lg shadow-lg w-full"
-                />
-              </div>
-              <div className="order-1 md:order-2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Where We're Headed</h3>
-                <p className="text-gray-600 mb-6">
-                  Today, our products are used by leading enterprises across the globe, helping them streamline operations 
-                  and make data-driven decisions with unprecedented accuracy.
-                </p>
-                <p className="text-gray-600 mb-6">
-                  Looking ahead, we're expanding our ecosystem to address emerging challenges in AI ethics, 
-                  data security, and cross-platform integration.
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
-                    <Globe className="h-6 w-6 text-gray-700" />
-                  </div>
-                  <p className="font-medium">Expanding globally with purpose</p>
-                </div>
-              </div>
+
+            <div className="mt-12 text-center">
+              <Button 
+                variant="outline" 
+                className="border border-gray-300 text-gray-700" 
+              >
+                Learn more about our technology
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
           </div>
         </section>
-        
-        {/* Feature Highlights */}
-        {/* <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Feature Highlights</h2>
-              <p className="text-lg text-gray-600">
-                Discover the powerful capabilities that set our product apart
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Advanced AI Integration",
-                  description: "Seamlessly integrates with existing workflows through our advanced machine learning algorithms.",
-                  icon: <Zap className="h-6 w-6 text-gray-700" />
-                },
-                {
-                  title: "Real-Time Analytics",
-                  description: "Monitor performance metrics and gain actionable insights with our real-time dashboard.",
-                  icon: <Target className="h-6 w-6 text-gray-700" />
-                },
-                {
-                  title: "Collaborative Tools",
-                  description: "Enable team collaboration with shared workspaces and permission-based access controls.",
-                  icon: <Users className="h-6 w-6 text-gray-700" />
-                },
-                {
-                  title: "Enterprise Security",
-                  description: "Bank-grade encryption and compliance with industry security standards.",
-                  icon: <Globe className="h-6 w-6 text-gray-700" />
-                },
-                {
-                  title: "Customizable Workflows",
-                  description: "Tailor the platform to your specific needs with our flexible configuration options.",
-                  icon: <Target className="h-6 w-6 text-gray-700" />
-                },
-                {
-                  title: "Seamless Integration",
-                  description: "Connect with your favorite tools and services through our extensive API ecosystem.",
-                  icon: <Zap className="h-6 w-6 text-gray-700" />
-                }
-              ].map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
-                >
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-6">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
         
         {/* Interactive Feature Demo Section */}
         <section className="py-24 bg-white">
