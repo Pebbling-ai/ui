@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,40 +53,63 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <Link 
+          to="/" 
           className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
+          onClick={scrollToTop}
           aria-label="Pulse Robot"
         >
           <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/rjxn4q81e0mjukr6wjfr.png" 
             alt="Pulse Robot Logo" 
-            className="h-14 sm:h-16 md:h-20" 
+            className="h-16 sm:h-18 md:h-24" 
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
           >
             Pebbling Protocol
-          </a>
-          <a href="#features" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Hibiscus</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Community</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Articles</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Docs</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Network</a>
-          <a href="#details" className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}>Pricing</a>
+          </Link>
+          <Link 
+            to="/hibiscus" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Hibiscus
+          </Link>
+          <Link 
+            to="/#details" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Community
+          </Link>
+          <Link 
+            to="/articles" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Articles
+          </Link>
+          <Link 
+            to="/#details" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Docs
+          </Link>
+          <Link 
+            to="/#details" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Network
+          </Link>
+          <Link 
+            to="/pricing" 
+            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
+          >
+            Pricing
+          </Link>
         </nav>
 
         {/* Desktop Signup Button */}
@@ -127,59 +151,55 @@ const Navbar = () => {
         </button>
 
         <nav className="flex flex-col space-y-6 items-center mt-8">
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-              handleMobileMenuItemClick();
-            }}
+            onClick={handleMobileMenuItemClick}
           >
             Pebbling Protocol
-          </a>
-          <a 
-            href="#features" 
+          </Link>
+          <Link 
+            to="/hibiscus" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
             Hibiscus
-          </a>
-          <a 
-            href="#details" 
+          </Link>
+          <Link 
+            to="/#details" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
             Community
-          </a>
-          <a 
-            href="#details" 
+          </Link>
+          <Link 
+            to="/articles" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
             Articles
-          </a>
-          <a 
-            href="#details" 
+          </Link>
+          <Link 
+            to="/#details" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
             Docs
-          </a>
-          <a 
-            href="#details" 
+          </Link>
+          <Link 
+            to="/#details" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
             Network Status
-          </a>
-          <a 
-            href="#details" 
+          </Link>
+          <Link 
+            to="/pricing" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
-            Network
-          </a>
+            Pricing
+          </Link>
           
           {/* Mobile Signup Button */}
           <Button 
