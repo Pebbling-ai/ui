@@ -62,7 +62,7 @@ const Navbar = () => {
           <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/rjxn4q81e0mjukr6wjfr.png" 
             alt="Pulse Robot Logo" 
-            className="h-16 sm:h-18 md:h-24" 
+            className="h-16 sm:h-18 md:h-20 w-20" 
           />
         </Link>
 
