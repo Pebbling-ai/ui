@@ -1,6 +1,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const Footer = () => {
   return (
@@ -100,8 +101,6 @@ const Footer = () => {
           </div>
         </div>
         
-        
-        
         {/* Bottom Section */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">© {new Date().getFullYear()} pebble Protocol. All rights reserved.</p>
@@ -123,6 +122,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Add Scroll to Top Button */}
+      <ScrollToTopButton />
     </footer>
   );
 };

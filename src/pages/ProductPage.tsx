@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Check, ArrowRight, Play, Users, Target, Zap, Globe } from "lucide-react";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const ProductPage = () => {
   return (
@@ -370,6 +371,7 @@ const ProductPage = () => {
       </main>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 };
