@@ -46,15 +46,7 @@ const PricingPage = () => {
       <main className="pt-28">
         <section className="py-16 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Simple, Transparent Pricing
-              </h1>
-              <p className="text-xl text-gray-600">
-                Choose the plan that best supports your agent communication needs.
-                All plans include core Pebbling Protocol features.
-              </p>
-            </div>
+            
             
             <PricingSection />
             
