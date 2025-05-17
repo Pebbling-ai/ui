@@ -51,7 +51,12 @@ const PricingPage = () => {
             <PricingSection />
             
             <div className="mt-24 animate-on-scroll opacity-0">
-              <h2 className="text-3xl font-bold text-center mb-12">Feature Comparison</h2>
+              <div className="text-center mb-14">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">FEATURES BREAKDOWN</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">Compare Plans</h2>
+              </div>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
