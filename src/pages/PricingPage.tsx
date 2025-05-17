@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PricingSection from "@/components/PricingSection";
 import { Button } from "@/components/ui/button";
-import { Check, Calendar, Users } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const PricingPage = () => {
   // Apply animations when elements enter viewport
@@ -47,11 +47,11 @@ const PricingPage = () => {
         <section className="py-16 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-                Choose the perfect plan for your needs
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                Simple, Transparent Pricing
               </h1>
               <p className="text-xl text-gray-600">
-                Scale your agent communication as your business grows.
+                Choose the plan that best supports your agent communication needs.
                 All plans include core Pebbling Protocol features.
               </p>
             </div>
@@ -59,60 +59,63 @@ const PricingPage = () => {
             <PricingSection />
             
             <div className="mt-24 animate-on-scroll opacity-0">
-              <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div className="border border-gray-200 rounded-xl p-8 hover:shadow-md transition-all">
-                  <div className="flex items-center mb-4">
-                    <Calendar className="h-10 w-10 p-2 bg-gray-100 rounded-lg mr-4" />
-                    <h3 className="text-xl font-bold">Schedule a Demo</h3>
-                  </div>
-                  <p className="text-gray-600 mb-6">
-                    Learn how the Pebbling Protocol can help your business create more efficient agent communication systems.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Personalized walkthrough</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Q&A with our engineers</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Implementation guidance</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-white border-2 border-black text-black hover:bg-gray-50">
-                    Book a Demo
-                  </Button>
-                </div>
-                
-                <div className="border border-gray-200 rounded-xl p-8 hover:shadow-md transition-all">
-                  <div className="flex items-center mb-4">
-                    <Users className="h-10 w-10 p-2 bg-gray-100 rounded-lg mr-4" />
-                    <h3 className="text-xl font-bold">Talk to Sales</h3>
-                  </div>
-                  <p className="text-gray-600 mb-6">
-                    Our team is ready to help you find the right solution and answer any questions about our enterprise offerings.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Custom pricing</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Volume discounts</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-5 w-5 text-black mt-0.5" />
-                      <span className="text-gray-700">Enterprise SLAs</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-black hover:bg-gray-800 text-white">
-                    Contact Sales
-                  </Button>
-                </div>
+              <h2 className="text-3xl font-bold text-center mb-12">Feature Comparison</h2>
+              
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="py-4 px-6 text-left font-medium text-lg">Feature</th>
+                      <th className="py-4 px-6 text-center font-medium text-lg">Developer</th>
+                      <th className="py-4 px-6 text-center font-medium text-lg">Business</th>
+                      <th className="py-4 px-6 text-center font-medium text-lg">Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Agent Messages</td>
+                      <td className="py-4 px-6 text-center">10,000/month</td>
+                      <td className="py-4 px-6 text-center">1M/month</td>
+                      <td className="py-4 px-6 text-center">Unlimited</td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Support Level</td>
+                      <td className="py-4 px-6 text-center">Community</td>
+                      <td className="py-4 px-6 text-center">Priority (24h)</td>
+                      <td className="py-4 px-6 text-center">Premium (24/7)</td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Authentication</td>
+                      <td className="py-4 px-6 text-center">Basic</td>
+                      <td className="py-4 px-6 text-center">Advanced</td>
+                      <td className="py-4 px-6 text-center">Enterprise-grade</td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Dedicated Infrastructure</td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Custom SLAs</td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">Custom Domain</td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
+                      <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
+                    </tr>
+                    <tr className="border-b border-gray-200">
+                      <td className="py-4 px-6 text-gray-800">On-premise Deployment</td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-500" /></td>
+                      <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             
@@ -143,16 +146,26 @@ const PricingPage = () => {
             </div>
             
             <div className="mt-20 text-center animate-on-scroll opacity-0">
-              <h2 className="text-3xl font-bold mb-8">Ready to transform your agent communication?</h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <h2 className="text-3xl font-bold mb-8">Ready to get started?</h2>
+              <div className="flex gap-4 justify-center">
                 <Button 
-                  className="bg-black hover:bg-gray-800 text-white rounded-full px-8 py-6 text-lg"
+                  className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
+                  style={{
+                    padding: '16px 24px',
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                  }}
                 >
                   Start with Free Plan
                 </Button>
                 <Button 
                   variant="outline"
-                  className="border-2 border-black hover:bg-gray-50 rounded-full px-8 py-6 text-lg"
+                  className="rounded-full"
+                  style={{
+                    padding: '16px 24px',
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                  }}
                 >
                   Talk to Sales
                 </Button>

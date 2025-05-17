@@ -2,20 +2,17 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, DollarSign, Info, X } from "lucide-react"; // Added X icon import
+import { Check, DollarSign, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 interface PricingTierProps {
   name: string;
-  price: string | { monthly: string; annual: string };
+  price: string;
   description: string;
   features: string[];
   cta: string;
   popular?: boolean;
   className?: string;
-  disabled?: boolean;
-  comingSoon?: boolean;
 }
 
 const PricingTier: React.FC<PricingTierProps> = ({
@@ -26,112 +23,57 @@ const PricingTier: React.FC<PricingTierProps> = ({
   cta,
   popular = false,
   className,
-  disabled = false,
-  comingSoon = false,
 }) => (
   <Card 
     className={cn(
-      "relative flex flex-col h-full transition-all duration-300 hover:-translate-y-1",
+      "relative transition-all duration-300 hover:-translate-y-1",
       popular ? "border-black shadow-lg" : "border-gray-200",
       className
     )}
   >
-    {popular && (
-      <div className="absolute -top-4 left-0 right-0 flex justify-center">
-        <span className="bg-black text-white text-xs font-medium py-1 px-3 rounded-full">
-          MOST POPULAR
-        </span>
-      </div>
-    )}
     
-    <CardContent className="p-6 flex flex-col h-full">
+    <CardContent className="p-6">
       <div className="mb-5">
         <h3 className="text-xl font-semibold mb-1">{name}</h3>
-        <p className="text-gray-600 text-sm">{description}</p>
+        <p className="text-gray-600">{description}</p>
       </div>
       
       <div className="my-6">
-        {typeof price === 'string' ? (
-          <>
-            <span className="text-3xl font-bold">{price}</span>
-            {price !== "Custom" && <span className="text-gray-600 ml-2">/month</span>}
-          </>
-        ) : (
-          <div className="tabbed-pricing">
-            <span className="text-3xl font-bold" id={`${name}-price`}>
-              {price.monthly}
-              <span className="text-gray-600 text-lg ml-1">/month</span>
-            </span>
-          </div>
-        )}
+        <span className="text-3xl font-bold">{price}</span>
+        {price !== "Custom" && <span className="text-gray-600 ml-2">/month</span>}
       </div>
       
-      <ul className="space-y-3 mb-8 flex-grow">
+      <ul className="space-y-3 mb-8">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2">
             <Check className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
-            <span className="text-gray-700 text-sm">{feature}</span>
+            <span className="text-gray-700 text-left">{feature}</span>
           </li>
         ))}
       </ul>
       
       <Button 
         className={cn(
-          "w-full mt-auto",
-          popular 
-            ? "bg-black hover:bg-gray-800 text-white" 
-            : "bg-white border-2 border-black text-black hover:bg-gray-50",
-          disabled && "opacity-60 cursor-not-allowed hover:bg-transparent"
+          "w-full",
+          popular ? "bg-white text-black border-2 border-black rounded-md" : "bg-gray-800 hover:bg-gray-900"
         )}
-        disabled={disabled}
       >
-        {comingSoon ? "Coming Soon" : cta}
+        {cta}
       </Button>
     </CardContent>
   </Card>
 );
 
 const PricingSection = () => {
-  const [billingPeriod, setBillingPeriod] = React.useState<"monthly" | "annual">("monthly");
-
-  const handleBillingChange = (value: string) => {
-    setBillingPeriod(value as "monthly" | "annual");
-    
-    // Update displayed prices
-    document.querySelectorAll('[id$="-price"]').forEach(element => {
-      const name = element.id.split('-')[0];
-      if (name === "Developer") return; // Free tier doesn't change
-      
-      const monthlyPrice = name === "Business" ? "$99" : "Custom";
-      const annualPrice = name === "Business" ? "$79" : "Custom";
-      
-      element.innerHTML = value === "monthly" 
-        ? `${monthlyPrice}<span class="text-gray-600 text-lg ml-1">/month</span>` 
-        : `${annualPrice}<span class="text-gray-600 text-lg ml-1">/month</span>`;
-    });
-  };
-
   return (
     <section className="py-16 animate-on-scroll opacity-0" id="pricing">
       <div className="section-container">
         <div className="text-center mb-12">
+         
           <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
           <p className="section-subtitle mx-auto">
-            Choose the plan that best fits your needs. All plans include core Pebbling Protocol features.
+            Choose the plan that best fits your needs. All plans include core protocol features.
           </p>
-          
-          <div className="mt-8 inline-flex justify-center">
-            <Tabs 
-              defaultValue="monthly" 
-              className="w-[300px]"
-              onValueChange={handleBillingChange}
-            >
-              <TabsList className="grid w-full grid-cols-2 bg-gray-100">
-                <TabsTrigger value="monthly">Monthly</TabsTrigger>
-                <TabsTrigger value="annual">Annual (20% off)</TabsTrigger>
-              </TabsList>
-            </Tabs>
-          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -151,7 +93,7 @@ const PricingSection = () => {
           
           <PricingTier 
             name="Business"
-            price={{ monthly: "$99", annual: "$79" }}
+            price="$99"
             description="For growing teams and applications"
             features={[
               "Up to 1M agent messages/month",
@@ -183,77 +125,19 @@ const PricingSection = () => {
           />
         </div>
         
-        <div className="mt-20 max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Compare Plans</h2>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="py-6 px-6 text-left font-medium text-lg whitespace-nowrap">Features</th>
-                  <th className="py-6 px-6 text-center font-medium text-lg whitespace-nowrap">Developer</th>
-                  <th className="py-6 px-6 text-center font-medium text-lg whitespace-nowrap bg-gray-50">Business</th>
-                  <th className="py-6 px-6 text-center font-medium text-lg whitespace-nowrap">Enterprise</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Agent Messages</td>
-                  <td className="py-4 px-6 text-center">10,000/month</td>
-                  <td className="py-4 px-6 text-center bg-gray-50">1M/month</td>
-                  <td className="py-4 px-6 text-center">Unlimited</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Authentication</td>
-                  <td className="py-4 px-6 text-center">Basic</td>
-                  <td className="py-4 px-6 text-center bg-gray-50">Advanced</td>
-                  <td className="py-4 px-6 text-center">Enterprise-grade</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Support</td>
-                  <td className="py-4 px-6 text-center">Community</td>
-                  <td className="py-4 px-6 text-center bg-gray-50">Priority (24h)</td>
-                  <td className="py-4 px-6 text-center">Premium (24/7)</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">SDKs</td>
-                  <td className="py-4 px-6 text-center">JS & Python</td>
-                  <td className="py-4 px-6 text-center bg-gray-50">All SDKs</td>
-                  <td className="py-4 px-6 text-center">All SDKs + Custom</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Analytics & Logging</td>
-                  <td className="py-4 px-6 text-center">Basic</td>
-                  <td className="py-4 px-6 text-center bg-gray-50">Enhanced</td>
-                  <td className="py-4 px-6 text-center">Advanced</td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Custom Domain</td>
-                  <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center bg-gray-50"><Check className="mx-auto text-green-500" /></td>
-                  <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Dedicated Infrastructure</td>
-                  <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center bg-gray-50"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">On-premise Deployment</td>
-                  <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center bg-gray-50"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
-                </tr>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 px-6 font-medium">Custom SLAs</td>
-                  <td className="py-4 px-6 text-center"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center bg-gray-50"><X className="mx-auto text-gray-400" /></td>
-                  <td className="py-4 px-6 text-center"><Check className="mx-auto text-green-500" /></td>
-                </tr>
-              </tbody>
-            </table>
+        <div className="mt-12 max-w-2xl mx-auto text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+          <div className="flex items-center justify-center gap-2 mb-4 text-pulse-600">
+            <Info className="text-black" size={24} />
+            <h3 className="text-black text-xl font-medium">Need a custom solution?</h3>
           </div>
+          <p className="text-gray-600 mb-4">
+            We understand that every project has unique requirements. Our team is ready to create
+            a tailored solution that perfectly matches your specific needs.
+          </p>
+          <Button className="bg-gray-800 hover:bg-gray-900">
+            <DollarSign className="mr-2 h-4 w-4" />
+            Get Custom Quote
+          </Button>
         </div>
       </div>
     </section>
