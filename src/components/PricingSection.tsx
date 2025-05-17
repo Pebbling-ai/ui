@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, DollarSign, Info } from "lucide-react";
+import { Check, DollarSign, Info, X } from "lucide-react"; // Added X icon import
 import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
