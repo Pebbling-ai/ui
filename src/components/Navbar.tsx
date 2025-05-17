@@ -139,8 +139,8 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "bg-white fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
-        isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+        " fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        isMenuOpen ? "opacity-100 translate-x-0" : " translate-x-full pointer-events-none"
       )}>
         {/* Close button for mobile */}
         <button 
