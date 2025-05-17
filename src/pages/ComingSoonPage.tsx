@@ -189,19 +189,7 @@ const ComingSoonPage = () => {
               </div>
               
               <div className="lg:w-1/2 animate-on-scroll opacity-0">
-                <div className="relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <LottieAnimation 
-                      animationPath={countdownAnimation}
-                      className="w-64 h-64"
-                    />
-                  </div>
-                  <img 
-                    src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/fajr9stliyz17xsez5nt.png"
-                    alt="Hibiscus Preview"
-                    className="rounded-xl shadow-2xl mx-auto"
-                  />
-                </div>
+                
                 
                 <div className="mt-8 bg-gray-50 rounded-xl p-6 max-w-sm mx-auto">
                   <h3 className="font-bold text-lg mb-2">Launch Timeline</h3>
