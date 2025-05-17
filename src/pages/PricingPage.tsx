@@ -43,7 +43,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="">
+      <main className="w-full">
         <section className="py-7 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             
@@ -59,15 +59,36 @@ const PricingPage = () => {
               </div>
               
               <div className="overflow-x-auto">
+                
+
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="py-4 px-6 text-left font-medium text-lg">Feature</th>
-                      <th className="py-4 px-6 text-center font-medium text-lg">Developer</th>
-                      <th className="py-4 px-6 text-center font-medium text-lg">Business</th>
-                      <th className="py-4 px-6 text-center font-medium text-lg">Enterprise</th>
-                    </tr>
-                  </thead>
+  <tr className="bg-[#f8f5f0]">
+    <th className="py-6 px-6 text-left font-bold text-xl text-black">Features</th>
+
+    {/* Developer Column */}
+    <th className="py-6 px-6 text-center">
+      <div className="text-[#6a5acd] font-medium text-base mb-1">Get Started</div>
+      <div className="text-black font-semibold text-xl mb-2">Free</div>
+      <button className="bg-black text-white py-2 px-4 rounded-full text-sm font-semibold">Start for Free</button>
+    </th>
+
+    {/* Business Column */}
+    <th className="py-6 px-6 text-center">
+      <div className="text-[#6a5acd] font-medium text-base mb-1">Pro</div>
+      <div className="text-black font-semibold text-xl mb-2">$249 <span className="text-sm font-normal">/month</span></div>
+      <button className="bg-black text-white py-2 px-4 rounded-full text-sm font-semibold">Build With Your Team</button>
+    </th>
+
+    {/* Enterprise Column */}
+    <th className="py-6 px-6 text-center">
+      <div className="text-[#6a5acd] font-medium text-base mb-1">Enterprise</div>
+      <div className="text-black font-semibold text-xl mb-2">Contact Us</div>
+      <button className="border border-black text-black py-2 px-4 rounded-full text-sm font-semibold">Get a Custom Plan</button>
+    </th>
+  </tr>
+</thead>
+
                   <tbody>
                     <tr className="border-b border-gray-200">
                       <td className="py-4 px-6 text-gray-800">Agent Messages</td>
@@ -116,60 +137,36 @@ const PricingPage = () => {
               </div>
             </div>
             
-            <div className="mt-20 bg-gray-50 rounded-2xl p-10 max-w-4xl mx-auto animate-on-scroll opacity-0">
-              <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-lg mb-2">How do I determine which plan is right for me?</h3>
-                  <p className="text-gray-600">We recommend starting with the Developer plan to explore the Pebbling Protocol's capabilities. As your agent communication needs grow, you can upgrade to the Business or Enterprise plan for additional features and support.</p>
-                </div>
-                
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Can I switch plans later?</h3>
-                  <p className="text-gray-600">Yes, you can upgrade or downgrade your plan at any time. When upgrading, the new features will be available immediately. When downgrading, changes will take effect at the start of the next billing cycle.</p>
-                </div>
-                
-                <div>
-                  <h3 className="font-bold text-lg mb-2">What happens if I exceed my monthly agent message limit?</h3>
-                  <p className="text-gray-600">If you exceed your monthly agent message limit, you'll be notified and given the option to upgrade to a higher tier. We won't cut off your service abruptly, but repeated overages may require an upgrade.</p>
-                </div>
-                
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Do you offer any discounts for startups or educational institutions?</h3>
-                  <p className="text-gray-600">Yes, we offer special pricing for qualified startups, educational institutions, and non-profit organizations. Please contact our sales team for more information.</p>
-                </div>
-              </div>
-            </div>
             
-            <div className="mt-20 text-center animate-on-scroll opacity-0">
-              <h2 className="text-3xl font-bold mb-8">Ready to get started?</h2>
-              <div className="flex gap-4 justify-center">
-                <Button 
-                  className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
-                  style={{
-                    padding: '16px 24px',
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                  }}
-                >
-                  Start with Free Plan
-                </Button>
-                <Button 
-                  variant="outline"
-                  className="rounded-full"
-                  style={{
-                    padding: '16px 24px',
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                  }}
-                >
-                  Talk to Sales
-                </Button>
-              </div>
-            </div>
+            
+           
+            
+
           </div>
         </section>
+        <section className="w-full mt-10 bg-gradient-to-r from-gray-700 to-zinc-900 py-20 px-4 text-center text-white">
+  <div className="max-w-3xl mx-auto">
+    <div className="flex justify-center items-center gap-2 text-gray-400 mb-3">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M13 2L3 14h9l-1 8L21 10h-9l1-8z" />
+      </svg>
+      <span className="uppercase text-sm tracking-wide font-medium">
+        Are you ready?
+      </span>
+    </div>
+    <h2 className="text-3xl md:text-4xl font-semibold mb-6 leading-tight">
+      Enhance your applications <br /> with powerful AI capabilities
+    </h2>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+      <Button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-md font-medium">
+        Try for Free
+      </Button>
+      <Button variant="outline" className="text-black border-white hover:bg-white hover:text-black px-6 py-2 rounded-md font-medium">
+        Talk to Us
+      </Button>
+    </div>
+  </div>
+</section>
       </main>
       <Footer />
     </div>
