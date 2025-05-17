@@ -16,7 +16,7 @@ const Footer = () => {
                  <img 
                   src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/fajr9stliyz17xsez5nt.png" 
                   alt="Pulse Robot Logo" 
-                  className="h-10 sm:h-12 md:h-20" 
+                  className="h-10 sm:h-12 md:h-28" 
                 />
              
               
