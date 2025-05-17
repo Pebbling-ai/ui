@@ -1,10 +1,10 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Check, ArrowRight, Play, Users, Target, Zap, Globe } from "lucide-react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import DeviceFeatureShowcase from "@/components/DeviceFeatureShowcase";
 
 const ProductPage = () => {
   return (
@@ -184,6 +184,46 @@ const ProductPage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+        
+        {/* Interactive Feature Demo Section */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Experience Our Technology</h2>
+              <p className="text-lg text-gray-600">
+                Take a closer look at our innovative solutions in action
+              </p>
+            </div>
+            
+            <DeviceFeatureShowcase 
+              title="AI-Powered Communication Interface"
+              description="Pebble's intuitive interface allows seamless communication between agents, leveraging advanced AI algorithms to understand context and intent."
+              imageUrl="/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png"
+              deviceType="macbook"
+              websiteUrl="pebble.com/dashboard"
+            />
+            
+            <div className="border-t border-gray-200 my-16"></div>
+            
+            <DeviceFeatureShowcase 
+              title="Real-time Neural Network Visualization"
+              description="Hibiscus provides unprecedented visibility into neural network operations, allowing for fine-tuning and optimization of AI communication channels."
+              imageUrl="/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png"
+              deviceType="macbook"
+              websiteUrl="hibiscus.com/network"
+            />
+            
+            <div className="border-t border-gray-200 my-16"></div>
+            
+            <DeviceFeatureShowcase 
+              title="Mobile Agent Configuration"
+              description="Configure and deploy AI agents directly from your mobile device with our responsive interface designed for maximum flexibility."
+              imageUrl="/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png"
+              deviceType="iphone"
+              websiteUrl="pebble.com/mobile"
+            />
           </div>
         </section>
         
