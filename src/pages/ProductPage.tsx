@@ -6,7 +6,8 @@ import { ChevronRight, Check, ArrowRight, Play, Users, Target, Zap, Globe, Messa
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import DeviceFeatureShowcase from "@/components/DeviceFeatureShowcase";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
+import { Chat } from "@/components/chat"
+import { FeaturesDemo } from "@/components/features-demo"
 const ProductPage = () => {
   // References for chat bubbles to apply scroll animations
   const chatRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -121,106 +122,21 @@ const ProductPage = () => {
           </div>
         </section>
       
-        {/* Interactive Chat Story Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600">
-                Learn about our journey and mission through this interactive conversation
-              </p>
-            </div>
-            
-            <div className="max-w-4xl mx-auto bg-gray-50 rounded-2xl p-6 md:p-10 shadow-sm">
-              <ScrollArea className="h-[500px] pr-4">
-                <div className="space-y-8">
-                  {chatMessages.map((message, index) => (
-                    <div 
-                      key={index}
-                      ref={(el) => chatRefs.current[index] = el}
-                      className={`flex ${message.type === 'question' ? 'justify-start' : 'justify-end'} opacity-0 transition-opacity duration-500`}
-                    >
-                      <div 
-                        className={`max-w-[80%] rounded-2xl p-4 shadow-sm ${
-                          message.type === 'question' 
-                            ? 'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 rounded-tl-none' 
-                            : 'bg-gradient-to-r from-gray-800 to-black text-white rounded-tr-none'
-                        }`}
-                      >
-                        <div className="flex items-center mb-2">
-                          <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${
-                            message.type === 'question' 
-                              ? 'bg-gray-300 text-gray-700' 
-                              : 'bg-gray-700 text-white'
-                          }`}>
-                            {message.type === 'question' ? 'Q' : 'A'}
-                          </div>
-                          <span className="font-medium">
-                            {message.type === 'question' ? 'User' : 'Pebble Team'}
-                          </span>
-                        </div>
-                        <p>{message.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-8 text-center">
-                  <p className="text-sm text-gray-500 italic">Our conversation with users guides our development</p>
-                </div>
-              </ScrollArea>
-            </div>
+        {/* Interactive Chat Story and features Section */}
+        <section className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Experience Communication</h1>
+        <p className="text-lg md:text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+          See how our platform transforms the way agents interact
+        </p>
 
-            <div className="mt-12 text-center">
-              <Button 
-                variant="outline" 
-                className="border border-gray-300 text-gray-700" 
-              >
-                Learn more about our technology
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </section>
-        
-        {/* Interactive Feature Demo Section */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto mb-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Experience Our Technology</h2>
-              <p className="text-lg text-gray-600">
-                Take a closer look at our innovative solutions in action
-              </p>
-            </div>
-            
-            <DeviceFeatureShowcase 
-              title="AI-Powered Communication Interface"
-              description="Pebble's intuitive interface allows seamless communication between agents, leveraging advanced AI algorithms to understand context and intent."
-              imageUrl="/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png"
-              deviceType="macbook"
-              websiteUrl="pebble.com/dashboard"
-            />
-            
-            <div className="border-t border-gray-200 my-16"></div>
-            
-            <DeviceFeatureShowcase 
-              title="Real-time Neural Network Visualization"
-              description="Hibiscus provides unprecedented visibility into neural network operations, allowing for fine-tuning and optimization of AI communication channels."
-              imageUrl="/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png"
-              deviceType="macbook"
-              websiteUrl="hibiscus.com/network"
-            />
-            
-            <div className="border-t border-gray-200 my-16"></div>
-            
-            <DeviceFeatureShowcase 
-              title="Mobile Agent Configuration"
-              description="Configure and deploy AI agents directly from your mobile device with our responsive interface designed for maximum flexibility."
-              imageUrl="/lovable-uploads/af412c03-21e4-4856-82ff-d1a975dc84a9.png"
-              deviceType="iphone"
-              websiteUrl="pebble.com/mobile"
-            />
-          </div>
-        </section>
+        <Chat />
+      </section>
+
+      <section className="container mx-auto px-4 py-16 bg-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Features Demo</h2>
+        <p className="text-lg text-center text-gray-600 mb-16 max-w-2xl mx-auto">See our platform in action</p>
+        <FeaturesDemo />
+      </section>
         
         {/* Use Cases */}
         <section className="py-20 bg-white">
