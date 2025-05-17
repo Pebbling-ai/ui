@@ -68,12 +68,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <Link 
-            to="/product" 
-            className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
-          >
-            Product
-          </Link>
+         
           <Link 
             to="/" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
