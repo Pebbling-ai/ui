@@ -48,7 +48,7 @@ const PricingPage = () => {
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             <div className="text-center mb-12">
          
-          <h2 className="section-title mb-4">Simple, Transparent Pricing</h2>
+          <h2 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 animate-fade-in mb-4">Simple, Transparent Pricing</h2>
           <p className="section-subtitle mx-auto">
             Choose the plan that best fits your needs. All plans include core protocol features.
           </p>
@@ -129,7 +129,7 @@ const PricingPage = () => {
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <span className=" text-gray-800 px-3 py-1 rounded-full text-sm font-medium">FEATURES BREAKDOWN</span>
                 </div>
-                <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">Compare Plans</h2>
+                <h2 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900  animate-fade-in mb-4">Compare Plans</h2>
               </div>
               
               <div className="overflow-x-auto">
