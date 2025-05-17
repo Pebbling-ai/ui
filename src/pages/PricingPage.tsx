@@ -44,7 +44,7 @@ const PricingPage = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <main className="">
-        <section className="py-16 animate-on-scroll opacity-0">
+        <section className="py-7 animate-on-scroll opacity-0">
           <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
             
             
