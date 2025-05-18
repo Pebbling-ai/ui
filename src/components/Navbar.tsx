@@ -82,7 +82,7 @@ const Navbar = () => {
             Hibiscus
           </Link>
           <Link 
-            to="/#details" 
+            to="https://discord.gg/m6ndEkce" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Community
