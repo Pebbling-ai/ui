@@ -87,7 +87,7 @@ const Navbar = () => {
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Community
-          </Link>
+          </a>
           <Link 
             to="/articles" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
