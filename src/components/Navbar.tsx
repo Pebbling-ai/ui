@@ -4,10 +4,16 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { AuthModal } from "./auth/AuthModal";
+import { UserProfile } from "./auth/UserProfile";
+import { useAuthModal } from "@/hooks/useAuthModal";
+import { useAuth } from "@/lib/auth-context";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isOpen, openModal, closeModal } = useAuthModal();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -114,18 +120,23 @@ const Navbar = () => {
           </a>
         </nav>
 
-        {/* Desktop Signup Button */}
-        <div className="hidden md:block">
-          <Button 
-            className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
-            style={{
-              padding: '16px 24px',
-              fontSize: '14px',
-              lineHeight: '20px',
-            }}
-          >
-            Access Hibiscus
-          </Button>
+        {/* Desktop Auth Button or User Profile */}
+        <div className="hidden md:flex items-center space-x-4">
+          {user ? (
+            <UserProfile />
+          ) : (
+            <Button 
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
+              style={{
+                padding: '16px 24px',
+                fontSize: '14px',
+                lineHeight: '20px',
+              }}
+              onClick={openModal}
+            >
+              Access Hibiscus
+            </Button>
+          )}
         </div>
 
         {/* Mobile menu button */}
@@ -210,19 +221,48 @@ const Navbar = () => {
             Pricing
           </Link>
           
-          {/* Mobile Signup Button */}
-          <Button 
-            className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4"
-            style={{
-              padding: '16px 24px',
-              fontSize: '14px',
-              lineHeight: '20px',
-            }}
-          >
-            Sign Up
-          </Button>
+          {/* Mobile Auth Button */}
+          {!user && (
+            <Button 
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4"
+              style={{
+                padding: '16px 24px',
+                fontSize: '14px',
+                lineHeight: '20px',
+              }}
+              onClick={() => {
+                closeModal();
+                openModal();
+                handleMobileMenuItemClick();
+              }}
+            >
+              Access Hibiscus
+            </Button>
+          )}
+          
+          {/* Mobile User Profile Section */}
+          {user && (
+            <div className="w-full mt-4 flex justify-center">
+              <Button 
+                className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full"
+                style={{
+                  padding: '16px 24px',
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                }}
+                onClick={() => {
+                  handleMobileMenuItemClick();
+                  window.location.href = '/hibiscus';
+                }}
+              >
+                Dashboard
+              </Button>
+            </div>
+          )}
         </nav>
       </div>
+      {/* Auth Modal */}
+      <AuthModal isOpen={isOpen} onClose={closeModal} />
     </header>
   );
 };

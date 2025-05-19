@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  pebbling-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_SUPABASE_PROJECT_URL=${VITE_SUPABASE_PROJECT_URL}
+      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+    restart: unless-stopped
+    networks:
+      - pebbling-network
+
+networks:
+  pebbling-network:
+    driver: bridge
