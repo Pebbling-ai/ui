@@ -1,0 +1,55 @@
+name: Deploy pebblingnewui to Railway
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Updated to a more current LTS version, adjust if needed
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8 # Or your project's pnpm version
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run linters
+        run: pnpm lint # Adjust if your lint script has a different name
+
+      - name: Run tests
+        run: pnpm test # Adjust if your test script has a different name
+
+      - name: Build project
+        run: pnpm build # Adjust if your build script has a different name
+
+  deploy:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          railway up --service=${{ secrets.RAILWAY_SERVICE_ID }} --detach
+          # If you prefer to use a variable with a fallback like your example, ensure RAILS_SERVICE_ID is defined in GitHub repo/org variables:
+          # railway up --service=${{ vars.RAILWAY_SERVICE_ID || 'YOUR_DEFAULT_SERVICE_ID_HERE' }} --detach
