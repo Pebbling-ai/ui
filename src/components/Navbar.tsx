@@ -126,15 +126,20 @@ const Navbar = () => {
             <UserProfile />
           ) : (
             <Button 
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full"
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
               style={{
-                padding: '16px 24px',
+                borderRadius: '1440px',
+                boxSizing: 'border-box',
+                color: '#FFFFFF',
+                cursor: 'pointer',
                 fontSize: '14px',
                 lineHeight: '20px',
+                padding: '16px 24px',
+                border: '1px solid white',
               }}
               onClick={openModal}
             >
-              Access Hibiscus
+              Join Us
             </Button>
           )}
         </div>

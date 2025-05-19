@@ -45,7 +45,7 @@ const TestimonialCard = ({
       <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
       
       <div className="relative z-0">
-        <p className="text-xl mb-8 font-satoshi leading-relaxed pr-20">{`"${content}"`}</p>
+        <p className="text-xl mb-8 leading-relaxed pr-20">{`"${content}"`}</p>
         <div className="flex items-center">
           {avatar && (
             <div className="mr-4 flex-shrink-0">

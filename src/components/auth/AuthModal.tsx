@@ -97,8 +97,8 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-[425px] p-0 overflow-hidden rounded-xl">
-        <div className="absolute right-4 top-4 z-10">
+      <DialogContent className="sm:max-w-[425px] p-0 overflow-hidden rounded-xl font-subheading">
+        {/* <div className="absolute right-4 top-4 z-10">
           <Button 
             variant="ghost" 
             size="icon" 
@@ -107,14 +107,14 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           >
             <X className="h-4 w-4" />
           </Button>
-        </div>
+        </div> */}
         
-        <div className="bg-gradient-to-r from-gray-700 to-zinc-900 p-6 text-white">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-semibold text-white">
+        <div className=" text-black">
+          <DialogHeader className='w-full pt-5 pb-2 px-7'>
+            <DialogTitle className="text-2xl font-semibold text-black">
               {activeTab === 'sign-up' ? 'Create your account' : 'Welcome back'}
             </DialogTitle>
-            <DialogDescription className="text-gray-300">
+            <DialogDescription className="text-black">
               {activeTab === 'sign-up' 
                 ? 'Join Hibiscus to access exclusive features' 
                 : 'Sign in to your Hibiscus account'}
@@ -135,14 +135,17 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
           
           <TabsContent value="sign-up">
             <div className="space-y-4">
-              <div className="space-y-2">
+              <div className='w-full flex flex-col items-center'>
+              
+              <div className="w-full space-y-2 gap-10 ">
+                
                 <Button 
                   variant="outline" 
                   className="w-full justify-start gap-2 font-normal"
                   onClick={() => handleSocialSignIn('github')}
                 >
                   <Github className="h-4 w-4" />
-                  Continue with GitHub
+                   Sign up with GitHub
                 </Button>
                 <Button 
                   variant="outline" 
@@ -167,10 +170,10 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       fill="#EA4335"
                     />
                   </svg>
-                  Continue with Google
+                   Sign Up with Google
                 </Button>
               </div>
-              
+              </div>
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t" />
@@ -205,7 +208,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-gray-700 to-zinc-900 text-white"
+                  className="w-full bg-black text-white"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -293,7 +296,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-gray-700 to-zinc-900 text-white"
+                  className="w-full bg-black text-white"
                   disabled={isLoading}
                 >
                   {isLoading ? (

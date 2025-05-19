@@ -46,8 +46,7 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
     <div 
       ref={cardRef}
       className={cn(
-        "p-6 rounded-lg shadow-sm border border-gray-100 bg-white",
-        "transition-all duration-300 hover:shadow-md"
+       "p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white"
       )}
     >
       <div className="rounded-full bg-gray-50 w-12 h-12 flex items-center justify-center text-[#3A5BA0] mb-5">

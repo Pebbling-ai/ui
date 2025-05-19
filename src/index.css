@@ -4,6 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.cdnfonts.com/css/alma-serif');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'LibreBaskerville-Regular';
+  src: url('/fonts/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+ 
+}
 
 @font-face {
   font-family: 'Brockmann';

@@ -125,7 +125,7 @@ const PricingSection = () => {
           />
         </div>
         
-        <div className="mt-12 max-w-2xl mx-auto text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+        <div className="mt-12 max-w-2xl mx-auto text-center p-6 rounded-xl  border border-gray-100 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white">
           <div className="flex items-center justify-center gap-2 mb-4 text-pulse-600">
             <Info className="text-black" size={24} />
             <h3 className="text-black text-xl font-medium">Need a custom solution?</h3>

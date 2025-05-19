@@ -112,6 +112,8 @@ export default {
 				'alma-serif': ['"Alma Serif Regular"', 'serif', 'system-ui'],
 				'thin-serif': ['"Baskerville"', '"Libre Baskerville"', '"Playfair Display"', 'serif'],
 				'satoshi': ['"Satoshi"', 'sans-serif'],
+				'subheading':["Montserrat", "sans-serif"],
+				'LibreBaskerville-Regular': ['LibreBaskerville-Regular', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -122,7 +124,7 @@ export default {
 				'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
 				'card': '0 2px 10px rgba(0, 0, 0, 0.08)',
 				'hover': '0 10px 25px rgba(0, 0, 0, 0.15)',
-				'pulse': '0 10px 25px rgba(0, 0, 0, 0.25)', // Updated from purple shadow to black shadow
+				'pulse': '0 10px 25px rgba(0, 0, 0, 0.25)', 
 			},
 			keyframes: {
 				'accordion-down': {

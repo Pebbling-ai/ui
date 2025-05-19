@@ -116,7 +116,7 @@ const ExampleUseCases = () => {
           {filteredUseCases.map((useCase) => (
             <Card 
               key={useCase.id} 
-              className="hover:shadow-lg transition-shadow duration-300 border border-gray-200 overflow-hidden"
+              className="shadow-sm hover:shadow-lg hover:border-gray-300 hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden"
             >
               <CardHeader className="p-5 pb-0 flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700">

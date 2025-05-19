@@ -67,7 +67,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1 z-10" ref={containerRef}>
         <div className="max-w-4xl mx-auto mb-8">
           <h1 
-            className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in " 
+            className=" text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in " 
             style={{ animationDelay: "0.3s" }}
           >
             Leave it to Pebble
@@ -75,7 +75,7 @@ const Hero = () => {
           
           <p 
             style={{ animationDelay: "0.5s" }} 
-            className="mt-4 sm:mt-6 mb-8 text-gray-600 opacity-0 animate-fade-in text-base sm:text-xl md:text-2xl max-w-3xl mx-auto"
+            className="font-subheading mt-4 sm:mt-6 mb-8 text-gray-600 opacity-0 animate-fade-in text-base sm:text-xl md:text-lg max-w-3xl mx-auto"
           >
             Pebble is a general AI agent that bridges minds and actions: it doesn't just think, it delivers results. Pebble excels at various tasks in work and life, getting everything done while you rest.
           </p>
