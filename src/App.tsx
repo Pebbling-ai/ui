@@ -10,25 +10,35 @@ import ComingSoonPage from "./pages/ComingSoonPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import ProductPage from "./pages/ProductPage";
 import AgentRegistry from "./components/AgentRegistry";
+import AuthCallback from "./pages/AuthCallback";
+import { AuthProvider } from "./lib/auth-context";
+import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/hibiscus" element={<AgentRegistry />} />
-          <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/product" element={<ProductPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/hibiscus" element={
+              <ProtectedRoute>
+                <AgentRegistry />
+              </ProtectedRoute>
+            } />
+            <Route path="/articles" element={<ArticlesPage />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </TooltipProvider>
+      </AuthProvider>
     </BrowserRouter>
   </QueryClientProvider>
 );
