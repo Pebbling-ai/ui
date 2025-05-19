@@ -26,8 +26,8 @@ const PricingTier: React.FC<PricingTierProps> = ({
 }) => (
   <Card 
     className={cn(
-      "relative transition-all duration-300 hover:-translate-y-1",
-      popular ? "border-black shadow-lg" : "border-gray-200",
+      "relative rounded-xl p-6 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-white",
+      popular ? "border-black " : "border-gray-200",
       className
     )}
   >
@@ -104,7 +104,7 @@ const PricingSection = () => {
               "Custom domain support"
             ]}
             popular={true}
-            className="md:scale-105 z-10"
+            className=" z-10"
             cta="Upgrade Now"
           />
           

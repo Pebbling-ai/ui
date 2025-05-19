@@ -160,13 +160,18 @@ export default {
 					'50%': { transform: 'translateY(-2px)' }
 				},
 				'pulse-slow': {
-					'0%, 100%': { opacity: 1 },
-					'50%': { opacity: 0.8 }
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-5px)' }
-				}
+				},
+				'scroll': {
+          to: {
+            transform: 'translate(calc(-50% - 0.5rem))',
+          },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -177,6 +182,7 @@ export default {
 				'micro-bounce': 'micro-bounce 1s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'float': 'float 4s ease-in-out infinite',
+				'scroll': 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
 			}
 		}
 	},
