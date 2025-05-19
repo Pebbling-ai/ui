@@ -71,13 +71,13 @@ const NetworkMetrics = () => {
   return (
     <section className="py-10 relative animate-on-scroll">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
-        {/* <div className="text-center mb-8">
+        <div className="text-center mb-8">
          
-          <h2 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 animate-fade-in mb-2">Live Network Performance</h2>
+          <h2 className="section-title mb-2">Live Network Performance</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Real-time monitoring of Pebble AI agents across distributed networks over the last 24 hours.
           </p>
-        </div> */}
+        </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

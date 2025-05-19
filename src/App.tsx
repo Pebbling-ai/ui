@@ -13,7 +13,7 @@ import AgentRegistry from "./components/AgentRegistry";
 import AuthCallback from "./pages/AuthCallback";
 import { AuthProvider } from "./lib/auth-context";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
-
+import NetworkPage from "./pages/NetworkPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -34,6 +34,7 @@ const App = () => (
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/product" element={<ProductPage />} />
             <Route path="/auth/callback" element={<AuthCallback />} />
+            <Route path="/network" element={<NetworkPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
