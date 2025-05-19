@@ -101,7 +101,7 @@ const Navbar = () => {
             Docs
           </Link>
           <Link 
-            to="/#details" 
+            to="" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Network
