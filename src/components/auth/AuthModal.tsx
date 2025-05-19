@@ -217,7 +217,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       Creating account...
                     </span>
                   ) : (
-                    'Create Account'
+                    'Launch Your Flow'
                   )}
                 </Button>
               </form>
@@ -305,7 +305,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
                       Signing in...
                     </span>
                   ) : (
-                    'Sign In'
+                    'Enter Workspace'
                   )}
                 </Button>
               </form>
