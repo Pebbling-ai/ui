@@ -106,12 +106,12 @@ const Navbar = () => {
           >
             Network
           </Link>
-          <Link 
-            to="/pricing" 
+          <a 
+            href="#pricing" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Pricing
-          </Link>
+          </a>
         </nav>
 
         {/* Desktop Signup Button */}

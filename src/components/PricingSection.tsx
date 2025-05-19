@@ -66,7 +66,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
 
 const PricingSection = () => {
   return (
-    <section className="py-16 animate-on-scroll opacity-0" id="pricing">
+    <section id="pricing" className="py-16 animate-on-scroll opacity-0" >
       <div className="section-container">
         <div className="text-center mb-12">
          

@@ -8,6 +8,7 @@ import DeviceFeatureShowcase from "@/components/DeviceFeatureShowcase";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Chat } from "@/components/chat"
 import { FeaturesDemo } from "@/components/features-demo"
+import { Link } from "react-router-dom";
 const ProductPage = () => {
   // References for chat bubbles to apply scroll animations
   const chatRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -68,6 +69,15 @@ const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* <div className="w-full flex justify-start px-4 pt-4">
+        <Link
+          to="/"
+          className="inline-flex items-center px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-medium shadow transition"
+          aria-label="Go to Home"
+        >
+          Home
+        </Link>
+      </div> */}
       <Navbar />
       
       <main>
