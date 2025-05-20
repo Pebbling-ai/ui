@@ -14,6 +14,7 @@ import AuthCallback from "./pages/AuthCallback";
 import { AuthProvider } from "./lib/auth-context";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 import NetworkPage from "./pages/NetworkPage";
+import PebblingProtocolPage from "./pages/PebblingProtocolPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/product" element={<ProductPage />} />
             <Route path="/auth/callback" element={<AuthCallback />} />
             <Route path="/network" element={<NetworkPage />} />
+            <Route path="/pebbling" element={<PebblingProtocolPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
