@@ -108,7 +108,7 @@ const testimonials = [
       
       <main>
         {/* Hero Section */}
-        <section className="py-32 pb-20 ">
+        <section className="px-7 py-32 pb-20 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex-1 text-left mt-10">
