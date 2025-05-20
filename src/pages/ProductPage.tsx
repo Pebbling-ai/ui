@@ -118,14 +118,20 @@ const testimonials = [
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
                   Automate your daily tasks, boost productivity, and unlock the power of AI in one click.
+                  Automate your daily tasks, boost productivity, and unlock the power of AI in one click.
+                  Automate your daily tasks, boost productivity, and unlock the power of AI in one click.
+                  Automate your daily tasks, boost productivity, and unlock the power of AI in one click.
+                  Automate your daily tasks, boost productivity, and unlock the power of AI in one click.
+                  
+                  
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button 
+                  {/* <Button 
                     className="bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg"
                   >
                     Get Started
                     <ChevronRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  </Button> */}
                   {/* <Button 
                     variant="outline" 
                     className="border border-gray-300 text-gray-700 rounded-lg px-8 py-6 text-lg"
@@ -153,6 +159,7 @@ const testimonials = [
             </div>
           </div>
         </section>
+        
          <section className="w-full flex flex-col items-center py-32 pb-20 ">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Why Hibiscus? (Differentiators)</h2>
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 ">
@@ -178,6 +185,96 @@ const testimonials = [
             />
           </div>
           </section>
+           <section className="pt-32 w-full flex flex-col justify-center items-center  ">
+          <div className="mb-12 w-full flex flex-col justify-center items-start pl-40">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              CoAgents: Everything you need to embed Agents in your application
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg text-gray-600 text-center">
+              Deeply embed vertical AI agents (powered by LangGraph) into your application with control, state, agents,
+              generators UI & human-in-the-loop.
+            </p>
+          </div>
+
+          <Card className="overflow-hidden border-0 bg-gradient-to-b from-gray-50 to-gray-100 shadow-md">
+            <div className="p-8 text-center">
+              <h3 className="text-2xl font-bold text-gray-900">CoAgents public beta</h3>
+              <p className="mt-2 text-gray-600">Discover what makes CoAgents a powerful AI human collaboration tool</p>
+
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                <div className="flex items-center">
+                  <span className="font-semibold text-gray-900">CapitalKit</span>
+                  <span className="mx-2 text-gray-400">+</span>
+                </div>
+                <div className="rounded-full bg-gray-200 px-3 py-1 text-sm font-medium text-gray-800">1.0</div>
+                <div className="font-semibold text-gray-900">LangGraph</div>
+              </div>
+            </div>
+
+            <div className="relative aspect-video w-full overflow-hidden bg-black">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition hover:bg-white">
+                  <Play className="h-8 w-8 text-gray-900" />
+                </button>
+              </div>
+              <img
+                src="/hero-image.jpg"
+                alt="CoAgents demo video thumbnail"
+                className="h-full w-full object-cover opacity-80"
+              />
+            </div>
+          </Card>
+        </section> 
+        <section className="w-full flex justify-center items-center py-20 ">
+  <div className="container mx-auto px-4">
+    {/* Value Proposition */}
+    <div className="mb-12 text-center max-w-3xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Pebblify Both Your Agent and MCP?
+      </h2>
+      <p className="text-lg text-gray-600">
+        Unlock seamless collaboration and maximum efficiency by integrating both your AI agents and MCP with Pebble. 
+        Experience unified communication, persistent storage, and dynamic routing—all designed to supercharge your workflows and deliver real business value.
+      </p>
+    </div>
+    {/* Feature Cards with Images */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+      {/* Agents Card */}
+      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
+        <img
+          src="/agent-illustration.png"
+          alt="Agents"
+          className="mb-6 size-full object-cover rounded-lg shadow"
+        />
+        <FeatureCard
+          title="Agents"
+          description="Each node of your app has isolated data. Stay near your users with Fly Volumes, Fly Managed Postgres, and S3-compatible Tigris files."
+        />
+        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
+          See our agents
+          <ChevronRight className="ml-2 h-5 w-5" />
+        </Button>
+      </div>
+      {/* MCP Card */}
+      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
+        <img
+          src="/mcp-illustration.png"
+          alt="MCP"
+          className="mb-6 size-full object-contain rounded-lg shadow"
+        />
+        <FeatureCard
+          title="MCP"
+          description="Each user gets an isolated memory and dedicated sandbox. Dynamic request routing using the Fly Proxy and fly-replay."
+        />
+        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
+          Explore MCP
+          <ChevronRight className="ml-2 h-5 w-5" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+<AgentRegistry/>
         {/*How it works*/}
         <section className="py-20 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -297,50 +394,61 @@ const testimonials = [
             </div>
           </div>
         </section>
-       {/* <section className="pt-32 w-full flex flex-col justify-center items-center">
-          <div className="mb-12 w-full flex flex-col justify-center items-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              CoAgents: Everything you need to embed Agents in your application
-            </h2>
-            <p className="mt-4 max-w-3xl text-lg text-gray-600 text-center">
-              Deeply embed vertical AI agents (powered by LangGraph) into your application with control, state, agents,
-              generators UI & human-in-the-loop.
-            </p>
-          </div>
-
-          <Card className="overflow-hidden border-0 bg-gradient-to-b from-gray-50 to-gray-100 shadow-md">
-            <div className="p-8 text-center">
-              <h3 className="text-2xl font-bold text-gray-900">CoAgents public beta</h3>
-              <p className="mt-2 text-gray-600">Discover what makes CoAgents a powerful AI human collaboration tool</p>
-
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-                <div className="flex items-center">
-                  <span className="font-semibold text-gray-900">CapitalKit</span>
-                  <span className="mx-2 text-gray-400">+</span>
-                </div>
-                <div className="rounded-full bg-gray-200 px-3 py-1 text-sm font-medium text-gray-800">1.0</div>
-                <div className="font-semibold text-gray-900">LangGraph</div>
-              </div>
-            </div>
-
-            <div className="relative aspect-video w-full overflow-hidden bg-black">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition hover:bg-white">
-                  <Play className="h-8 w-8 text-gray-900" />
-                </button>
-              </div>
-              <img
-                src="/hero-image.jpg"
-                alt="CoAgents demo video thumbnail"
-                className="h-full w-full object-cover opacity-80"
-              />
-            </div>
-          </Card>
-        </section> */}
+      <section className="w-full flex justify-center items-center py-20 ">
+  <div className="container mx-auto px-4">
+    {/* Value Proposition */}
+    <div className="mb-12 text-center max-w-3xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Pebblify Both Your Agent and MCP?
+      </h2>
+      <p className="text-lg text-gray-600">
+        Unlock seamless collaboration and maximum efficiency by integrating both your AI agents and MCP with Pebble. 
+        Experience unified communication, persistent storage, and dynamic routing—all designed to supercharge your workflows and deliver real business value.
+      </p>
+    </div>
+    {/* Feature Cards with Images */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
+      {/* MCP Card */}
+      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
+        <img
+          src="/mcp-illustration.png"
+          alt="MCP"
+          className="mb-6 size-full object-contain rounded-lg shadow"
+        />
+        <FeatureCard
+          title="MCP"
+          description="Each user gets an isolated memory and dedicated sandbox. Dynamic request routing using the Fly Proxy and fly-replay."
+        />
+        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
+          Explore MCP
+          <ChevronRight className="ml-2 h-5 w-5" />
+        </Button>
+      </div>
+      {/* Agents Card */}
+      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
+        <img
+          src="/agent-illustration.png"
+          alt="Agents"
+          className="mb-6 size-full object-cover rounded-lg shadow"
+        />
+        <FeatureCard
+          title="Agents"
+          description="Each node of your app has isolated data. Stay near your users with Fly Volumes, Fly Managed Postgres, and S3-compatible Tigris files."
+        />
+        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
+          See our agents
+          <ChevronRight className="ml-2 h-5 w-5" />
+        </Button>
+      </div>
+      
+    </div>
+  </div>
+</section>
         {/* <div className="block">
-      <Feature /> */}
-      <MCPDashboardSection/>
-       <AgentRegistry/>
+      <Feature />
+      {/* <MCPDashboardSection/> */}
+       
+       
    
         { /* Interactive Chat Story and features Section */}
         {/* <section className="container mx-auto px-4 py-16 mt-10">
@@ -352,11 +460,11 @@ const testimonials = [
         <Chat />
       </section> */}
 
-      <section className="container mx-auto px-4 py-16 ">
+      {/* <section className="container mx-auto px-4 py-16 ">
         <h1 className="text-center text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">Features Demo</h1>
         <p className="text-lg text-center text-gray-600 mb-16 max-w-2xl mx-auto">See our platform in action</p>
         <FeaturesDemo />
-      </section>
+      </section> */}
         
         {/* Use Cases */}
         {/* <section className="py-20 bg-white">
@@ -517,12 +625,14 @@ const testimonials = [
     </div>
   );
 };
-function FeatureCard({ number, title, description }: { number: string; title: string; description: string }) {
+function FeatureCard({ number, title, description }: { number?: string; title: string; description: string }) {
   return (
-    <div className="group p-6">
-      <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 text-sm font-medium text-white">
-        {number}
-      </div>
+    <div className="max-w-2xl group p-6">
+     {number && (
+        <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 text-sm font-medium text-white">
+          {number}
+        </div>
+      )}
       <h1 className="text-lg md:text-xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">{title}</h1>
       <p className="text-sm leading-relaxed text-gray-600">{description}</p>
     </div>
