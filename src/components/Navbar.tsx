@@ -113,7 +113,7 @@ const Navbar = () => {
             Network
           </Link>
           <a 
-            href="#pricing" 
+            href="/#pricing" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Pricing
