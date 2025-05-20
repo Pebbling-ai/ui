@@ -12,6 +12,8 @@ import  {Globe}  from "@/components/ui/globe"
 import { Card } from "@/components/ui/card";
 import {Feature} from "@/components/ui/feature";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import AgentRegistry from "@/components/AgentRegistry";
+import MCPDashboardSection from "@/components/Mcpdashboardsection";
 const ProductPage = () => {
   // References for chat bubbles to apply scroll animations
   const chatRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -151,6 +153,31 @@ const testimonials = [
             </div>
           </div>
         </section>
+         <section className="w-full flex flex-col items-center py-32 pb-20 ">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Why Hibiscus? (Differentiators)</h2>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 ">
+            <FeatureCard
+              number="01"
+              title="User-Specific Routing"
+              description="Each user gets an isolated memory and dedicated sandbox. Dynamic request routing using the Fly Proxy and fly-replay."
+            />
+            <FeatureCard
+              number="02"
+              title="Persistent Storage"
+              description="Each node of your app has isolated data. Stay near your users with Fly Volumes, Fly Managed Postgres, and S3-compatible Tigris files."
+            />
+            <FeatureCard
+              number="03"
+              title="Zero-Cost When Idle"
+              description="Fly Machines automatically scale to zero when you don't need them, so you only pay for the compute you actually use."
+            />
+            <FeatureCard
+              number="04"
+              title="MCP with SSE"
+              description="Build remote-hosted Console Protocol (MCP) servers on Fly Machines and use Server-Sent Events (SSE) to plug your desktop into any UI service."
+            />
+          </div>
+          </section>
         {/*How it works*/}
         <section className="py-20 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -312,7 +339,8 @@ const testimonials = [
         </section> */}
         {/* <div className="block">
       <Feature /> */}
-       
+      <MCPDashboardSection/>
+       <AgentRegistry/>
    
         { /* Interactive Chat Story and features Section */}
         {/* <section className="container mx-auto px-4 py-16 mt-10">
@@ -331,7 +359,7 @@ const testimonials = [
       </section>
         
         {/* Use Cases */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto mb-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Use Cases</h2>
@@ -396,10 +424,10 @@ const testimonials = [
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         
         {/* Why choose us */}
-       <section className="py-20 ">
+       {/* <section className="py-20 ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto mb-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Hibiscus? (Differentiators)</h2>
@@ -447,42 +475,8 @@ const testimonials = [
               ))}
             </div>
           </div>
-        </section>
-        {/* Demo Section */}
-        {/* <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">See It in Action</h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Watch how our product can transform your business operations and drive results
-                  </p>
-                </div>
-                
-                <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl">
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-20">
-                    <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full w-16 h-16 flex items-center justify-center">
-                      <Play className="h-6 w-6" />
-                    </Button>
-                  </div>
-                  <img 
-                    src="/lovable-uploads/5663820f-6c97-4492-9210-9eaa1a8dc415.png"
-                    alt="Product Demo" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                <div className="mt-12 text-center">
-                  <Button className="bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
-                    Schedule a Live Demo
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
         </section> */}
+        
         
         {/* CTA Section */}
         <section className="w-full flex item-center justify-center  ">
@@ -523,5 +517,15 @@ const testimonials = [
     </div>
   );
 };
-
+function FeatureCard({ number, title, description }: { number: string; title: string; description: string }) {
+  return (
+    <div className="group p-6">
+      <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 text-sm font-medium text-white">
+        {number}
+      </div>
+      <h1 className="text-lg md:text-xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">{title}</h1>
+      <p className="text-sm leading-relaxed text-gray-600">{description}</p>
+    </div>
+  )
+}
 export default ProductPage;

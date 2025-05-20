@@ -94,10 +94,10 @@ const AgentRegistry = () => {
   };
 
   return (
-    <section className="py-12 relative animate-on-scroll opacity-0 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-12 relative animate-on-scroll ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
-          <h2 className="section-title font-bold mb-2 text-black">Hibiscus Registry</h2>
+          <h1 className=" text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">Hibiscus Registry</h1>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Search and discover AI agents across the Pebble network ecosystem.
           </p>

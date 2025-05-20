@@ -76,7 +76,7 @@ const Navbar = () => {
         <nav className="hidden md:flex space-x-8">
          
           <Link 
-            to="/" 
+            to="/pebbling" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Pebbling Protocol
