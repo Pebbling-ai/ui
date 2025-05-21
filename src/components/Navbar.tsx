@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -63,13 +62,13 @@ const Navbar = () => {
         >
           <img 
             src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/rjxn4q81e0mjukr6wjfr.png" 
-            alt="Pulse Robot Logo" 
+            alt="logo" 
             className="h-16 sm:h-18  " 
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 pl-36">
          
           <Link 
             to="/pebbling" 
@@ -83,14 +82,12 @@ const Navbar = () => {
           >
             Hibiscus
           </Link>
-    
-
-  
-
-  
+         
         </nav>
-        
-        <div className="flex space-x-3">
+
+        {/* Desktop Auth Button or User Profile */}
+        <div className="hidden md:flex items-center space-x-4">
+           <div className="flex space-x-3">
                 {/* Docs Button */}
   <a
     href="/docs"
@@ -133,8 +130,6 @@ const Navbar = () => {
     <span className="text-xs ml-0.5">★</span>
   </a>
         </div>
-        {/* Desktop Auth Button or User Profile */}
-        <div className="hidden md:flex items-center space-x-4">
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
@@ -170,11 +165,11 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "bg-white fixed inset-0 z-40  flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        " fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : " translate-x-full pointer-events-none"
       )}>
-       
-         <button 
+        {/* Close button for mobile */}
+        <button 
           className="absolute top-4 right-4 p-2"
           onClick={toggleMenu}
           aria-label="Close menu"
@@ -183,13 +178,7 @@ const Navbar = () => {
         </button>
 
         <nav className="flex flex-col space-y-6 items-center mt-8">
-          <Link 
-            to="/product" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Product
-          </Link>
+          
           <Link 
             to="/" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
@@ -204,41 +193,7 @@ const Navbar = () => {
           >
             Hibiscus
           </Link>
-          <Link 
-            to="/#details" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Community
-          </Link>
-          <Link 
-            to="/articles" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Articles
-          </Link>
-          <Link 
-            to="/#details" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Docs
-          </Link>
-          <Link 
-            to="/#details" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Network Status
-          </Link>
-          <Link 
-            to="/pricing" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
-            onClick={handleMobileMenuItemClick}
-          >
-            Pricing
-          </Link>
+          
           
           {/* Mobile Auth Button */}
           <SignedOut>
