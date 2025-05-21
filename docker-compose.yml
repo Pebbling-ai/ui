@@ -8,8 +8,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - VITE_SUPABASE_PROJECT_URL=${VITE_SUPABASE_PROJECT_URL}
-      - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+      - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY}
     restart: unless-stopped
     networks:
       - pebbling-network
