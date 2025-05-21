@@ -11,8 +11,7 @@ import ArticlesPage from "./pages/ArticlesPage";
 import ProductPage from "./pages/ProductPage";
 import AgentRegistry from "./components/AgentRegistry";
 import AuthCallback from "./pages/AuthCallback";
-import { AuthProvider } from "./lib/auth-context";
-import { ProtectedRoute } from "./components/auth/ProtectedRoute";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import NetworkPage from "./pages/NetworkPage";
 import PebblingProtocolPage from "./pages/PebblingProtocolPage";
 const queryClient = new QueryClient();
@@ -20,7 +19,6 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <AuthProvider>
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -28,9 +26,14 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/hibiscus" element={
-              <ProtectedRoute>
-                <AgentRegistry />
-              </ProtectedRoute>
+              <>
+                <SignedIn>
+                  <AgentRegistry />
+                </SignedIn>
+                <SignedOut>
+                  <RedirectToSignIn />
+                </SignedOut>
+              </>
             } />
             <Route path="/articles" element={<ArticlesPage />} />
             <Route path="/product" element={<ProductPage />} />
@@ -41,7 +44,6 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
-      </AuthProvider>
     </BrowserRouter>
   </QueryClientProvider>
 );

@@ -1,26 +1,27 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { supabase } from '@/lib/supabase';
+import { useClerk } from '@clerk/clerk-react';
 
 export default function AuthCallback() {
   const navigate = useNavigate();
+  const { handleRedirectCallback } = useClerk();
 
   useEffect(() => {
     // Handle the OAuth callback
-    const handleAuthCallback = async () => {
-      const { error } = await supabase.auth.getSession();
-      
-      if (error) {
+    const handleCallback = async () => {
+      try {
+        // This handles the Clerk redirect and any errors
+        await handleRedirectCallback({});
+        // If successful, redirect to the Hibiscus page
+        navigate('/hibiscus');
+      } catch (error) {
         console.error('Error during auth callback:', error);
         navigate('/');
-      } else {
-        // Redirect to the Hibiscus page after successful authentication
-        navigate('/hibiscus');
       }
     };
 
-    handleAuthCallback();
-  }, [navigate]);
+    handleCallback();
+  }, [navigate, handleRedirectCallback]);
 
   return (
     <div className="flex items-center justify-center min-h-screen">
