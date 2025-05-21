@@ -116,42 +116,66 @@ const page = () => {
     }
   };
   
-  const handleQuickFilter = (value: string) => {
-    setSelectedQuickFilter(selectedQuickFilter === value ? null : value);
-    
-    // Apply the quick filters
+  // Update the handleQuickFilter function
+const handleQuickFilter = (value: string) => {
+  // If we're clearing the filter (clicking X), reset everything related to this filter
+  if (selectedQuickFilter === value) {
+    setSelectedQuickFilter(null);
+    // Reset the specific filter's effects
     switch (value) {
       case 'popular':
-        setSortOption('popularity');
+        setSortOption('name');
         break;
       case 'recent':
-        setSortOption('date');
+        setSortOption('name');
         break;
       case 'active':
-        setSelectedFilters(prev => 
-          prev.includes('Active') ? prev : [...prev, 'Active']
-        );
+        setSelectedFilters(prev => prev.filter(f => f !== 'Active'));
         break;
       case 'performance':
-        setSelectedTags(prev =>
-          prev.includes('Performance') ? prev : [...prev, 'Performance']
-        );
+        setSelectedTags(prev => prev.filter(t => t !== 'Performance'));
         break;
       case 'integration':
-        setSelectedTags(prev =>
-          prev.includes('API Integration') ? prev : [...prev, 'API Integration']
-        );
+        setSelectedTags(prev => prev.filter(t => t !== 'API Integration'));
         break;
       case 'learning':
-        setSelectedTags(prev =>
-          prev.includes('Machine Learning') ? prev : [...prev, 'Machine Learning']
-        );
+        setSelectedTags(prev => prev.filter(t => t !== 'Machine Learning'));
         break;
-      default:
-        setSortOption('name');
-        setSelectedFilters([]);
     }
-  };
+    return;
+  }
+
+  // If setting a new filter
+  setSelectedQuickFilter(value);
+  switch (value) {
+    case 'popular':
+      setSortOption('popularity');
+      break;
+    case 'recent':
+      setSortOption('date');
+      break;
+    case 'active':
+      setSelectedFilters(prev => 
+        prev.includes('Active') ? prev : [...prev, 'Active']
+      );
+      break;
+    case 'performance':
+      setSelectedTags(prev =>
+        prev.includes('Performance') ? prev : [...prev, 'Performance']
+      );
+      break;
+    case 'integration':
+      setSelectedTags(prev =>
+        prev.includes('API Integration') ? prev : [...prev, 'API Integration']
+      );
+      break;
+    case 'learning':
+      setSelectedTags(prev =>
+        prev.includes('Machine Learning') ? prev : [...prev, 'Machine Learning']
+      );
+      break;
+  }
+};
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
