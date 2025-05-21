@@ -18,13 +18,13 @@ const CTASection = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="#get-started" 
+                href="/hibiscus" 
                 className="bg-white text-black hover:bg-gray-200 flex items-center justify-center group text-center rounded-md transition-colors" 
                 style={{
                   padding: '12px 24px',
                 }}
               >
-                Let's Pebble
+                Let's explore hibiscus
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               

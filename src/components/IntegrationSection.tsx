@@ -118,7 +118,7 @@ RECEIVE {
   };
 
   return (
-    <section className="py-16 animate-on-scroll opacity-0" id="integration">
+    <section className="section-container" id="integration">
       <div className="section-container">
         <div className="text-center mb-12">
           <h2 className="section-title mb-4">Seamless Integration</h2>

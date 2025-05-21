@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
+import CompactNetworkMetrics from "@/components/CompactNetworkMetrices";
 import ProductShowcase from "@/components/ProductShowcase";
 import NetworkMetrics from "@/components/NetworkMetrices";
 import AgentRegistry from "@/components/AgentRegistry";
@@ -94,9 +94,9 @@ const Index = () => {
         
         <ProductShowcase />
         <ExampleUseCases />
-        <AgentRegistry />
+        {/* <AgentRegistry /> */}
         {/* <Features/> */}
-        <NetworkMetrics />
+        {/* <NetworkMetrics /> */}
         <ProductTimeline />
         <GitHubSection />
         <IntegrationSection />

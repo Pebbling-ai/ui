@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/hibiscus" element={
             <>
               <SignedIn>
-                <AgentRegistry />
+                <Hibiscuspage />
               </SignedIn>
               <SignedOut>
                 <RedirectToSignIn />

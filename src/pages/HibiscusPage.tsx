@@ -1,5 +1,6 @@
+
 import React, { useState, useRef, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/hibiscus/card";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { toast } from "sonner";
@@ -20,7 +21,15 @@ import {
   ArrowUpDown
 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
-import  Footer  from "@/components/Footer";
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious 
+} from "@/components/ui/pagination";
+
 
 // Tags data for the new section
 const popularTags = [
@@ -45,6 +54,8 @@ const page = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
   const [selectedQuickFilter, setSelectedQuickFilter] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 8;
   
   const handleFilterClick = (filter: string) => {
     setSelectedFilters(prev =>
@@ -97,6 +108,12 @@ const page = () => {
         return 0;
     }
   });
+
+  // Calculate pagination
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = filteredAgents.slice(indexOfFirstCard, indexOfLastCard);
+  const totalPages = Math.ceil(filteredAgents.length / cardsPerPage);
   
   const handleAgentClick = (agent: typeof agents[0]) => {
     setSelectedAgent(agent);
@@ -118,65 +135,71 @@ const page = () => {
   };
   
   // Update the handleQuickFilter function
-const handleQuickFilter = (value: string) => {
-  // If we're clearing the filter (clicking X), reset everything related to this filter
-  if (selectedQuickFilter === value) {
-    setSelectedQuickFilter(null);
-    // Reset the specific filter's effects
+  const handleQuickFilter = (value: string) => {
+    // If we're clearing the filter (clicking X), reset everything related to this filter
+    if (selectedQuickFilter === value) {
+      setSelectedQuickFilter(null);
+      // Reset the specific filter's effects
+      switch (value) {
+        case 'popular':
+          setSortOption('name');
+          break;
+        case 'recent':
+          setSortOption('name');
+          break;
+        case 'active':
+          setSelectedFilters(prev => prev.filter(f => f !== 'Active'));
+          break;
+        case 'performance':
+          setSelectedTags(prev => prev.filter(t => t !== 'Performance'));
+          break;
+        case 'integration':
+          setSelectedTags(prev => prev.filter(t => t !== 'API Integration'));
+          break;
+        case 'learning':
+          setSelectedTags(prev => prev.filter(t => t !== 'Machine Learning'));
+          break;
+      }
+      return;
+    }
+
+    // If setting a new filter
+    setSelectedQuickFilter(value);
     switch (value) {
       case 'popular':
-        setSortOption('name');
+        setSortOption('popularity');
         break;
       case 'recent':
-        setSortOption('name');
+        setSortOption('date');
         break;
       case 'active':
-        setSelectedFilters(prev => prev.filter(f => f !== 'Active'));
+        setSelectedFilters(prev => 
+          prev.includes('Active') ? prev : [...prev, 'Active']
+        );
         break;
       case 'performance':
-        setSelectedTags(prev => prev.filter(t => t !== 'Performance'));
+        setSelectedTags(prev =>
+          prev.includes('Performance') ? prev : [...prev, 'Performance']
+        );
         break;
       case 'integration':
-        setSelectedTags(prev => prev.filter(t => t !== 'API Integration'));
+        setSelectedTags(prev =>
+          prev.includes('API Integration') ? prev : [...prev, 'API Integration']
+        );
         break;
       case 'learning':
-        setSelectedTags(prev => prev.filter(t => t !== 'Machine Learning'));
+        setSelectedTags(prev =>
+          prev.includes('Machine Learning') ? prev : [...prev, 'Machine Learning']
+        );
         break;
     }
-    return;
-  }
+  };
 
-  // If setting a new filter
-  setSelectedQuickFilter(value);
-  switch (value) {
-    case 'popular':
-      setSortOption('popularity');
-      break;
-    case 'recent':
-      setSortOption('date');
-      break;
-    case 'active':
-      setSelectedFilters(prev => 
-        prev.includes('Active') ? prev : [...prev, 'Active']
-      );
-      break;
-    case 'performance':
-      setSelectedTags(prev =>
-        prev.includes('Performance') ? prev : [...prev, 'Performance']
-      );
-      break;
-    case 'integration':
-      setSelectedTags(prev =>
-        prev.includes('API Integration') ? prev : [...prev, 'API Integration']
-      );
-      break;
-    case 'learning':
-      setSelectedTags(prev =>
-        prev.includes('Machine Learning') ? prev : [...prev, 'Machine Learning']
-      );
-      break;
-  }
-};
+  // Function to handle page change
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -192,47 +215,40 @@ const handleQuickFilter = (value: string) => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, nameFilter, selectedFilters, selectedTags, sortOption]);
+  
+  const handleLoginClick = () => {
+    setShowLoginDialog(true);
+  };
   
   return (
     <div className="min-h-screen">
       
-      <Navbar/>
+      <Navbar />
       <section className="pt-28 py-2 relative animate-on-scroll">
-        <div className="px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex justify-between items-center w-full">
             <div className="text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-black font-[var(--font-heading)]">
-                Hibiscus Registry
-              </h1>
-              <p className="mt-2 text-lg text-gray-600 font-[var(--font-body)] text-nowrap mb-3">
+              <div className="flex items-center gap-3">
+  <img src="/hibiscuslogo.png" className="size-20"/>
+  <h1 className="-ml-5 text-4xl font-bold tracking-tight text-black font-[var(--font-heading)]">
+    Hibiscus 
+  </h1>
+</div>
+              <p className="-mt-3 ml-5 text-lg text-gray-600 font-[var(--font-body)] text-nowrap mb-3">
                 Discover and connect with powerful AI agents across the Pebble network ecosystem.
               </p>
             </div>
             
-            {/* <div className="flex gap-3">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="bg-black text-white hover:bg-black/90 border-black flex items-center h-10 px-4"
-                onClick={() => window.open('https://pebbling.com/server', '_blank')}
-              >
-                <Server className="mr-1.5 h-4 w-4" />
-                Launch your MCP Server
-              </Button>
-              
-              <Button
-                variant="outline"
-                className="bg-black hover:bg-black/90 text-white font-medium shadow-sm transition-all duration-200 px-6 py-2.5 rounded-md"
-                onClick={() => setShowCreateAgentDialog(true)}
-              >
-                <Bot className="mr-2 h-5 w-5" />
-                Create Agent
-              </Button>
-            </div> */}
+           
           </div>
           
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center rounded-full">
             <div className="w-full relative group" onClick={focusSearch}>
               <Search 
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" 
@@ -241,7 +257,7 @@ const handleQuickFilter = (value: string) => {
                 ref={searchInputRef}
                 type="text"
                 placeholder="Search by agent name, type, or capabilities..."
-                className="pl-10 py-6 text-base border-gray-200 hover:border-gray-300 focus:border-gray-400 focus:ring focus:ring-gray-100 transition-all duration-300 rounded-lg shadow-sm"
+                className="rounded-full pl-10 py-6 text-base  transition-all duration-300 shadow-sm"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -256,7 +272,7 @@ const handleQuickFilter = (value: string) => {
           />
           
           {/* Tags Section with X buttons for clearing */}
-          <div className="w-full px-4 pb-6 mb-5">
+          <div className="w-full px-4 mb-5">
             <div className="mx-auto">
               <div className="flex flex-wrap items-center justify-between">
                 {/* Left side - Quick filter tags */}
@@ -442,61 +458,107 @@ const handleQuickFilter = (value: string) => {
           </div>
           
           {filteredAgents.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-5 w-full">
-              {filteredAgents.map(agent => (
-                <Card 
-                  key={agent.id}
-                  className={`border cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-gray-400 relative overflow-hidden
-                    ${hoveredAgent === agent.id ? 'transform scale-[1.04] shadow-lg z-10' : 'hover:shadow-md'}
-                  `}
-                  onClick={() => handleAgentClick(agent)}
-                  onMouseEnter={() => setHoveredAgent(agent.id)}
-                  onMouseLeave={() => setHoveredAgent(null)}
-                >
-                  <div className="absolute inset-0 bg-white dark:bg-gray-900 pointer-events-none"/>
-                  <CardHeader className="flex flex-row items-center gap-3 pb-2 relative z-10">
-                    <div className={`p-2 rounded-lg transition-all duration-300 ${hoveredAgent === agent.id ? 'bg-gray-100 dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-800/70'}`}>
-                      {agent.icon}
-                    </div>
-                    <div>
-                      <CardTitle className="text-base text-black dark:text-white font-[var(--font-heading)]">{agent.name}</CardTitle>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 font-[var(--font-body)]">{agent.type}</p>
-                    </div>
-                    <div className={`ml-auto px-2 py-1 rounded-full text-xs font-medium transition-colors duration-300 
-                      ${agent.status === "Active" ? "bg-green-500/20 text-green-800 dark:bg-green-500/30 dark:text-green-400" : 
-                        agent.status === "Idle" ? "bg-amber-500/20 text-amber-800 dark:bg-amber-500/30 dark:text-amber-400" : 
-                        "bg-gray-500/20 text-gray-800 dark:bg-gray-500/30 dark:text-gray-400"}
-                    `}>
-                      {agent.status}
-                    </div>
-                  </CardHeader>
-                  <CardContent className="relative z-10">
-                    <div className="space-y-2">
-                      <p className="text-xs text-gray-600 dark:text-gray-300 line-clamp-2 font-[var(--font-body)]">{agent.description}</p>
-                      <div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mb-1 font-[var(--font-body)]">Capabilities:</p>
-                        <div className="flex flex-wrap gap-1">
-                          {agent.capabilities.slice(0, 3).map((capability, idx) => (
-                            <span 
-                              key={idx} 
-                              className="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600"
-                              title={capability.description}
-                            >
-                              {capability.name}
-                            </span>
-                          ))}
-                          {agent.capabilities.length > 3 && (
-                            <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">
-                              +{agent.capabilities.length - 3}
-                            </span>
-                          )}
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5 w-full">
+                {currentCards.map(agent => (
+                  <Card 
+                    key={agent.id}
+                    agentId={agent.id}
+                    className={`cursor-pointer transition-all duration-300 hover:shadow-xl border-none relative overflow-hidden rounded-2xl h-fit
+                      ${hoveredAgent === agent.id ? 'transform scale-[1.03] shadow-lg z-10' : ''}
+                    `}
+                    onClick={() => handleAgentClick(agent)}
+                    onMouseEnter={() => setHoveredAgent(agent.id)}
+                    onMouseLeave={() => setHoveredAgent(null)}
+                  >
+                    <div className="absolute inset-0 bg-opacity-20 bg-black backdrop-brightness-75 pointer-events-none"/>
+                    <CardHeader className="relative z-10 pb-0">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <div className={`flex items-center justify-center h-8 w-8 bg-white/20 backdrop-blur-sm rounded-md text-white`}>
+                            {agent.icon}
+                          </div>
+                        </div>
+                        <div className={`px-2 py-1 rounded-full text-xs font-medium bg-white/20 text-white backdrop-blur-sm`}>
+                          {agent.status}
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                      <CardTitle className="text-lg mt-8 mb-2 text-white font-bold">
+                        {agent.name}
+                      </CardTitle>
+                      <p className="text-sm text-white/90 font-light mb-1 line-clamp-2">{agent.description}</p>
+                    </CardHeader>
+                    <CardContent className="relative z-10">
+                      <div className="mt-auto">
+                        <div className="flex items-center gap-2 mt-4">
+                          <div className="flex items-center space-x-1">
+                            <span className="text-xs text-white/80">{agent.createdBy}</span>
+                          </div>
+                          <div className="ml-auto text-xs text-white/80">
+                            {agent.dateCreated}
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Pagination Component */}
+              {totalPages > 1 && (
+                <div className="w-full flex justify-center mt-8 mb-8">
+                  <Pagination>
+                    <PaginationContent>
+                      <PaginationItem>
+                        <PaginationPrevious 
+                          onClick={() => goToPage(Math.max(1, currentPage - 1))} 
+                          className={currentPage === 1 ? "pointer-events-none opacity-50" : ""}
+                        />
+                      </PaginationItem>
+                      
+                      {Array.from({ length: totalPages }).map((_, index) => {
+                        const pageNumber = index + 1;
+                        
+                        // Show first page, last page, and pages around current page
+                        if (
+                          pageNumber === 1 || 
+                          pageNumber === totalPages || 
+                          (pageNumber >= currentPage - 1 && pageNumber <= currentPage + 1)
+                        ) {
+                          return (
+                            <PaginationItem key={pageNumber}>
+                              <PaginationLink 
+                                onClick={() => goToPage(pageNumber)}
+                                isActive={currentPage === pageNumber}
+                              >
+                                {pageNumber}
+                              </PaginationLink>
+                            </PaginationItem>
+                          );
+                        }
+                        
+                        // Show ellipsis for gaps
+                        if (
+                          (pageNumber === 2 && currentPage > 3) || 
+                          (pageNumber === totalPages - 1 && currentPage < totalPages - 2)
+                        ) {
+                          return <PaginationItem key={pageNumber}>...</PaginationItem>;
+                        }
+                        
+                        return null;
+                      })}
+                      
+                      <PaginationItem>
+                        <PaginationNext 
+                          onClick={() => goToPage(Math.min(totalPages, currentPage + 1))}
+                          className={currentPage === totalPages ? "pointer-events-none opacity-50" : ""}
+                        />
+                      </PaginationItem>
+                    </PaginationContent>
+                  </Pagination>
+                </div>
+              )}
+            </>
           ) : (
             <div className="text-center py-12 bg-white rounded-lg border border-gray-100 shadow-sm">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
@@ -512,7 +574,7 @@ const handleQuickFilter = (value: string) => {
           )}
         </div>
       </section>
-      <Footer/>
+      
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
         <DialogContent className="max-w-md">
@@ -786,3 +848,4 @@ const handleQuickFilter = (value: string) => {
 };
 
 export default page;
+

@@ -43,7 +43,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white animate-on-scroll opacity-0" id="faq">
+    <section className="" id="faq">
       <div className="section-container">
         <div className="text-center mb-12">
          
