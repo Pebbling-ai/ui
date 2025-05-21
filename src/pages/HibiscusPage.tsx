@@ -20,6 +20,7 @@ import {
   ArrowUpDown
 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import  Footer  from "@/components/Footer";
 
 // Tags data for the new section
 const popularTags = [
@@ -511,7 +512,7 @@ const handleQuickFilter = (value: string) => {
           )}
         </div>
       </section>
-      
+      <Footer/>
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
         <DialogContent className="max-w-md">
