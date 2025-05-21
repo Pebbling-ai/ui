@@ -6,6 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Layers3, Zap, Brain, ArrowRight, GitFork, Code2, Eye, MessageSquare, ShieldCheck, Star, Lightbulb } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import  PebblingTerminalDemo  from '@/components/PebblingTerminalDemo';
+import { Globe } from '@/components/ui/globe';
+import { ExternalLink,Code,Database } from 'lucide-react';
+import AgentRegistry from '@/components/AgentRegistry';
 const Section: React.FC<{ title: string; subtitle?: string; children: React.ReactNode; className?: string; id?: string }> = ({ title, subtitle, children, className, id }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +49,19 @@ const Section: React.FC<{ title: string; subtitle?: string; children: React.Reac
     </section>
   );
 };
-
+function Feature({ number, title, description }: { number?: string; title: string; description: string }) {
+  return (
+    <div className="max-w-2xl group p-6">
+     {number && (
+        <div className="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-900 text-sm font-medium text-white">
+          {number}
+        </div>
+      )}
+      <h1 className="text-lg md:text-xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">{title}</h1>
+      <p className="text-sm leading-relaxed text-gray-600">{description}</p>
+    </div>
+  )
+}
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; description: string; className?: string }> = ({ icon, title, description, className }) => (
   <Card className={cn("bg-white shadow-card hover:shadow-hover transition-shadow duration-300 rounded-xl", className)}>
     <CardContent className="p-6 flex flex-col items-center text-center">
@@ -80,7 +95,7 @@ const PebblingProtocolPage = () => {
       <Navbar />
       <main className="flex-grow pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="py-20 md:py-32  text-black text-center">
+        {/* <section className="py-20 md:py-32  text-black text-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
             <Layers3 className="w-16 h-16 md:w-20 md:h-20 text-black mx-auto mb-6" />
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-satoshi font-extrabold mb-6">
@@ -93,25 +108,205 @@ const PebblingProtocolPage = () => {
               Explore Documentation <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-        </section>
+        </section> */}
+        <section className='relative container mx-auto section-container px-4 sm:px-6 lg:px-8 grid gap-20 items-center'>
+          <div className='lg:grid grid-cols-2 gap-x-8 xl:gap-x-16 items-start'>
+            <div className='relative lg:max-w-xl space-y-4 lg:pb-20'>
+              <h1 className='text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in '>
+                <p>Full Stack Sandboxes</p>
+                <p>Fly.io Metal</p>
+              </h1>
+              <p className='text-lg'>
+            Fly Machines are hardware-virtualized containers with a REST API, that can run any Docker image on our custom-built global cloud in 35 regions. Launch instantly and keep them running as long as you want them to – for a single HTTP request, or weeks of uptime.
+          </p>
+          <div className='hidden lg:block w-full h-px absolute bottom-0 bg-gradient-to-r from-navy-400 via-navy-400/[0.35] via-10% to-transparent'>
 
-        {/* What is Pebbling Protocol? */}
-        <Section title="What is Pebbling Protocol?" subtitle="The backbone of intelligent agent communication and state management." id="what-is">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="prose prose-lg text-gray-700 max-w-none">
-              <p>
-                The Pebbling Protocol is a sophisticated yet elegant system designed to orchestrate the flow of information and contextual understanding among multiple AI agents. Think of it as a shared nervous system for your AI workforce, allowing them to build upon each other's work, maintain a consistent understanding of tasks, and adapt dynamically to evolving scenarios.
-              </p>
-              <p>
-                It moves beyond simple message passing, enabling agents to share, interpret, and update a distributed "context pebble" – a lightweight, structured piece of information that represents the current state of a task or conversation. This allows for complex, multi-agent workflows that feel intuitive and remarkably human-like.
-              </p>
+          </div>
             </div>
-            <div className="p-8 bg-white rounded-xl shadow-card flex items-center justify-center">
-              {/* Placeholder for a simple diagram or visual */}
-              <GitFork className="w-32 h-32 text-black " />
+            <img src="https://fly.io/phx/ui/images/fly-globe-cb332f77ddb429aa3ef4e0a2c6c592ba.png?vsn=d" className='w-full max-w-sm -mb-12 mx-auto relative lg:-mt-4'/>
+          </div>
+          <div className='grid lg:grid-cols-2 gap-y-16 gap-x-8 xl:gap-x-16'>
+            <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
+              <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
+              <Eye className='size-12'/>
+              </div>
+              <div>
+                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+              User-Specific Routing
+            </h2>
+            <p className='mt-4 text-base'>
+              
+              Route each user (or robot) to their own dedicated sandbox with
+              
+            </p>
+              </div>
+            </div>
+             <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
+              <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
+              <Eye className='size-12'/>
+              </div>
+              <div>
+                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+              User-Specific Routing
+            </h2>
+            <p className='mt-4 text-base'>
+              
+              Route each user (or robot) to their own dedicated sandbox with
+              
+            </p>
+              </div>
+            </div>
+             <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
+              <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
+              <Eye className='size-12'/>
+              </div>
+              <div>
+                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+              User-Specific Routing
+            </h2>
+            <p className='mt-4 text-base'>
+              
+              Route each user (or robot) to their own dedicated sandbox with
+              
+            </p>
+              </div>
+            </div>
+             <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
+              <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
+              <Eye className='size-12'/>
+              </div>
+              <div>
+                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+              User-Specific Routing
+            </h2>
+            <p className='mt-4 text-base'>
+              
+              Route each user (or robot) to their own dedicated sandbox with
+              
+            </p>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
+        <AgentRegistry/>
+        <section className="py-20 ">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto mb-16 text-center">
+              <h1 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">How it Works</h1>
+              <p className="text-lg text-gray-600">
+                Effortlessly enhance your apps with powerful AI-driven capabilities
+              </p>
+            </div>
+            
+            {/* Shared State Feature */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div className="flex flex-col justify-center">
+                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Step:1</h2>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Search your Agents</h3>
+                  <p className="text-gray-600 mb-6">
+                    With a single line of code, your application can see everything the agent is doing, and the agent can see everything that happens inside the application.
+                  </p>
+                  {/* <div className="flex items-center">
+                    <Button variant="outline" className="flex items-center gap-2">
+                      Learn more about Shared State
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </div> */}
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md bg-gray-50 p-4">
+                  <img 
+                    src="/hibiscussearch.png" 
+                    alt="Shared State Visualization" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            {/* How It Works Diagram */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm mb-12 border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">Step:2</h2>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Activate and customize according to your need </h3>
+              
+              <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-4 bg-gray-50 rounded-xl">
+                <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-3">
+                    <Database className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="font-medium">LANGUAGE AGENT</span>
+                </div>
+                
+                <div className="w-full md:w-20 h-1 md:h-20 flex md:flex-col items-center justify-center">
+                  <div className="w-full h-0.5 md:w-0.5 md:h-full bg-gray-300"></div>
+                  <div className="hidden md:block absolute w-3 h-3 rounded-full bg-gray-800"></div>
+                </div>
+                
+                <div className="flex-1 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                  <div className="text-center mb-4">
+                    <span className="text-sm font-medium text-gray-500">COMMUNICATION PROTOCOL</span>
+                  </div>
+                  <div className="grid grid-cols-5 gap-2 items-center">
+                    {Array(5).fill(0).map((_, i) => (
+                      <div key={i} className="h-6 rounded bg-gray-200"></div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="w-full md:w-20 h-1 md:h-20 flex md:flex-col items-center justify-center">
+                  <div className="w-full h-0.5 md:w-0.5 md:h-full bg-gray-300"></div>
+                  <div className="hidden md:block absolute w-3 h-3 rounded-full bg-gray-800"></div>
+                </div>
+                
+                <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-3">
+                    <Code className="h-8 w-8 text-white" />
+                  </div>
+                  <span className="font-medium">CLIENT</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Agentive UI Feature */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div className="order-2 lg:order-1">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
+                      <div className="mb-3 text-sm font-medium text-gray-500">CLIENT APP</div>
+                      {Array(3).fill(0).map((_, i) => (
+                        <div key={i} className="h-8 bg-white rounded mb-2 flex items-center px-3">
+                          <div className="w-4 h-4 rounded-full bg-gray-300 mr-2"></div>
+                          <div className="h-3 w-24 bg-gray-200 rounded"></div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
+                      <div className="mb-3 text-sm font-medium text-gray-500">AGENT</div>
+                      <div className="h-12 bg-white rounded mb-2"></div>
+                      <div className="h-20 bg-white rounded"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="order-1 lg:order-2 flex flex-col justify-center">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4 ">Step:3</h2>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Let them handle your tasks </h3>
+                  <p className="text-gray-600 mb-6">
+                    Teach the agent to use your tools to help users accomplish their tasks in the most intuitive way.
+                  </p>
+                  <div className="flex items-center">
+                    <Button variant="outline" className="flex items-center gap-2">
+                      Let's explore Hibiscus
+                      <ExternalLink className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Why It Matters */}
         <Section title="Why It Matters" subtitle="Unlock new levels of AI capability and efficiency." id="why-it-matters" className="bg-white">
@@ -149,50 +344,7 @@ const PebblingProtocolPage = () => {
           </div>
         </Section>
         
-        {/* How It Works */}
-        <Section title="How It Works" subtitle="A step-by-step look at the flow of contextual information." id="how-it-works">
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-10">
-              <Step 
-                stepNumber={1}
-                icon={<MessageSquare />}
-                title="Context Pebble Creation"
-                description="An initial 'context pebble' is generated, encapsulating the starting parameters, goals, or data for a task."
-              />
-              <Step 
-                stepNumber={2}
-                icon={<GitFork />}
-                title="Agent Interaction & Augmentation"
-                description="Agents interact with the pebble, reading its current state, performing their specialized function, and augmenting it with new information or insights."
-              />
-              <Step 
-                stepNumber={3}
-                icon={<Layers3 />}
-                title="Protocol-Managed Propagation"
-                description="The Pebbling Protocol manages how the updated pebble is passed to subsequent agents, ensuring orderly and relevant information flow based on predefined or dynamic rules."
-              />
-              <Step 
-                stepNumber={4}
-                icon={<ShieldCheck />}
-                title="State Synchronization & Resolution"
-                description="Mechanisms within the protocol handle potential conflicts or divergences, ensuring a coherent and synchronized state is maintained across the agent network."
-              />
-              <Step 
-                stepNumber={5}
-                icon={<Brain />}
-                title="Intelligent Task Completion"
-                description="The process continues until the task goals are met, with the final pebble representing the collective intelligence and work of the agent ensemble."
-              />
-            </div>
-            {/* Placeholder for more detailed infographic or animation */}
-            {/* <div className="mt-12 p-8  rounded-xl text-center">
-              <p className="text-black">
-                [Animated infographic or interactive diagram illustrating the flow will be here]
-              </p>
-              <Eye className="w-16 h-16 text-gray-400 mx-auto mt-4" />
-            </div> */}
-          </div>
-        </Section>
+        
 
         {/* Real-Time Demo or Visualization */}
         <Section title="Protocol in Action" subtitle="See how the Pebbling Protocol is used in Hibiscus." id="demo" className=" text-black">
@@ -201,27 +353,6 @@ const PebblingProtocolPage = () => {
           </div>
         </Section>
 
-        {/* Where It’s Used in Hibiscus */}
-        <Section title="Where It’s Used in Hibiscus" subtitle="Powering intelligent features within our ecosystem." id="use-cases">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="p-8 bg-white rounded-xl shadow-card flex items-center justify-center">
-                <img src="/lovable-uploads/c3d5522b-6886-4b75-8ffc-d020016bb9c2.png" alt="Hibiscus Integration" className="max-w-xs md:max-w-sm rounded-lg"/>
-            </div>
-            <div className="prose prose-lg text-gray-700 max-w-none">
-              <p>
-                The Pebbling Protocol is not just a theoretical concept; it's the core engine driving many of Hibiscus's advanced AI capabilities. From coordinating multiple specialized agents for complex project management to ensuring seamless handoffs in our conversational AI, Pebbling is what makes Hibiscus truly intelligent and adaptive.
-              </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li><strong>Multi-Agent Task Orchestration:</strong> Coordinating creative, analytical, and automation agents.</li>
-                <li><strong>Context-Aware Chatbots:</strong> Maintaining conversation history and user intent across interactions.</li>
-                <li><strong>Dynamic Workflow Automation:</strong> Adapting automated processes based on real-time data and agent feedback.</li>
-              </ul>
-              <Button variant="link" className="text-purple-600 hover:text-purple-800 px-0">
-                Learn more about Hibiscus Features <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </Section>
       </main>
       <Footer />
     </div>
