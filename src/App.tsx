@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ReactLenis } from 'lenis/react';
+import 'lenis/dist/lenis.css';
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PricingPage from "./pages/PricingPage";
@@ -19,7 +21,8 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    <ReactLenis root>
+      <BrowserRouter>
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -44,7 +47,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ReactLenis>
   </QueryClientProvider>
 );
 
