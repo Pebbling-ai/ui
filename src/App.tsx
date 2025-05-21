@@ -14,36 +14,36 @@ import AuthCallback from "./pages/AuthCallback";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import NetworkPage from "./pages/NetworkPage";
 import PebblingProtocolPage from "./pages/PebblingProtocolPage";
+import Hibiscuspage from "./pages/HibiscusPage"
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/hibiscus" element={
-              <>
-                <SignedIn>
-                  <AgentRegistry />
-                </SignedIn>
-                <SignedOut>
-                  <RedirectToSignIn />
-                </SignedOut>
-              </>
-            } />
-            <Route path="/articles" element={<ArticlesPage />} />
-            <Route path="/product" element={<ProductPage />} />
-            <Route path="/auth/callback" element={<AuthCallback />} />
-            <Route path="/network" element={<NetworkPage />} />
-            <Route path="/pebbling" element={<PebblingProtocolPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </TooltipProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/hibiscus" element={
+            <>
+              <SignedIn>
+                <AgentRegistry />
+              </SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>
+          } />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/network" element={<NetworkPage />} />
+          <Route path="/pebbling" element={<PebblingProtocolPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </TooltipProvider>
     </BrowserRouter>
   </QueryClientProvider>
 );

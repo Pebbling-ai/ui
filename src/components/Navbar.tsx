@@ -78,7 +78,7 @@ const Navbar = () => {
             Pebbling Protocol
           </Link>
           <Link 
-            to="/product" 
+            to="/hibiscus" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Hibiscus
@@ -96,12 +96,13 @@ const Navbar = () => {
           >
             Articles
           </Link>
-          <Link 
-            to="/#details" 
+          <a 
+            href="https://hibiscus-docs-production.up.railway.app" 
+            target="_blank"
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Docs
-          </Link>
+          </a>
           <Link 
             to="/network" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
