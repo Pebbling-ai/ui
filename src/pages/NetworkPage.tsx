@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NetworkMetrics from "@/components/NetworkMetrics";
+import NetworkMetrics from "@/components/NetworkMetrices";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart";

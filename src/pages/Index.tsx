@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
 import ProductShowcase from "@/components/ProductShowcase";
-import NetworkMetrics from "@/components/NetworkMetrics";
+import NetworkMetrics from "@/components/NetworkMetrices";
 import AgentRegistry from "@/components/AgentRegistry";
 import GitHubSection from "@/components/GitHubSection";
 import HumanoidSection from "@/components/HumanoidSection";
@@ -95,7 +95,7 @@ const Index = () => {
         <ProductShowcase />
         <ExampleUseCases />
         <AgentRegistry />
-        <Features/>
+        {/* <Features/> */}
         <NetworkMetrics />
         <ProductTimeline />
         <GitHubSection />
