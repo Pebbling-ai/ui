@@ -4,16 +4,12 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { AuthModal } from "./auth/AuthModal";
-import { UserProfile } from "./auth/UserProfile";
-import { useAuthModal } from "@/hooks/useAuthModal";
-import { useAuth } from "@/lib/auth-context";
+import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isOpen, openModal, closeModal } = useAuthModal();
-  const { user } = useAuth();
+  const { openSignIn, redirectToSignIn } = useClerk();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,9 +135,10 @@ const Navbar = () => {
         </div>
         {/* Desktop Auth Button or User Profile */}
         <div className="hidden md:flex items-center space-x-4">
-          {user ? (
-            <UserProfile />
-          ) : (
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
+          <SignedOut>
             <Button 
               className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
               style={{
@@ -154,11 +151,11 @@ const Navbar = () => {
                 padding: '16px 24px',
                 border: '1px solid white',
               }}
-              onClick={openModal}
+              onClick={() => redirectToSignIn()}
             >
               Join Us
             </Button>
-          )}
+          </SignedOut>
         </div>
 
         {/* Mobile menu button */}
@@ -244,7 +241,7 @@ const Navbar = () => {
           </Link>
           
           {/* Mobile Auth Button */}
-          {!user && (
+          <SignedOut>
             <Button 
               className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4"
               style={{
@@ -253,17 +250,16 @@ const Navbar = () => {
                 lineHeight: '20px',
               }}
               onClick={() => {
-                closeModal();
-                openModal();
                 handleMobileMenuItemClick();
+                redirectToSignIn();
               }}
             >
               Access Hibiscus
             </Button>
-          )}
+          </SignedOut>
           
           {/* Mobile User Profile Section */}
-          {user && (
+          <SignedIn>
             <div className="w-full mt-4 flex justify-center">
               <Button 
                 className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full"
@@ -280,11 +276,10 @@ const Navbar = () => {
                 Dashboard
               </Button>
             </div>
-          )}
+          </SignedIn>
         </nav>
       </div>
-      {/* Auth Modal */}
-      <AuthModal isOpen={isOpen} onClose={closeModal} />
+      {/* Clerk handles the auth modals automatically */}
     </header>
   );
 };
