@@ -34,13 +34,13 @@ const filters = [
   "Anomaly detection",
   "Query response",
   "Knowledge retrieval",
-  "Task automation",
-  "Energy management",
-  "Load balancing",
-  "Consumption analysis",
-  "Data synchronization",
-  "Format conversion",
-  "Schema mapping"
+  // "Task automation",
+  // "Energy management",
+  // "Load balancing",
+  // "Consumption analysis",
+  // "Data synchronization",
+  // "Format conversion",
+  // "Schema mapping"
 ];
 
 const filterIcons: { [key: string]: React.ReactNode } = {
@@ -55,13 +55,13 @@ const filterIcons: { [key: string]: React.ReactNode } = {
   "Anomaly detection": <AlertTriangle size={20} />,
   "Query response": <MessageCircle size={20} />,
   "Knowledge retrieval": <BookOpen size={20} />,
-  "Task automation": <PlayCircle size={20} />,
-  "Energy management": <Zap size={20} />,
-  "Load balancing": <Shuffle size={20} />,
-  "Consumption analysis": <BarChart size={20} />,
-  "Data synchronization": <Repeat size={20} />,
-  "Format conversion": <FileText size={20} />,
-  "Schema mapping": <Grid3X3 size={20} />
+  // "Task automation": <PlayCircle size={20} />,
+  // "Energy management": <Zap size={20} />,
+  // "Load balancing": <Shuffle size={20} />,
+  // "Consumption analysis": <BarChart size={20} />,
+  // "Data synchronization": <Repeat size={20} />,
+  // "Format conversion": <FileText size={20} />,
+  // "Schema mapping": <Grid3X3 size={20} />
 };
 type SortOption = 'name' | 'status' | 'date' | 'popularity';
 export default function FilterBarUI({

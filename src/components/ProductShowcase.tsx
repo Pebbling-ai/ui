@@ -3,10 +3,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
-
+import { Link } from "react-router-dom";
 const ProductShowcase = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-white">
+    <section className="section-container">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           
@@ -50,7 +50,7 @@ const ProductShowcase = () => {
                   </ul>
                 </div>
                 
-                <div className="w-full md:w-2/5 relative">
+                {/* <div className="w-full md:w-2/5 relative">
                   <div className="aspect-square overflow-hidden rounded-lg p-4 bg-gray-50">
                     <img 
                       src="/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png" 
@@ -58,11 +58,12 @@ const ProductShowcase = () => {
                       className="object-contain w-full h-full"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </CardContent>
             
             <CardFooter className="pt-4">
+              <Link to="/pebbling">
               <Button 
                 variant="ghost" 
                 className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
@@ -70,6 +71,7 @@ const ProductShowcase = () => {
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
+              </Link>
             </CardFooter>
           </Card>
           
@@ -104,7 +106,7 @@ const ProductShowcase = () => {
                   </ul>
                 </div>
                 
-                <div className="w-full md:w-2/5 relative">
+                {/* <div className="w-full md:w-2/5 relative">
                   <div className="aspect-square overflow-hidden rounded-lg bg-gray-50 p-4 relative">
                     <img 
                       src="/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png" 
@@ -112,11 +114,12 @@ const ProductShowcase = () => {
                       className="object-contain w-full h-full"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </CardContent>
             
             <CardFooter className="pt-4">
+              <Link to="/hibiscus">
               <Button 
                 variant="ghost" 
                 className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
@@ -124,6 +127,7 @@ const ProductShowcase = () => {
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
+              </Link>
             </CardFooter>
           </Card>
         </div>

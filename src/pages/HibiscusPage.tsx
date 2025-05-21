@@ -198,41 +198,45 @@ const handleQuickFilter = (value: string) => {
       
       <Navbar/>
       <section className="pt-28 py-2 relative animate-on-scroll">
-        <div className="px-4 sm:px-6 lg:px-8 w-full">
+        <div className="section-container">
           
           <div className="flex justify-between items-center w-full">
             <div className="text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-black font-[var(--font-heading)]">
-                Hibiscus Registry
-              </h1>
+              <div className="flex items-center gap-3">
+  <svg 
+    width="40" 
+    height="40" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className="text-pink-600"
+  >
+    <path
+      d="M12 2C7.58172 2 4 5.58172 4 10C4 14.4183 7.58172 18 12 18C16.4183 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2ZM12 4C15.3137 4 18 6.68629 18 10C18 13.3137 15.3137 16 12 16C8.68629 16 6 13.3137 6 10C6 6.68629 8.68629 4 12 4Z"
+      fill="currentColor"
+    />
+    <path
+      d="M12 6C9.79086 6 8 7.79086 8 10C8 12.2091 9.79086 14 12 14C14.2091 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6ZM12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12C10.8954 12 10 11.1046 10 10C10 8.89543 10.8954 8 12 8Z"
+      fill="currentColor"
+    />
+    <path
+      d="M12 22C14.2091 22 16 20.2091 16 18H8C8 20.2091 9.79086 22 12 22Z"
+      fill="currentColor"
+    />
+  </svg>
+  <h1 className="text-4xl font-bold tracking-tight text-black font-[var(--font-heading)]">
+    Hibiscus 
+  </h1>
+</div>
               <p className="mt-2 text-lg text-gray-600 font-[var(--font-body)] text-nowrap mb-3">
                 Discover and connect with powerful AI agents across the Pebble network ecosystem.
               </p>
             </div>
             
-            {/* <div className="flex gap-3">
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="bg-black text-white hover:bg-black/90 border-black flex items-center h-10 px-4"
-                onClick={() => window.open('https://pebbling.com/server', '_blank')}
-              >
-                <Server className="mr-1.5 h-4 w-4" />
-                Launch your MCP Server
-              </Button>
-              
-              <Button
-                variant="outline"
-                className="bg-black hover:bg-black/90 text-white font-medium shadow-sm transition-all duration-200 px-6 py-2.5 rounded-md"
-                onClick={() => setShowCreateAgentDialog(true)}
-              >
-                <Bot className="mr-2 h-5 w-5" />
-                Create Agent
-              </Button>
-            </div> */}
+           
           </div>
           
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center rounded-full">
             <div className="w-full relative group" onClick={focusSearch}>
               <Search 
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" 
@@ -241,7 +245,7 @@ const handleQuickFilter = (value: string) => {
                 ref={searchInputRef}
                 type="text"
                 placeholder="Search by agent name, type, or capabilities..."
-                className="pl-10 py-6 text-base border-gray-200 hover:border-gray-300 focus:border-gray-400 focus:ring focus:ring-gray-100 transition-all duration-300 rounded-lg shadow-sm"
+                className="rounded-full pl-10 py-6 text-base  transition-all duration-300 shadow-sm"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />

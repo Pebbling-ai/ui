@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NetworkMetrics from "@/components/NetworkMetrices";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CompactNetworkMetrics from "@/components/CompactNetworkMetrics";
+import CompactNetworkMetrics from "@/components/CompactNetworkMetrices";
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 import { AreaChart, Area, LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Network, Activity, Zap, Database, Server, Globe, Shield, Clock } from "lucide-react";
