@@ -394,59 +394,10 @@ const testimonials = [
             </div>
           </div>
         </section>
-      <section className="w-full flex justify-center items-center py-20 ">
-  <div className="container mx-auto px-4">
-    {/* Value Proposition */}
-    <div className="mb-12 text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Why Pebblify Both Your Agent and MCP?
-      </h2>
-      <p className="text-lg text-gray-600">
-        Unlock seamless collaboration and maximum efficiency by integrating both your AI agents and MCP with Pebble. 
-        Experience unified communication, persistent storage, and dynamic routing—all designed to supercharge your workflows and deliver real business value.
-      </p>
-    </div>
-    {/* Feature Cards with Images */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-      {/* MCP Card */}
-      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
-        <img
-          src="/mcp-illustration.png"
-          alt="MCP"
-          className="mb-6 size-full object-contain rounded-lg shadow"
-        />
-        <FeatureCard
-          title="MCP"
-          description="Each user gets an isolated memory and dedicated sandbox. Dynamic request routing using the Fly Proxy and fly-replay."
-        />
-        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
-          Explore MCP
-          <ChevronRight className="ml-2 h-5 w-5" />
-        </Button>
-      </div>
-      {/* Agents Card */}
-      <div className="w-full flex flex-col items-center bg-white rounded-xl shadow p-8">
-        <img
-          src="/agent-illustration.png"
-          alt="Agents"
-          className="mb-6 size-full object-cover rounded-lg shadow"
-        />
-        <FeatureCard
-          title="Agents"
-          description="Each node of your app has isolated data. Stay near your users with Fly Volumes, Fly Managed Postgres, and S3-compatible Tigris files."
-        />
-        <Button className="w-fit mt-4 bg-gradient-to-r from-gray-800 to-black text-white rounded-lg px-8 py-6 text-lg">
-          See our agents
-          <ChevronRight className="ml-2 h-5 w-5" />
-        </Button>
-      </div>
-      
-    </div>
-  </div>
-</section>
+      <MCPDashboardSection/> 
         {/* <div className="block">
       <Feature />
-      {/* <MCPDashboardSection/> */}
+      
        
        
    

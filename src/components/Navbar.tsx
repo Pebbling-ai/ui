@@ -82,7 +82,7 @@ const Navbar = () => {
             Pebbling Protocol
           </Link>
           <Link 
-            to="/product" 
+            to="/hibiscus" 
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Hibiscus
