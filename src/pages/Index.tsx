@@ -3,22 +3,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import CompactNetworkMetrics from "@/components/CompactNetworkMetrices";
 import ProductShowcase from "@/components/ProductShowcase";
-import NetworkMetrics from "@/components/NetworkMetrices";
-import AgentRegistry from "@/components/AgentRegistry";
 import GitHubSection from "@/components/GitHubSection";
-import HumanoidSection from "@/components/HumanoidSection";
-import SpecsSection from "@/components/SpecsSection";
-import ImageShowcaseSection from "@/components/ImageShowcaseSection";
 import ProductTimeline from "@/components/ProductTimeline";
 import IntegrationSection from "@/components/IntegrationSection";
 import FAQSection from "@/components/FAQSection";
 import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
-import Features from "@/components/Features";
 import ExampleUseCases from "@/components/ExampleUseCases";
-import MadeByHumans from "@/components/MadeByHumans";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -93,19 +85,12 @@ const Index = () => {
         
         <ProductShowcase />
         <ExampleUseCases />
-        {/* <AgentRegistry /> */}
-        {/* <Features/> */}
-        {/* <NetworkMetrics /> */}
         <ProductTimeline />
         <GitHubSection />
         <IntegrationSection />
         <PricingSection />
         <FAQSection />
         <Testimonials />
-        
-        {/* <MadeByHumans /> */}
-        
-        {/* Add the new CTA section right before the footer */}
         <CTASection />
       </main>
       <Footer />

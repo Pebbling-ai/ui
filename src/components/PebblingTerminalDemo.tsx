@@ -220,7 +220,7 @@ EOF`, type: 'command', delay: 2000 },
     }, demoSequence[currentStep].delay);
 
     return () => clearTimeout(timer);
-  }, [currentStep, isRunning]);
+  }, [currentStep, isRunning, demoSequence]);
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border border-slate-700">
