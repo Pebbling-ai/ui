@@ -49,6 +49,9 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          railway up --service=${{ secrets.RAILWAY_SERVICE_ID }} --detach
-          # If you prefer to use a variable with a fallback like your example, ensure RAILS_SERVICE_ID is defined in GitHub repo/org variables:
-          # railway up --service=${{ vars.RAILWAY_SERVICE_ID || 'YOUR_DEFAULT_SERVICE_ID_HERE' }} --detach
+          # Login to Railway using the token
+          railway login ${{ secrets.RAILWAY_TOKEN }}
+          # Link the project using the service ID
+          railway link ${{ secrets.RAILWAY_SERVICE_ID }}
+          # Deploy the application
+          railway up --detach

@@ -198,14 +198,14 @@ const Navbar = () => {
           
           <Link 
             to="/pebbling" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
+            className="text-base font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation"
             onClick={handleMobileMenuItemClick}
           >
             Pebbling Protocol
           </Link>
           <Link 
             to="/hibiscus" 
-            className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
+            className="text-base font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation"
             onClick={handleMobileMenuItemClick}
           >
             Hibiscus
