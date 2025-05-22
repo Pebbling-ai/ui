@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { toast } from "sonner";
-import { Search, User, Network, Database, Activity, Zap } from "lucide-react";
+import { Search, User, Network, Database, Activity, Zap,ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Sample agents data
 const agents = [
@@ -81,10 +82,10 @@ const AgentRegistry = () => {
     setSelectedAgent(agent);
     setDialogOpen(true);
     // Show toast notification
-    toast("Feature Coming Soon", {
-      description: "The Hibiscus agent integration feature will be available soon!",
-      duration: 5000,
-    });
+    // toast("Feature Coming Soon", {
+    //   description: "The Hibiscus agent integration feature will be available soon!",
+    //   duration: 5000,
+    // });
   };
 
   const focusSearch = () => {
@@ -94,7 +95,7 @@ const AgentRegistry = () => {
   };
 
   return (
-    <section className="py-12 relative animate-on-scroll ">
+    <section className="section-container relative animate-on-scroll ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <h1 className=" text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">Hibiscus Registry</h1>
@@ -267,12 +268,14 @@ const AgentRegistry = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 bg-pulse-50 border border-pulse-100 rounded-lg">
-                  <p className="text-sm text-pulse-800">
-                    <span className="font-medium">Coming Soon:</span> Hibiscus will enable direct agent 
-                    integration, letting you deploy and manage agents across your network with full mTLS security.
-                  </p>
-                </div>
+                <Link 
+          to="/hibiscus" 
+          className="flex items-center justify-center gap-2 w-full bg-black text-white py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors"
+          onClick={() => setDialogOpen(false)}
+        >
+          Try on Hibiscus
+          <ExternalLink className="h-4 w-4" />
+        </Link>
               </>
             )}
           </DialogContent>

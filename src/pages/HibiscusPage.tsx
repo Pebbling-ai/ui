@@ -29,7 +29,7 @@ import {
   PaginationNext, 
   PaginationPrevious 
 } from "@/components/ui/pagination";
-
+import Footer from "@/components/Footer";
 
 // Tags data for the new section
 const popularTags = [
@@ -236,7 +236,7 @@ const page = () => {
             <div className="text-left">
               <div className="flex items-center gap-3">
   <img src="/hibiscuslogo.png" className="size-20"/>
-  <h1 className="-ml-5 text-4xl font-bold tracking-tight text-black font-[var(--font-heading)]">
+  <h1 className="-ml-5 text-4xl font-bold tracking-tight text-black ">
     Hibiscus 
   </h1>
 </div>
@@ -574,7 +574,7 @@ const page = () => {
           )}
         </div>
       </section>
-      
+      <Footer/>
       {/* Login Dialog */}
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
         <DialogContent className="max-w-md">

@@ -9,6 +9,8 @@ import  PebblingTerminalDemo  from '@/components/PebblingTerminalDemo';
 import { Globe } from '@/components/ui/globe';
 import { ExternalLink,Code,Database } from 'lucide-react';
 import AgentRegistry from '@/components/AgentRegistry';
+import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 const Section: React.FC<{ title: string; subtitle?: string; children: React.ReactNode; className?: string; id?: string }> = ({ title, subtitle, children, className, id }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -38,10 +40,10 @@ const Section: React.FC<{ title: string; subtitle?: string; children: React.Reac
   }, []);
   
   return (
-    <section ref={sectionRef} id={id} className={cn("py-16 md:py-24", className)}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} id={id} className={cn("", className)}>
+      <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-satoshi font-bold text-gray-900 mb-4">{title}</h2>
+          <h1 className="'text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in ">{title}</h1>
           {subtitle && <p className="text-lg md:text-xl text-gray-600">{subtitle}</p>}
         </div>
         {children}
@@ -109,7 +111,7 @@ const PebblingProtocolPage = () => {
             </Button>
           </div>
         </section> */}
-        <section className='relative container mx-auto section-container px-4 sm:px-6 lg:px-8 grid gap-20 items-center'>
+        <section className=' section-container '>
           <div className='lg:grid grid-cols-2 gap-x-8 xl:gap-x-16 items-start'>
             <div className='relative lg:max-w-xl space-y-4 lg:pb-20'>
               <h1 className='text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in '>
@@ -128,12 +130,12 @@ const PebblingProtocolPage = () => {
           <div className='grid lg:grid-cols-2 gap-y-16 gap-x-8 xl:gap-x-16'>
             <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
               <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
-              <Eye className='size-12'/>
+              <Eye className='size-7'/>
               </div>
               <div>
-                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+                <h1 className='text-lg font-bold tracking-tight text-gray-900 mb-6 animate-fade-in'>
               User-Specific Routing
-            </h2>
+            </h1>
             <p className='mt-4 text-base'>
               
               Route each user (or robot) to their own dedicated sandbox with
@@ -143,12 +145,12 @@ const PebblingProtocolPage = () => {
             </div>
              <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
               <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
-              <Eye className='size-12'/>
+              <Eye className='size-7'/>
               </div>
               <div>
-                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+                <h1 className='text-lg font-bold tracking-tight text-gray-900 mb-6 animate-fade-in'>
               User-Specific Routing
-            </h2>
+            </h1>
             <p className='mt-4 text-base'>
               
               Route each user (or robot) to their own dedicated sandbox with
@@ -158,12 +160,12 @@ const PebblingProtocolPage = () => {
             </div>
              <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
               <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
-              <Eye className='size-12'/>
+              <Eye className='size-7'/>
               </div>
               <div>
-                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+                 <h1 className='text-lg font-bold tracking-tight text-gray-900 mb-6 animate-fade-in'>
               User-Specific Routing
-            </h2>
+            </h1>
             <p className='mt-4 text-base'>
               
               Route each user (or robot) to their own dedicated sandbox with
@@ -173,12 +175,12 @@ const PebblingProtocolPage = () => {
             </div>
              <div className='group w-full relative grid grid-cols-auto-span items-start gap-8 text-left'>
               <div className='flex justify-center items-center shrink-0 bg-gradient-to-br ring-1 shadow-xl rounded-xl w-12 h-12 shadow-emerald-500/30 from-green-300/50 to-emerald-300/50 text-emerald-500 ring-emerald-500/35'>
-              <Eye className='size-12'/>
+              <Eye className='size-7'/>
               </div>
               <div>
-                <h2 className='font-heading text-lg md:text-1.5xl text-navy'>
+                 <h1 className='text-lg font-bold tracking-tight text-gray-900 mb-6 animate-fade-in'>
               User-Specific Routing
-            </h2>
+            </h1>
             <p className='mt-4 text-base'>
               
               Route each user (or robot) to their own dedicated sandbox with
@@ -189,7 +191,7 @@ const PebblingProtocolPage = () => {
           </div>
         </section>
         <AgentRegistry/>
-        <section className="py-20 ">
+        <section className="section-container">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto mb-16 text-center">
               <h1 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">How it Works</h1>
@@ -297,10 +299,12 @@ const PebblingProtocolPage = () => {
                     Teach the agent to use your tools to help users accomplish their tasks in the most intuitive way.
                   </p>
                   <div className="flex items-center">
+                    <Link to="/hibiscus">
                     <Button variant="outline" className="flex items-center gap-2">
                       Let's explore Hibiscus
                       <ExternalLink className="h-4 w-4" />
                     </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -352,7 +356,40 @@ const PebblingProtocolPage = () => {
             <PebblingTerminalDemo />
           </div>
         </Section>
-
+        
+        {/* CTA Section */}
+        <section className="w-full bg-white flex item-center justify-center  ">
+          <div className="flex rounded-xl mb-10 container mx-auto px-4 sm:px-6 lg:px-16 py-20 bg-gradient-to-r from-slate-50 to-gray-100 text-black">
+            <div className="max-w-4xl flex flex-col text-left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-lg text-black mb-10 max-w-2xl ">
+                Join thousands of forward-thinking companies already leveraging our technology to drive growth and innovation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                <Link to="/hibiscus">
+                <Button 
+                  className="bg-black text-white rounded-lg px-8 py-6 text-lg"
+                >
+                  Explore hibiscus
+                  <ChevronRight className="ml-2 h-5 w-5" />
+                </Button>
+                </Link>
+                {/* <Button 
+                  variant="outline" 
+                  className="border border-white text-black hover:bg-white/10 rounded-lg px-8 py-6 text-lg"
+                >
+                  Contact Sales
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button> */}
+              </div>
+            </div>
+            <img
+  src="/logo/navlogo.svg"
+  alt="Robot"
+  className="w-64 max-w-xs md:w-80 lg:w-96 max-h-60  object-contain ml-auto"
+/>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
