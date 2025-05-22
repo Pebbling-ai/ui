@@ -60,7 +60,7 @@ const GitHubSection = () => {
     fetchData("pebbling-ai", "hibiscus", setHibiscusStars, setHibiscusContributors);
   }, []);
   return (
-    <section className="animate-on-scroll ">
+    <section className="section-container animate-on-scroll ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <h2 className="section-title mb-2">Proudly Open Source</h2>
