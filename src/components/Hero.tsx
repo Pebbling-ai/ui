@@ -84,19 +84,9 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" 
             style={{ animationDelay: "0.7s" }}
           >
-            <a 
-              href="#get-access" 
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
-              style={{
-                borderRadius: '1440px',
-                boxSizing: 'border-box',
-                color: '#FFFFFF',
-                cursor: 'pointer',
-                fontSize: '14px',
-                lineHeight: '20px',
-                padding: '16px 24px',
-                border: '1px solid white',
-              }}
+            <a
+              href="#get-access"
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center rounded-full text-white cursor-pointer text-sm leading-5 py-4 px-6 border border-white"
             >
               Launch Article
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
