@@ -58,7 +58,7 @@ const Navbar = () => {
           to="/" 
           className="flex items-center space-x-2"
           onClick={scrollToTop}
-          aria-label="Pulse Robot"
+          aria-label="Source "
         >
           <img 
             src="/logo/navlogo.svg" 
@@ -72,6 +72,7 @@ const Navbar = () => {
          
           <Link 
             to="/pebbling" 
+            
             className={cn("nav-link font-montserrat font-medium hover-underline-animation", !isScrolled && "text-black")}
           >
             Pebbling Protocol
