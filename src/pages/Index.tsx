@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import CompactNetworkMetrics from "@/components/CompactNetworkMetrices";
 import ProductShowcase from "@/components/ProductShowcase";
 import GitHubSection from "@/components/GitHubSection";
 import ProductTimeline from "@/components/ProductTimeline";
@@ -77,23 +76,37 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main className="space-y-0 bg-white"> 
-        <Hero />
-        <CompactNetworkMetrics />
-        
-        <ProductShowcase />
-        <ExampleUseCases />
-        <ProductTimeline />
-        <GitHubSection />
-        <IntegrationSection />
-        <PricingSection />
-        <FAQSection />
-        <Testimonials />
-        <CTASection />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900 overflow-hidden relative">
+      {/* Background blur gradient elements similar to Hero component */}
+      <div className="fixed -top-[20%] -right-[10%] w-2/3 h-[80%] bg-blue-100 dark:bg-blue-900/20 opacity-30 blur-3xl rounded-full animate-pulse z-0"></div>
+      <div className="fixed top-[30%] -left-[10%] w-2/3 h-[60%] bg-purple-100 dark:bg-purple-900/20 opacity-20 blur-3xl rounded-full animate-pulse z-0"></div>
+      <div className="fixed -bottom-[20%] right-[5%] w-1/2 h-[50%] bg-pink-100 dark:bg-pink-900/20 opacity-20 blur-3xl rounded-full animate-pulse z-0"></div>
+      
+      {/* Main content with z-index to appear above background gradients */}
+      <div className="relative z-10">
+        <Navbar />
+        <main className="space-y-0"> 
+          <Hero />
+          <ProductShowcase />
+          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm">
+            <ExampleUseCases />
+          </div>
+          <ProductTimeline />
+          <div className="bg-white/90 dark:bg-zinc-900/90">
+            <GitHubSection />
+          </div>
+          <IntegrationSection />
+          <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm">
+            <PricingSection />
+          </div>
+          <FAQSection />
+          <div className="bg-white/90 dark:bg-zinc-900/90">
+            <Testimonials />
+          </div>
+          <CTASection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };

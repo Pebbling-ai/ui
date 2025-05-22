@@ -1,14 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Play, ExternalLink, Star, Terminal, Bot } from "lucide-react";
-import { Button } from "./ui/button";
-import LottieAnimation from "./LottieAnimation";
+import { ArrowRight, Play, ExternalLink, Star, Fingerprint, MessageSquare, Code, Rocket, Shield } from "lucide-react";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  // If you know the type, use it instead of 'unknown'. For now, using 'unknown'.
-const [lottieData, setLottieData] = useState<unknown>(null);
+  const [lottieData, setLottieData] = useState<unknown>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   
@@ -74,47 +71,80 @@ const [lottieData, setLottieData] = useState<unknown>(null);
         
         <div className="max-w-4xl mx-auto mb-8 mt-2 md:mt-0">
           <h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600 dark:from-purple-400 dark:via-blue-300 dark:to-indigo-400" 
-            style={{ animationDelay: "0.3s" }}
+            className="font-subheading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600 dark:from-purple-400 dark:via-blue-300 dark:to-indigo-400" 
+            style={{ animationDelay: '0.3s' }}
           >
-            Your AI Agent, <br/> Your Digital Companion
+            Leave it to Pebble
           </h1>
-          
           <p 
             style={{ animationDelay: "0.5s" }} 
-            className="font-subheading mt-4 sm:mt-6 mb-8 text-gray-700 dark:text-gray-300 opacity-0 animate-fade-in text-base sm:text-xl md:text-xl max-w-3xl mx-auto leading-relaxed"
+            className="font-subheading mt-4 sm:mt-6 mb-20 text-gray-700 dark:text-gray-300 opacity-0 animate-fade-in text-base sm:text-xl md:text-xl max-w-3xl mx-auto leading-relaxed"
           >
-            Pebbling is more than just an AI—it's your digital companion that <span className="font-semibold text-blue-600 dark:text-blue-400">thinks</span>, <span className="font-semibold text-purple-600 dark:text-purple-400">plans</span>, and <span className="font-semibold text-indigo-600 dark:text-indigo-400">executes</span> tasks for you. From research to coding, from planning to problem-solving—Pebbling handles it all.
+            <br/> Pebbling, all you need. <br/> Write your logic, let Pebble handle the rest.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            <div className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-zinc-800 rounded-full shadow-sm">
-              <Terminal className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-              <span className="text-sm font-medium">Proactive Thinking</span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            {/* Feature Badge - Decentralised Identifier */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-purple-50 to-purple-200 dark:from-purple-900 dark:to-purple-800 rounded-lg shadow-sm border border-purple-200 dark:border-purple-800 hover:shadow-md transition-all">
+              <Fingerprint className="w-6 h-6 flex-shrink-0 text-purple-700 dark:text-purple-300" />
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                Decentralised <span className="font-semibold text-purple-700 dark:text-purple-300">Identifier</span>
+              </span>
             </div>
-            <div className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-zinc-800 rounded-full shadow-sm">
-              <Bot className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-              <span className="text-sm font-medium">24/7 Availability</span>
+            
+            {/* Feature Badge - mLTS Communication */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-blue-50 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-lg shadow-sm border border-blue-200 dark:border-blue-800 hover:shadow-md transition-all">
+              <MessageSquare className="w-6 h-6 flex-shrink-0 text-blue-700 dark:text-blue-300" />
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                <span className="font-semibold text-blue-700 dark:text-blue-300">mLTS</span> Communication
+              </span>
+            </div>
+            
+            {/* Feature Badge - Framework Agnostic */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-green-50 to-green-200 dark:from-green-900 dark:to-green-800 rounded-lg shadow-sm border border-green-200 dark:border-green-800 hover:shadow-md transition-all">
+              <Code className="w-6 h-6 flex-shrink-0 text-green-700 dark:text-green-300" />
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                Framework <span className="font-semibold text-green-700 dark:text-green-300">Agnostic</span>
+              </span>
+            </div>
+            
+            {/* Feature Badge - One Click Deployment */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-pink-50 to-pink-200 dark:from-pink-900 dark:to-pink-800 rounded-lg shadow-sm border border-pink-200 dark:border-pink-800 hover:shadow-md transition-all">
+              <Rocket className="w-6 h-6 flex-shrink-0 text-pink-700 dark:text-pink-300" />
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                One Click <span className="font-semibold text-pink-700 dark:text-pink-300">Deployment</span>
+              </span>
+            </div>
+            
+            {/* Feature Badge - No Hassle */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-yellow-50 to-yellow-200 dark:from-yellow-900 dark:to-yellow-800 rounded-lg shadow-sm border border-yellow-200 dark:border-yellow-800 hover:shadow-md transition-all">
+              <Shield className="w-6 h-6 flex-shrink-0 text-yellow-700 dark:text-yellow-300" />
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                No <span className="font-semibold text-yellow-700 dark:text-yellow-300">Hassle</span>
+              </span>
+            </div>
+            
+            {/* Feature Badge - Federated Registry */}
+            <div className="flex items-center gap-3 min-h-[56px] px-7 py-4 bg-gradient-to-r from-orange-50 to-orange-200 dark:from-orange-900 dark:to-orange-800 rounded-lg shadow-sm border border-orange-200 dark:border-orange-800 hover:shadow-md transition-all">
+              <span className="text-xl flex-shrink-0" role="img" aria-label="Hibiscus Flower">🌺</span>
+              <span className="text-base font-medium text-gray-900 dark:text-gray-100">
+                Federated <span className="font-semibold text-orange-700 dark:text-orange-300">Registry - Hibiscus</span>
+              </span>
             </div>
           </div>
           
-          <div 
+                    <div 
             className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in" 
             style={{ animationDelay: "0.7s" }}
           >
             <a
-              href="#get-started"
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white shadow-lg flex items-center justify-center group w-full sm:w-auto text-center rounded-full cursor-pointer text-sm font-medium leading-5 py-4 px-8 transition-all duration-300"
+              href="https://docs.pebbling.ai" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white shadow-lg flex items-center justify-center group w-full sm:w-auto text-center rounded-full cursor-pointer text-sm font-medium leading-5 py-4 px-8 min-h-[56px] min-w-[220px] transition-all duration-300"
             >
-              Get Started Now
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            
-            <a
-              href="#learn-more"
-              className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white shadow-lg flex items-center justify-center group w-full sm:w-auto text-center rounded-full cursor-pointer text-sm font-medium leading-5 py-4 px-8 transition-all duration-300 border-0"
-            >
-              Learn More
+              Dive In with Pebbling <span className="ml-1 text-lg" role="img" aria-label="Penguin">🐧</span>
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
@@ -138,9 +168,10 @@ const [lottieData, setLottieData] = useState<unknown>(null);
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <button
                     onClick={() => setIsPlaying(true)}
-                    className="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white shadow-lg rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-105"
+                    aria-label="Play video"
+                    className="w-[56px] h-[56px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white shadow-lg rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-105"
                   >
-                    <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" />
+                    <Play className="w-8 h-8 text-white ml-1" />
                   </button>
                 </div>
               </>
@@ -156,21 +187,51 @@ const [lottieData, setLottieData] = useState<unknown>(null);
           </div>
         </div>
         
-        {/* Trust indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mt-4 mb-12 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-          <div className="flex flex-col items-center">
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">79+</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">GitHub Stars</div>
-          </div>
-          <div className="h-8 w-px bg-gray-300 dark:bg-gray-700"></div>
-          <div className="flex flex-col items-center">
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">24/7</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Availability</div>
-          </div>
-          <div className="h-8 w-px bg-gray-300 dark:bg-gray-700"></div>
-          <div className="flex flex-col items-center">
-            <div className="text-2xl font-bold text-gray-900 dark:text-white">100%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Open Source</div>
+        {/* Pebbling Story Section - Refactored for spacing and readability */}
+        <div className="flex flex-col items-center justify-center py-10 md:py-14 mb-12 opacity-0 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          <h3 className="font-subheading text-xl md:text-2xl lg:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 animate-fade-in bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600 dark:from-purple-400 dark:via-blue-300 dark:to-indigo-400">From Seed to Hibiscus: The Pebbling Story</h3>
+          {/* Data-driven story cards */}
+          <div className="flex flex-col md:flex-row gap-y-8 gap-x-8 w-full max-w-5xl justify-center">
+            {[
+              {
+                emoji: '🌱',
+                label: 'Seed',
+                title: 'The Seed is Planted',
+                titleClass: 'text-gray-800 dark:text-gray-100',
+                desc: 'Pebbling began as a vision to empower secure, decentralized communication for all.'
+              },
+              {
+                emoji: '🌺',
+                label: 'Hibiscus',
+                title: 'The Hibiscus Blooms',
+                titleClass: 'text-orange-700 dark:text-orange-300',
+                desc: 'Our federated registry, symbolized by the hibiscus, brings global trust and vibrant connection to the ecosystem.'
+              },
+              {
+                emoji: '🔗',
+                label: 'MCP',
+                title: 'Powered by MCP',
+                titleClass: 'text-blue-700 dark:text-blue-300',
+                desc: 'Multi-Channel Protocol (MCP) bridges worlds—connecting agents, frameworks, and communities seamlessly.'
+              },
+              {
+                emoji: '🛡️',
+                label: 'Open Source',
+                title: 'Open, Always',
+                titleClass: 'text-green-700 dark:text-green-300',
+                desc: 'Open source, always available, and community-driven. Pebbling is here for you, 24/7.'
+              }
+            ].map((card, idx) => (
+              <div
+                key={card.label}
+                className="flex flex-col items-center bg-white/90 dark:bg-zinc-800/90 rounded-2xl shadow-lg px-8 py-7 min-w-[220px] max-w-xs mx-auto border border-gray-100 dark:border-zinc-700 transition-all hover:shadow-xl"
+                style={{ transitionDelay: `${idx * 0.05}s` }}
+              >
+                <span className="text-4xl mb-3" role="img" aria-label={card.label}>{card.emoji}</span>
+                <div className={`font-semibold mb-2 text-lg md:text-xl ${card.titleClass}`}>{card.title}</div>
+                <div className="text-sm md:text-base text-gray-600 dark:text-gray-300 text-center leading-relaxed">{card.desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
