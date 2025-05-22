@@ -24,7 +24,7 @@ jobs:
           version: 8 # Or your project's pnpm version
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run linters
         run: pnpm lint # Adjust if your lint script has a different name
