@@ -55,15 +55,15 @@ const ProductShowcase = () => {
                   </ul>
                 </div>
                 
-                {/* <div className="w-full md:w-2/5 relative">
-                  <div className="aspect-square overflow-hidden rounded-lg p-4 bg-gray-50">
+                <div className="w-full md:w-2/5 relative">
+                 
                     <img 
-                      src="/lovable-uploads/22d31f51-c174-40a7-bd95-00e4ad00eaf3.png" 
+                      src="/hibiscus.png" 
                       alt="Pebble Humanoid" 
-                      className="object-contain w-full h-full"
+                      className="object-cover w-full h-full"
                     />
-                  </div>
-                </div> */}
+                  
+                </div>
               </div>
             </CardContent>
             
@@ -116,15 +116,15 @@ const ProductShowcase = () => {
                   </ul>
                 </div>
                 
-                {/* <div className="w-full md:w-2/5 relative">
-                  <div className="aspect-square overflow-hidden rounded-lg bg-gray-50 p-4 relative">
+                <div className="w-full md:w-2/5 h-full relative">
+                  
                     <img 
-                      src="/lovable-uploads/dc13e94f-beeb-4671-8a22-0968498cdb4c.png" 
+                      src="/hibiscus.png" 
                       alt="Hibiscus Network" 
-                      className="object-contain w-full h-full"
+                      className="object-cover w-full h-full"
                     />
-                  </div>
-                </div> */}
+                  
+                </div>
               </div>
             </CardContent>
             

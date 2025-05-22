@@ -93,7 +93,7 @@ export default function FilterBarUI({
 
   return (
     <div className="w-full">
-      <div className="relative px-4 py-1 scrollbar-hide w-full max-w-[100vw] overflow-hidden">
+      <div className="relative px-4 py-2 scrollbar-hide w-full max-w-[100vw] overflow-hidden">
         <div className="relative flex items-center">
           {/* Left Scroll Button */}
           <button

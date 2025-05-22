@@ -226,11 +226,11 @@ const page = () => {
   };
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       
       <Navbar />
-      <section className="pt-28 py-2 relative animate-on-scroll">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-28 pb-20 relative animate-on-scroll min-h-[calc(100vh-80px)] flex flex-col">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
           
           <div className="flex justify-between items-center w-full">
             <div className="text-left">
@@ -462,10 +462,10 @@ const page = () => {
               </div>
             </div>
           </div>
-          
+          <div className="flex-1 flex flex-col">
           {filteredAgents.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5 w-full min-h-[400px]">
                 {currentCards.map(agent => (
                   <Card 
                     key={agent.id}
@@ -512,7 +512,7 @@ const page = () => {
 
               {/* Pagination Component */}
               {totalPages > 1 && (
-                <div className="w-full flex justify-center mt-8 mb-8">
+                <div className="w-full flex justify-center mt-auto pt-8 pb-8">
                   <Pagination>
                     <PaginationContent>
                       <PaginationItem>
@@ -566,7 +566,8 @@ const page = () => {
               )}
             </>
           ) : (
-            <div className="text-center py-12 bg-white rounded-lg border border-gray-100 shadow-sm">
+            <div className="flex-1 flex items-center justify-center min-h-[400px]">
+            <div className="text-center py-12 bg-white rounded-lg border border-gray-100 shadow-sm w-full max-w-2xl">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
                 <Search className="h-6 w-6 text-gray-600" />
               </div>
@@ -577,7 +578,9 @@ const page = () => {
                 No agents match your search for "{searchTerm}"{selectedFilters.length > 0 && " with the selected filters"}. Try adjusting your search terms or filters.
               </p>
             </div>
+            </div>
           )}
+        </div>
         </div>
       </section>
       <Footer/>

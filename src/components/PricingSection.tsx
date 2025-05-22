@@ -82,11 +82,13 @@ const PricingSection = () => {
             price="Free"
             description="Perfect for hobbyists and small projects"
             features={[
-              "Up to 10,000 agent messages/month",
-              "Basic authentication",
-              "Community support",
-              "JavaScript & Python SDKs",
-              "Public documentation"
+              "Unlimited agent messages",
+              "Dedicated infrastructure",
+              "24/7 premium support",
+              "Custom implementation support",
+              "Advanced compliance features",
+              "On-premise deployment option",
+              "Custom SLAs"
             ]}
             cta="Start Building"
           />
@@ -110,7 +112,7 @@ const PricingSection = () => {
           
           <PricingTier 
             name="Enterprise"
-            price="Custom"
+            price="$110"
             description="For mission-critical deployments"
             features={[
               "Unlimited agent messages",
