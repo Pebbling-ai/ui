@@ -52,13 +52,27 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+
+### Styling and best practices
+
+- **Tailwind container** – the `tailwind.config.ts` file centers the container and
+  applies a default padding of `2rem` for consistent spacing across screen sizes.
+- **PostCSS Autoprefixer** – `postcss.config.js` includes Autoprefixer to
+  automatically add vendor prefixes during builds.
+- **Global styles** – `src/index.css` defines CSS custom properties, sets global
+  typography, and enables smooth scrolling.
+- **Section helper** – the `.section-container` class applies responsive
+  horizontal padding (`px-4 sm:px-6 lg:px-8`) and vertical padding
+  (`py-7 md:py-10`) to sections, ensuring consistent spacing.
+- **Padding utilities** – inline pixel values have largely been replaced with
+  Tailwind classes such as `py-3 px-6` for better scalability.
 
 ## How can I deploy this project?
 
