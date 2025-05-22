@@ -47,9 +47,9 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 pt-2 sm:py-3 md:pt-4 md:pb-0 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 pt-2 sm:py-3 md:pt-4 md:pb-0 transition-all duration-300 d:bg-white/80 md:backdrop-blur-md md:shadow-sm",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
+          ? "bg-white/80 md:backdrop-blur-md md:shadow-sm" 
           : "bg-transparent"
       )}
     >
@@ -180,7 +180,7 @@ const Navbar = () => {
         <nav className="flex flex-col space-y-6 items-center mt-8">
           
           <Link 
-            to="/" 
+            to="/pebbling" 
             className="text-xl font-montserrat font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100 hover-underline-animation" 
             onClick={handleMobileMenuItemClick}
           >
@@ -196,6 +196,9 @@ const Navbar = () => {
           
           
           {/* Mobile Auth Button */}
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
           <SignedOut>
             <Button 
               className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4"
@@ -209,29 +212,11 @@ const Navbar = () => {
                 redirectToSignIn();
               }}
             >
-              Access Hibiscus
+              Join Us
             </Button>
           </SignedOut>
           
-          {/* Mobile User Profile Section */}
-          <SignedIn>
-            <div className="w-full mt-4 flex justify-center">
-              <Button 
-                className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full"
-                style={{
-                  padding: '16px 24px',
-                  fontSize: '14px',
-                  lineHeight: '20px',
-                }}
-                onClick={() => {
-                  handleMobileMenuItemClick();
-                  window.location.href = '/hibiscus';
-                }}
-              >
-                Dashboard
-              </Button>
-            </div>
-          </SignedIn>
+         
         </nav>
       </div>
       {/* Clerk handles the auth modals automatically */}

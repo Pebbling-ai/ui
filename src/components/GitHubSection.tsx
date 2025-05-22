@@ -18,7 +18,7 @@ const GitHubSection = () => {
           const repoData = await repoRes.json();
           setStars(repoData.stargazers_count);
         } else {
-          console.error(`Failed to fetch ${repoName} repo details:`, repoRes.status);
+          // console.error(`Failed to fetch ${repoName} repo details:`, repoRes.status);
           setStars(0); // Default to 0 on error
         }
 

@@ -240,7 +240,7 @@ const page = () => {
     Hibiscus 
   </h1>
 </div>
-              <p className="-mt-3 ml-5 text-lg text-gray-600 font-[var(--font-body)] text-nowrap mb-3">
+              <p className="-mt-3 ml-5 text-lg text-gray-600 font-[var(--font-body)]  md:text-nowrap mb-3">
                 Discover and connect with powerful AI agents across the Pebble network ecosystem.
               </p>
             </div>

@@ -40,8 +40,8 @@ const CompactNetworkMetrics = () => {
     <section className="py-6">
       <div className="container max-w-6xl mx-auto px-4">
         <div className="w-full flex items-center justify-center mb-4">
-          <div className="flex items-center space-x-2">
-            <Network className="size-10" />
+          <div className="flex  space-x-2">
+            <Network className="mt-3 md:mt-0 size-5 md:size-10" />
             <h1 className="text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in ">Live Network Matrices</h1>
           </div>
           {/* <div className="text-sm text-gray-500">
