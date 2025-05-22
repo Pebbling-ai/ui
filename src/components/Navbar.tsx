@@ -99,7 +99,7 @@ const Navbar = () => {
   </a>
   {/* Discord Button */}
   <a
-    href="https://discord.gg/your-invite"
+    href="https://discord.gg/m6ndEkce"
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center space-x-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-md text-sm hover:bg-gray-200 transition"
