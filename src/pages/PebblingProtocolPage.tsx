@@ -357,39 +357,35 @@ const PebblingProtocolPage = () => {
           </div>
         </Section>
         
+       
         {/* CTA Section */}
-        <section className="w-full bg-white flex item-center justify-center  ">
-          <div className="flex rounded-xl mb-10 container mx-auto px-4 sm:px-6 lg:px-16 py-20 bg-gradient-to-r from-slate-50 to-gray-100 text-black">
-            <div className="max-w-4xl flex flex-col text-left">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-lg text-black mb-10 max-w-2xl ">
-                Join thousands of forward-thinking companies already leveraging our technology to drive growth and innovation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-start">
-                <Link to="/hibiscus">
-                <Button 
-                  className="bg-black text-white rounded-lg px-8 py-6 text-lg"
-                >
-                  Explore hibiscus
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Button>
-                </Link>
-                {/* <Button 
-                  variant="outline" 
-                  className="border border-white text-black hover:bg-white/10 rounded-lg px-8 py-6 text-lg"
-                >
-                  Contact Sales
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button> */}
-              </div>
-            </div>
-            <img
-  src="/logo/navlogo.svg"
-  alt="Robot"
-  className="w-64 max-w-xs md:w-80 lg:w-96 max-h-60  object-contain ml-auto"
-/>
-          </div>
-        </section>
+<section className="w-full bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div className="flex flex-col lg:flex-row items-center rounded-xl mb-10 container mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-20 bg-gradient-to-r from-slate-50 to-gray-100 text-black">
+    <div className="max-w-4xl flex flex-col text-center lg:text-left w-full lg:w-2/3">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+        Ready to Transform Your Business?
+      </h2>
+      <p className="text-base sm:text-lg text-black mb-6 sm:mb-10 max-w-2xl mx-auto lg:mx-0">
+        Join thousands of forward-thinking companies already leveraging our technology to drive growth and innovation.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <Link to="/hibiscus">
+          <Button 
+            className="w-full sm:w-auto bg-black text-white rounded-lg px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg"
+          >
+            Explore hibiscus
+            <ChevronRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5" />
+          </Button>
+        </Link>
+      </div>
+    </div>
+    <img
+      src="/logo/navlogo.svg"
+      alt="Robot"
+      className="w-48 sm:w-64 md:w-80 lg:w-96 max-h-48 sm:max-h-60 object-contain mt-8 lg:mt-0 lg:ml-auto"
+    />
+  </div>
+</section>
       </main>
       <Footer />
     </div>

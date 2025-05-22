@@ -95,7 +95,7 @@ const AgentRegistry = () => {
   };
 
   return (
-    <section className="section-container relative animate-on-scroll ">
+    <section className="hidden md:block section-container relative animate-on-scroll ">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center mb-8">
           <h1 className=" text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in">Hibiscus Registry</h1>

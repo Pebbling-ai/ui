@@ -94,7 +94,7 @@ const Index = () => {
         
         <ProductShowcase />
         <ExampleUseCases />
-        {/* <AgentRegistry /> */}
+        <AgentRegistry />
         {/* <Features/> */}
         {/* <NetworkMetrics /> */}
         <ProductTimeline />

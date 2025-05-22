@@ -65,7 +65,7 @@ const Hero = () => {
       
       {/* Center aligned content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center flex-1 z-10" ref={containerRef}>
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-8 mt-7 md:mt-0">
           <h1 
             className=" text-3xl md:text-6xl lg:text-5xl font-bold tracking-tight text-gray-900 mb-6 animate-fade-in " 
             style={{ animationDelay: "0.3s" }}
