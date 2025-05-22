@@ -17,23 +17,17 @@ const CTASection = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="/hibiscus" 
-                className="bg-white text-black hover:bg-gray-200 flex items-center justify-center group text-center rounded-md transition-colors" 
-                style={{
-                  padding: '12px 24px',
-                }}
+              <a
+                href="/hibiscus"
+                className="bg-white text-black hover:bg-gray-200 flex items-center justify-center group text-center rounded-md transition-colors py-3 px-6"
               >
                 Let's explore hibiscus
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
               
-              <a 
-                href="#docs" 
-                className="bg-transparent text-white flex items-center justify-center group text-center border border-gray-300 rounded-md hover:bg-gray-800 transition-all" 
-                style={{
-                  padding: '12px 24px',
-                }}
+              <a
+                href="#docs"
+                className="bg-transparent text-white flex items-center justify-center group text-center border border-gray-300 rounded-md hover:bg-gray-800 transition-all py-3 px-6"
               >
                 Docs
                 <svg className="ml-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
