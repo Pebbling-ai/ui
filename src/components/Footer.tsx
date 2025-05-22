@@ -3,7 +3,13 @@ import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram, Github } from "lucide-react";
 import ScrollToTopButton from "./ScrollToTopButton";
 import { Link } from "react-router-dom";
-
+const SOCIAL_LINKS = {
+  GITHUB: "https://github.com/Pebbling-ai",
+  TWITTER: "https://twitter.com/pebblingprotocol",
+  LINKEDIN: "https://www.linkedin.com/company/pebbling-ai/",
+  FACEBOOK: "https://facebook.com/pebblingprotocol",
+  INSTAGRAM: "https://instagram.com/pebblingprotocol"
+};
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-white to-gray-50 text-gray-900 py-12 border-t border-gray-100 relative">
@@ -34,15 +40,42 @@ const Footer = () => {
           {/* Social Links - now responsive */}
           <div className="flex flex-wrap gap-6 md:gap-8 items-center justify-center md:justify-end">
             {[
-              { icon: Github, label: "GitHub", color: "hover:text-gray-900" },
-              { icon: Twitter, label: "Twitter", color: "hover:text-blue-400" },
-              { icon: Linkedin, label: "LinkedIn", color: "hover:text-blue-700" },
-              { icon: Facebook, label: "Facebook", color: "hover:text-blue-600" },
-              { icon: Instagram, label: "Instagram", color: "hover:text-pink-600" }
+              
+    { 
+      icon: Github, 
+      label: "GitHub", 
+      color: "hover:text-gray-900",
+      url: SOCIAL_LINKS.GITHUB 
+    },
+    { 
+      icon: Twitter, 
+      label: "Twitter", 
+      color: "hover:text-blue-400",
+      url: SOCIAL_LINKS.TWITTER 
+    },
+    { 
+      icon: Linkedin, 
+      label: "LinkedIn", 
+      color: "hover:text-blue-700",
+      url: SOCIAL_LINKS.LINKEDIN 
+    },
+    { 
+      icon: Facebook, 
+      label: "Facebook", 
+      color: "hover:text-blue-600",
+      url: SOCIAL_LINKS.FACEBOOK 
+    },
+    { 
+      icon: Instagram, 
+      label: "Instagram", 
+      color: "hover:text-pink-600",
+      url: SOCIAL_LINKS.INSTAGRAM 
+    }
             ].map((social, index) => (
               <a 
                 key={index}
-                href="#" 
+                href={social.url} 
+                target="_blank"
                 aria-label={social.label} 
                 className={`text-black ${social.color} transition-all duration-300 transform hover:-translate-y-1`}
               >

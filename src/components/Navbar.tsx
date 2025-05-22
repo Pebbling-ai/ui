@@ -91,7 +91,8 @@ const Navbar = () => {
            <div className="flex space-x-3">
                 {/* Docs Button */}
   <a
-    href="/docs"
+    href="https://hibiscus-docs-production.up.railway.app"
+    target="_blank"
     className="flex items-center space-x-2 px-3 py-1.5  text-gray-800 rounded-md text-sm hover:bg-gray-200 transition"
   >
     <span>Docs</span>
