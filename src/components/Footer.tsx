@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="mb-6 transform transition-transform duration-300 hover:scale-105">
               <img 
                 src="/logo/footerLogo.svg" 
-                alt="Pulse Robot Logo" 
+                alt="Pebbling Logo" 
                 className="h-10 sm:h-14 filter drop-shadow-sm" 
               />
             </div>

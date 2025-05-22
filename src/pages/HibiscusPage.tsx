@@ -305,7 +305,7 @@ const page = () => {
                 </div>
                 
                 {/* Right side - Controls */}
-                <div className="flex items-center gap-3 ml-auto mt-3 sm:mt-0">
+                <div className="flex items-center gap-3 ml-0 md:ml-auto mt-3 sm:mt-0">
                   {/* Name filter input */}
                   <div className="relative mr-2">
                     <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -576,7 +576,7 @@ const page = () => {
       </section>
       <Footer/>
       {/* Login Dialog */}
-      <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
+      {/* <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center font-[var(--font-heading)]">Welcome to Hibiscus</DialogTitle>
@@ -637,10 +637,10 @@ const page = () => {
               </div>
           </div>
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
       
       {/* Create Agent Dialog */}
-      <Dialog open={showCreateAgentDialog} onOpenChange={setShowCreateAgentDialog}>
+      {/* <Dialog open={showCreateAgentDialog} onOpenChange={setShowCreateAgentDialog}>
         <DialogContent className="max-w-3xl">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold font-[var(--font-heading)]">Create a New Agent</DialogTitle>
@@ -651,7 +651,7 @@ const page = () => {
           
           <CreateAgentForm onClose={() => setShowCreateAgentDialog(false)} />
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
       
       {/* Agent Details Sheet */}
       <Sheet open={selectedAgent !== null} onOpenChange={() => setSelectedAgent(null)}>
