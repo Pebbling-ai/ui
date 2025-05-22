@@ -12,24 +12,26 @@ const Footer = () => {
         <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-gray-100 opacity-50"></div>
         <div className="absolute -bottom-16 -left-16 w-32 h-32 rounded-full bg-gray-100 opacity-30"></div>
       </div>
-      <div className="flex flex-col">
-      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative z-10">
-        <div className="flex flex-col items-center text-center mb-8">
-          <div className="mb-6 transform transition-transform duration-300 hover:scale-105">
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center relative z-10">
+        <div className="w-full flex justify-between">
+        <div className="flex flex-col items-start text-left mb-8">
+          
+          <div className="mb-6 transform transition-transform duration-300 hover:scale-105 justify-start">
             <img 
-              src="https://res.cloudinary.com/dhjzu51mb/image/upload/v1747426786/fajr9stliyz17xsez5nt.png" 
+              src="/logo/footerLogo.svg" 
               alt="Pulse Robot Logo" 
-              className="h-14 filter drop-shadow-sm" 
+              className="h-14 filter drop-shadow-sm text-left" 
             />
           </div>
-          <p className="text-gray-600 max-w-md text-center text-sm sm:text-base font-light leading-relaxed mb-6">
+          <p className="text-black max-w-md text-left text-sm sm:text-base font-light leading-relaxed mb-6">
             Advanced agent communication protocol for the next generation of AI applications,
             designed to maximize efficiency and security in AI interactions.
           </p>
         </div>
         
         {/* Social Links with improved styling */}
-        <div className="flex space-x-8 mb-10">
+        <div className="flex space-x-8 items-center">
           {[
             { icon: Github, label: "GitHub", color: "hover:text-gray-900" },
             { icon: Twitter, label: "Twitter", color: "hover:text-blue-400" },
@@ -41,17 +43,18 @@ const Footer = () => {
               key={index}
               href="#" 
               aria-label={social.label} 
-              className={`text-gray-400 ${social.color} transition-all duration-300 transform hover:-translate-y-1`}
+              className={`text-black ${social.color} transition-all duration-300 transform hover:-translate-y-1`}
             >
               <social.icon className="h-5 w-5" />
             </a>
           ))}
         </div>
+        
         </div>
         {/* Copyright with subtle divider */}
-        <div className="relative w-full  flex flex-col items-center">
+        <div className="relative w-full max-w-xs flex flex-col items-center">
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
-          <p className="text-gray-500 text-sm font-light">
+          <p className="text-black text-sm font-light">
             © {new Date().getFullYear()} pebble Protocol. All rights reserved.
           </p>
         </div>

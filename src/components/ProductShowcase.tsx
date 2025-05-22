@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight,Bot, Network } from "lucide-react";
 import { Link } from "react-router-dom";
 const ProductShowcase = () => {
   return (
@@ -21,14 +21,19 @@ const ProductShowcase = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Pebble Product Card */}
           <Card className="border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-300 hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
-            <CardHeader className="pb-0">
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-2xl font-bold text-left mb-1">Pebble</CardTitle>
-                  <CardDescription className="text-left text-gray-500">Humanoid Companion</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
+           <CardHeader className="pb-0">
+  <div className="flex justify-between items-start">
+    <div className="flex items-center gap-3">
+      <div className="p-2 rounded-lg bg-gray-50">
+        <Bot className="w-6 h-6 text-black" />
+      </div>
+      <div>
+        <CardTitle className="text-2xl font-bold text-left mb-1">Pebble</CardTitle>
+        <CardDescription className="text-left text-gray-500">Humanoid Companion</CardDescription>
+      </div>
+    </div>
+  </div>
+</CardHeader>
             
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -66,7 +71,7 @@ const ProductShowcase = () => {
               <Link to="/pebbling">
               <Button 
                 variant="ghost" 
-                className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
+                className="bg-gray-100 text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -78,13 +83,18 @@ const ProductShowcase = () => {
           {/* Hibiscus Product Card */}
           <Card className="border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-300 hover:scale-[1.02] transition-all duration-300 bg-white overflow-hidden">
             <CardHeader className="pb-0">
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle className="text-2xl font-bold text-left mb-1">Hibiscus</CardTitle>
-                  <CardDescription className="text-left text-gray-500">Network Intelligence</CardDescription>
-                </div>
-              </div>
-            </CardHeader>
+  <div className="flex justify-between items-start">
+    <div className="flex items-center gap-3">
+      <div className="p-2 rounded-lg bg-gray-50">
+        <Network className="w-6 h-6 text-black" />
+      </div>
+      <div>
+        <CardTitle className="text-2xl font-bold text-left mb-1">Hibiscus</CardTitle>
+        <CardDescription className="text-left text-gray-500">Network Intelligence</CardDescription>
+      </div>
+    </div>
+  </div>
+</CardHeader>
             
             <CardContent className="pt-6">
               <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -122,7 +132,7 @@ const ProductShowcase = () => {
               <Link to="/hibiscus">
               <Button 
                 variant="ghost" 
-                className="text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
+                className="bg-gray-100 text-black hover:bg-gray-100 group w-full justify-center sm:w-auto sm:justify-start"
               >
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
