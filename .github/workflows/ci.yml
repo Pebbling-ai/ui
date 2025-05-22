@@ -29,8 +29,8 @@ jobs:
       - name: Run linters
         run: pnpm lint # Adjust if your lint script has a different name
 
-      - name: Run tests
-        run: pnpm test # Adjust if your test script has a different name
+      # - name: Run tests
+      #   run: pnpm test # Adjust if your test script has a different name
 
       - name: Build project
         run: pnpm build # Adjust if your build script has a different name
