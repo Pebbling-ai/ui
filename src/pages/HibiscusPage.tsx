@@ -244,7 +244,13 @@ const page = () => {
                 Discover and connect with powerful AI agents across the Pebble network ecosystem.
               </p>
             </div>
-            
+            <Button 
+    className="hidden md:flex items-center gap-2 bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg transition-all duration-300 transform hover:translate-y-[-1px] hover:shadow-lg"
+    onClick={() => {/* Add your PAT token creation logic here */}}
+  >
+    <Server className="w-4 h-4" />
+    <span className="font-medium">Create PAT Token</span>
+  </Button>
            
           </div>
           
