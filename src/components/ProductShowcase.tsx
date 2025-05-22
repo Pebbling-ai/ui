@@ -281,7 +281,7 @@ const ProductShowcase = () => {
             <div className="flex justify-between items-start">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
-                  <Bot className="w-6 h-6 text-blue-700 dark:text-blue-300" />
+                  <span className="text-xl flex-shrink-0" role="img" aria-label="Penguin">🐧</span>
                 </div>
                 <div>
                   <CardTitle className="text-2xl font-bold text-left mb-1 text-gray-900 dark:text-white">Pebble</CardTitle>
