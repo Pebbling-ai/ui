@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="w-full py-20 relative overflow-hidden">
+    <section className="section-container">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="rounded-3xl p-12 md:p-16" style={{ 
           background: "linear-gradient(to right, #222222, #000000)" 

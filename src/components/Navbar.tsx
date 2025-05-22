@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X ,FileText, Star} from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { SignedIn, SignedOut, UserButton, useClerk } from "@clerk/clerk-react";
+type GitHubRepo = {
+  stargazers_count: number;
+};
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { openSignIn, redirectToSignIn } = useClerk();
-
+  const [stars, setStars] = useState<number>(0);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -18,7 +21,19 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+  const fetchGitHubStars = async () => {
+    try {
+      const response = await fetch('https://api.github.com/repos/Pebbling-ai/hibiscus');
+      const data: GitHubRepo = await response.json();
+      setStars(data.stargazers_count);
+    } catch (error) {
+      console.error('Error fetching GitHub stars:', error);
+    }
+  };
 
+  fetchGitHubStars();
+}, []);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     // Prevent background scrolling when menu is open
@@ -47,7 +62,7 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 pt-2 sm:py-3 md:pt-4 md:pb-0 transition-all duration-300 d:bg-white/80 md:backdrop-blur-md md:shadow-sm",
+        "fixed top-0 left-0 right-0 z-50 pt-2 md:pt-2 md:pb-0 transition-all duration-300 d:bg-white/80 md:backdrop-blur-md md:shadow-sm",
         isScrolled 
           ? "bg-white/80 md:backdrop-blur-md md:shadow-sm" 
           : "bg-transparent"
@@ -93,8 +108,9 @@ const Navbar = () => {
   <a
     href="https://hibiscus-docs-production.up.railway.app"
     target="_blank"
-    className="flex items-center space-x-2 px-3 py-1.5  text-gray-800 rounded-md text-sm hover:bg-gray-200 transition"
+    className="flex items-center space-x-2 px-3 py-1.5  text-gray-800 rounded-md text-sm bg-gray-200 transition"
   >
+    <FileText className="w-4 h-4" />
     <span>Docs</span>
   </a>
   {/* Discord Button */}
@@ -115,22 +131,15 @@ const Navbar = () => {
     <span>Discord</span>
   </a>
           <a
-    href="https://github.com/your-repo"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center space-x-1 px-3 py-1.5 bg-black text-white rounded-md text-sm hover:opacity-90 transition"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-4 h-4"
-    >
-      <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 008.21 10.94c.6.11.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.1-.76.08-.75.08-.75 1.22.09 1.87 1.25 1.87 1.25 1.08 1.84 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.23-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.44 11.44 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17.77.85 1.24 1.92 1.24 3.23 0 4.61-2.81 5.63-5.48 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A11.5 11.5 0 0023.5 12C23.5 5.73 18.27.5 12 .5z" />
-    </svg>
-    <span>5k</span>
-    <span className="text-xs ml-0.5">★</span>
-  </a>
+  href="https://github.com/Pebbling-ai/hibiscus"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center space-x-1 px-3 py-1.5 bg-black text-white rounded-md text-sm hover:opacity-90 transition"
+>
+  <Star className="w-4 h-4" />
+  <span className="text-xs ml-0.5 text-white ">{stars}</span>
+  
+</a>
         </div>
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
