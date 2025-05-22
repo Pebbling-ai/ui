@@ -39,7 +39,7 @@ const popularTags = [
   "Cloud Computing", "Edge Computing", "Database", "Monitoring"
 ];
 
-const page = () => {
+const HibiscusPage = () => {
   type SortOption = 'name' | 'status' | 'date' | 'popularity';
   const [searchTerm, setSearchTerm] = useState("");
   const [nameFilter, setNameFilter] = useState("");
@@ -856,5 +856,5 @@ const page = () => {
   );
 };
 
-export default page;
+export default HibiscusPage;
 

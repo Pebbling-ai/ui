@@ -22,18 +22,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   useEffect(() => {
-  const fetchGitHubStars = async () => {
-    try {
-      const response = await fetch('https://api.github.com/repos/Pebbling-ai/hibiscus');
-      const data: GitHubRepo = await response.json();
-      setStars(data.stargazers_count);
-    } catch (error) {
-      console.error('Error fetching GitHub stars:', error);
-    }
-  };
+    const fetchGitHubStars = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/Pebbling-ai/pebble');
+        const data: GitHubRepo = await response.json();
+        setStars(data.stargazers_count);
+      } catch (error) {
+        console.error('Error fetching GitHub stars:', error);
+      }
+    };
 
-  fetchGitHubStars();
-}, []);
+    fetchGitHubStars();
+    // Refresh every 6 hours (21600000 ms)
+    const interval = setInterval(fetchGitHubStars, 21600000);
+    return () => clearInterval(interval);
+  }, []);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     // Prevent background scrolling when menu is open
@@ -73,13 +76,19 @@ const Navbar = () => {
           to="/" 
           className="flex items-center space-x-2"
           onClick={scrollToTop}
-          aria-label="Source "
+          aria-label="Pebble Home"
         >
           <img 
             src="/logo/navlogo.svg" 
             alt="logo" 
-            className="h-16 sm:h-18  " 
+            className="h-16 sm:h-18" 
           />
+          <span 
+            className="ml-2 px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-semibold shadow-sm hidden sm:inline-block" 
+            aria-label="Open Source Badge"
+          >
+            Open Source
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -103,56 +112,63 @@ const Navbar = () => {
 
         {/* Desktop Auth Button or User Profile */}
         <div className="hidden md:flex items-center space-x-4">
-           <div className="flex space-x-3">
-                {/* Docs Button */}
-  <a
-    href="https://hibiscus-docs-production.up.railway.app"
-    target="_blank"
-    className="flex items-center space-x-2 px-3 py-1.5  text-gray-800 rounded-md text-sm bg-gray-200 transition"
-  >
-    <FileText className="w-4 h-4" />
-    <span>Docs</span>
-  </a>
-  {/* Discord Button */}
-  <a
-    href="https://discord.gg/m6ndEkce"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center space-x-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-md text-sm hover:bg-gray-200 transition"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      className="w-4 h-4"
-      viewBox="0 0 24 24"
+  <div className="flex space-x-3">
+    {/* Docs Button */}
+    <a
+      href="https://docs.pebbling.ai"
+      target="_blank"
+      className="flex items-center space-x-2 px-3 py-1.5 text-gray-800 rounded-md text-sm bg-gray-200 hover:bg-gray-300 shadow-sm hover:shadow-md transition-all duration-150"
+      rel="noopener noreferrer"
     >
-      <path d="M20.317 4.369A19.791 19.791 0 0015.69 3c-.2.352-.434.832-.592 1.204a18.568 18.568 0 00-5.196 0A12.354 12.354 0 009.31 3c-1.97.29-3.782.805-5.63 1.694C.772 9.212-.176 14.256.124 19.246a20.13 20.13 0 006.202 3.07c.474-.647.89-1.33 1.256-2.035a13.337 13.337 0 01-2.025-.918c.17-.122.336-.249.497-.38a14.232 14.232 0 0011.886 0c.161.131.327.258.497.38a13.38 13.38 0 01-2.02.916c.367.705.783 1.388 1.256 2.035a20.117 20.117 0 006.202-3.07c.365-5.12-.882-10.156-3.875-14.877zM8.02 15.33c-1.18 0-2.145-1.085-2.145-2.417 0-1.332.952-2.417 2.145-2.417 1.198 0 2.158 1.091 2.145 2.417 0 1.332-.952 2.417-2.145 2.417zm7.96 0c-1.18 0-2.145-1.085-2.145-2.417 0-1.332.952-2.417 2.145-2.417 1.198 0 2.158 1.091 2.145 2.417 0 1.332-.952 2.417-2.145 2.417z" />
-    </svg>
-    <span>Discord</span>
-  </a>
-          <a
-  href="https://github.com/Pebbling-ai/hibiscus"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center space-x-1 px-3 py-1.5 bg-black text-white rounded-md text-sm hover:opacity-90 transition"
->
-  <Star className="w-4 h-4" />
-  <span className="text-xs ml-0.5 text-white ">{stars}</span>
-  
-</a>
-        </div>
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
-          <SignedOut>
-            <Button
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center rounded-full text-white cursor-pointer text-sm leading-5 py-4 px-6 border border-white"
-              onClick={() => redirectToSignIn()}
-            >
-              Join Us
-            </Button>
-          </SignedOut>
-        </div>
+      {/* Open Book Icon */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m8-10.5a2.5 2.5 0 00-2.5-2.5H6.5A2.5 2.5 0 004 7.5v9A2.5 2.5 0 006.5 19h11a2.5 2.5 0 002.5-2.5v-9z"/>
+      </svg>
+      <span>Docs</span>
+    </a>
+    {/* Discord Button */}
+    <a
+      href="https://discord.gg/RBvKfcrPnY"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center space-x-2 px-3 py-1.5 bg-[#5865F2] text-white rounded-md text-sm hover:bg-[#4752C4] shadow-sm hover:shadow-md transition-all duration-150"
+    >
+      {/* Modern Discord SVG */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 55" fill="currentColor" className="w-4 h-4">
+        <path d="M60.104 4.552A58.16 58.16 0 0051.497.8a.112.112 0 00-.118.056c-2.25 3.98-4.5 9.13-6.177 13.3-7.393-1.116-14.673-1.116-21.987 0-1.677-4.18-3.927-9.32-6.177-13.3A.115.115 0 0019.503.8a58.12 58.12 0 00-8.607 3.752.104.104 0 00-.047.041C.533 16.563-.32 28.25.099 39.885c0 .05.028.098.07.123a58.6 58.6 0 0017.763 9.035.112.112 0 00.123-.04c1.366-1.874 2.588-3.84 3.644-5.891a.112.112 0 00-.06-.154 40.13 40.13 0 01-5.74-2.728.112.112 0 01-.011-.187c.386-.291.772-.584 1.144-.891a.112.112 0 01.114-.012c12.06 5.522 25.11 5.522 37.13 0a.112.112 0 01.115.01c.373.307.758.6 1.145.892a.112.112 0 01-.01.186 37.8 37.8 0 01-5.741 2.729.112.112 0 00-.06.153c1.056 2.052 2.278 4.018 3.645 5.892a.112.112 0 00.123.04 58.55 58.55 0 0017.762-9.035.122.122 0 00.07-.123c.5-11.634-.418-23.322-7.352-35.292a.105.105 0 00-.047-.041zM23.725 37.275c-3.226 0-5.89-2.946-5.89-6.572 0-3.625 2.617-6.572 5.89-6.572 3.293 0 5.89 2.967 5.89 6.572 0 3.626-2.597 6.572-5.89 6.572zm23.55 0c-3.226 0-5.89-2.946-5.89-6.572 0-3.625 2.617-6.572 5.89-6.572 3.293 0 5.89 2.967 5.89 6.572 0 3.626-2.597 6.572-5.89 6.572z"/>
+      </svg>
+      <span>Discord</span>
+    </a>
+    {/* GitHub Button */}
+    <a
+      href="https://github.com/Pebbling-ai/pebble"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center space-x-2 px-3 py-1.5 bg-gray-900 text-white rounded-md text-sm hover:bg-black shadow-sm hover:shadow-md transition-all duration-150"
+    >
+      {/* Modern GitHub SVG */}
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-4 h-4">
+        <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.89.58.11.79-.25.79-.56v-2.1c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 012.9-.39c.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.8 1.19 1.83 1.19 3.09 0 4.43-2.68 5.41-5.24 5.7.42.36.79 1.09.79 2.2v3.26c0 .31.21.67.8.56C20.71 21.38 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/>
+      </svg>
+      <span className="ml-1">{stars}</span>
+    </a>
+  </div>
+  <SignedIn>
+    <UserButton afterSignOutUrl="/" />
+  </SignedIn>
+  <SignedOut>
+    <Button
+      className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center rounded-full text-white cursor-pointer text-sm leading-5 py-2.5 px-6 border border-transparent hover:from-gray-800 hover:to-black shadow-sm hover:shadow-md transition-all duration-150"
+      onClick={() => redirectToSignIn()}
+    >
+      <span className="mr-2">Let's Pebble</span>
+      {/* User Plus Icon */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2m16-10a4 4 0 11-8 0 4 4 0 018 0zm6 8v-2m0 0v-2m0 2h-2m2 0h2" />
+      </svg>
+    </Button>
+  </SignedOut>
+</div>
 
         {/* Mobile menu button */}
         <button 
@@ -202,7 +218,7 @@ const Navbar = () => {
           </SignedIn>
           <SignedOut>
             <Button
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4 text-sm leading-5 py-4 px-6"
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4 text-sm leading-5 py-4 px-6 shadow-sm hover:shadow-md transition-all duration-150"
               onClick={() => {
                 handleMobileMenuItemClick();
                 redirectToSignIn();

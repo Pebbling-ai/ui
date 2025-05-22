@@ -16,7 +16,7 @@ import AuthCallback from "./pages/AuthCallback";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import NetworkPage from "./pages/NetworkPage";
 import PebblingProtocolPage from "./pages/PebblingProtocolPage";
-import Hibiscuspage from "./pages/HibiscusPage"
+import HibiscusPage from "./pages/HibiscusPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -32,7 +32,7 @@ const App = () => (
           <Route path="/hibiscus" element={
             <>
               <SignedIn>
-                <Hibiscuspage />
+                <HibiscusPage />
               </SignedIn>
               <SignedOut>
                 <RedirectToSignIn />

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Star, Users } from "lucide-react";
@@ -10,7 +9,12 @@ const GitHubSection = () => {
   const [hibiscusContributors, setHibiscusContributors] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchData = async (repoOwner: string, repoName: string, setStars: Function, setContributors: Function) => {
+    const fetchData = async (
+  repoOwner: string,
+  repoName: string,
+  setStars: (stars: number) => void,
+  setContributors: (contributors: number) => void
+) => {
       try {
         // Fetch repository details (for stars)
         const repoRes = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}`);
