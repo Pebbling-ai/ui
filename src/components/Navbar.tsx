@@ -145,18 +145,8 @@ const Navbar = () => {
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
           <SignedOut>
-            <Button 
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center" 
-              style={{
-                borderRadius: '1440px',
-                boxSizing: 'border-box',
-                color: '#FFFFFF',
-                cursor: 'pointer',
-                fontSize: '14px',
-                lineHeight: '20px',
-                padding: '16px 24px',
-                border: '1px solid white',
-              }}
+            <Button
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 flex items-center justify-center group w-full sm:w-auto text-center rounded-full text-white cursor-pointer text-sm leading-5 py-4 px-6 border border-white"
               onClick={() => redirectToSignIn()}
             >
               Join Us
@@ -211,13 +201,8 @@ const Navbar = () => {
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
           <SignedOut>
-            <Button 
-              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4"
-              style={{
-                padding: '16px 24px',
-                fontSize: '14px',
-                lineHeight: '20px',
-              }}
+            <Button
+              className="bg-gradient-to-r from-gray-700 to-zinc-900 text-white rounded-full w-full mt-4 text-sm leading-5 py-4 px-6"
               onClick={() => {
                 handleMobileMenuItemClick();
                 redirectToSignIn();
