@@ -1,4 +1,3 @@
-
 name: ui to Railway
 
 on:
@@ -51,6 +50,7 @@ jobs:
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
           echo "Deploying with Railway..."
-          railway up --detach --project ${{ secrets.RAILWAY_PROJECT_ID }}
+          railway up --detach
