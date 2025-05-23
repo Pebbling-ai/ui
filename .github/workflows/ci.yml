@@ -55,6 +55,9 @@ jobs:
         run: |
           echo "Deploying with Railway..."
           # Explicitly export environment variables to ensure they are available to the shell.
+          # IMPORTANT: Double-check that RAILWAY_TOKEN and RAILWAY_PROJECT_ID are correctly
+          # configured in your GitHub repository secrets. The error "Project Token not found"
+          # often indicates an issue with the secret values or names themselves.
           export RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
           export RAILWAY_PROJECT=${{ secrets.RAILWAY_PROJECT_ID }}
           # The Railway CLI will automatically use RAILWAY_TOKEN and RAILWAY_PROJECT from environment variables.
