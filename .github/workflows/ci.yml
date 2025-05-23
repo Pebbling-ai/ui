@@ -1,4 +1,4 @@
-name: Railway Deployment
+name: ui to Railway
 
 on:
   push:
@@ -29,6 +29,9 @@ jobs:
       - name: Run linters
         run: pnpm lint
 
+      # Uncomment if needed
+      # - name: Run tests
+      #   run: pnpm test
 
       - name: Build project
         run: pnpm build
@@ -47,7 +50,12 @@ jobs:
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          # Set RAILWAY_PROJECT environment variable for the CLI to pick up the project ID
           RAILWAY_PROJECT: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
           echo "Deploying with Railway..."
+          # Explicitly export environment variables to ensure they are available to the shell.
+          export RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
+          export RAILWAY_PROJECT=${{ secrets.RAILWAY_PROJECT_ID }}
+          # The Railway CLI will automatically use RAILWAY_TOKEN and RAILWAY_PROJECT from environment variables.
           railway up --detach
