@@ -61,4 +61,6 @@ jobs:
           export RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
           export RAILWAY_PROJECT=${{ secrets.RAILWAY_PROJECT_ID }}
           # The Railway CLI will automatically use RAILWAY_TOKEN and RAILWAY_PROJECT from environment variables.
-          railway up --detach
+          # Add the --service flag and replace 'YOUR_SERVICE_NAME' with the actual name of your service.
+          # You can find the service name in your Railway project dashboard or by running `railway services` locally.
+          railway up --detach --service calm-cat
