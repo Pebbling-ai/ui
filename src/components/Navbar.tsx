@@ -136,7 +136,18 @@ const Navbar = () => {
             <ThemeToggle theme={theme} onToggle={toggleTheme} />
           </div>
           <SignedIn>
-            <UserButton afterSignOutUrl="/" />
+            <div className="flex items-center space-x-4">
+              <Link 
+                to="/tokens" 
+                className="flex items-center px-3 py-1 text-sm rounded-full border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-zinc-800/80 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors duration-150 shadow-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 mr-1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+                <span className="font-medium">PAT</span>
+              </Link>
+              <UserButton afterSignOutUrl="/" />
+            </div>
           </SignedIn>
           <SignedOut>
             <Button
@@ -196,7 +207,21 @@ const Navbar = () => {
           </div>
           <div className="w-full pt-4">
             <SignedIn>
-              <UserButton afterSignOutUrl="/" />
+              <div className="flex flex-col space-y-4 items-center">
+                <div className="w-full flex justify-center">
+                  <UserButton afterSignOutUrl="/" />
+                </div>
+                <Link 
+                  to="/tokens" 
+                  className="flex items-center justify-center space-x-2 py-2 px-4 rounded-md bg-white dark:bg-zinc-800 border border-gray-200 dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 shadow-sm"
+                  onClick={handleMobileMenuItemClick}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                  </svg>
+                  <span className="font-medium">PAT</span>
+                </Link>
+              </div>
             </SignedIn>
             <SignedOut>
               <Button

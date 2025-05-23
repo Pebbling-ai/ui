@@ -17,6 +17,7 @@ import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import NetworkPage from "./pages/NetworkPage";
 import PebblingProtocolPage from "./pages/PebblingProtocolPage";
 import HibiscusPage from "./pages/HibiscusPage";
+import TokensPage from "./pages/TokensPage";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -33,6 +34,16 @@ const App = () => (
             <>
               <SignedIn>
                 <HibiscusPage />
+              </SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>
+          } />
+          <Route path="/tokens" element={
+            <>
+              <SignedIn>
+                <TokensPage />
               </SignedIn>
               <SignedOut>
                 <RedirectToSignIn />
