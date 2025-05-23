@@ -10,7 +10,6 @@ import PricingSection from "@/components/PricingSection";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ExampleUseCases from "@/components/ExampleUseCases";
-import CTASection from "@/components/CTASection";
 
 const Index = () => {
   // Initialize intersection observer to detect when elements enter viewport
@@ -103,7 +102,6 @@ const Index = () => {
           <div className="bg-white/90 dark:bg-zinc-900/90">
             <Testimonials />
           </div>
-          <CTASection />
         </main>
         <Footer />
       </div>

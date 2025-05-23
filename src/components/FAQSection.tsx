@@ -175,10 +175,10 @@ const FAQSection = () => {
                       >
                         <AccordionTrigger 
                           className={cn(
-                            "text-left py-6 text-lg font-medium text-gray-900 dark:text-white transition-colors",
-                            category.color === "green" && "hover:text-green-700 dark:hover:text-green-400",
-                            category.color === "blue" && "hover:text-blue-700 dark:hover:text-blue-400",
-                            category.color === "purple" && "hover:text-purple-700 dark:hover:text-purple-400"
+                            "text-left py-6 text-lg font-subheading font-semibold tracking-tight transition-colors",
+                            category.color === "green" && "bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-500 dark:from-green-400 dark:to-green-300 hover:from-green-700 hover:to-green-600 dark:hover:from-green-300 dark:hover:to-green-200",
+                            category.color === "blue" && "bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-400 dark:to-blue-300 hover:from-blue-700 hover:to-blue-600 dark:hover:from-blue-300 dark:hover:to-blue-200",
+                            category.color === "purple" && "bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-purple-500 dark:from-purple-400 dark:to-purple-300 hover:from-purple-700 hover:to-purple-600 dark:hover:from-purple-300 dark:hover:to-purple-200"
                           )}
                         >
                           {faq.question}
