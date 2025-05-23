@@ -52,4 +52,4 @@ jobs:
           echo "Deploying with Railway..."
           export RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
           export RAILWAY_PROJECT=${{ secrets.RAILWAY_PROJECT_ID }}
-          railway up --detach --service uiq
+          railway up --detach --service ui
