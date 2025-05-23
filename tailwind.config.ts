@@ -111,7 +111,7 @@ export default {
 				'grotesk': ['"Space Grotesk"', 'sans-serif'],
 				'brockmann': ['Brockmann', 'sans-serif'],
 				'baskerville': ['"Baskerville Classico Std Roman"', 'serif', 'system-ui'],
-				'alma-serif': ['"Alma Serif Regular"', 'serif', 'system-ui'],
+				'alma-serif': ['"Cormorant Garamond"', 'serif', 'system-ui'],
 				'thin-serif': ['"Baskerville"', '"Libre Baskerville"', '"Playfair Display"', 'serif'],
 				'satoshi': ['"Satoshi"', 'sans-serif'],
 				'subheading':["Montserrat", "sans-serif"],

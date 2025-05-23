@@ -2,16 +2,27 @@ import { ClerkProvider } from "@clerk/clerk-react";
 // import { dark } from "@clerk/themes"; // No longer using dark theme explicitly
 import { ReactNode } from "react";
 
+// Try to get key from environment variables
 const publishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-if (!publishableKey) {
+// Check if we're in development mode
+const isDevelopment = import.meta.env.MODE === 'development';
+
+// Use a temporary fallback for development if no key is available
+// NOTE: This is only for local development and testing the UI
+// For production, always set the proper environment variable
+if (!publishableKey && !isDevelopment) {
   throw new Error("Missing Clerk publishable key");
 }
+
+// This allows local development even without a key
+// Components requiring authentication will still fail, but the UI will render
+const effectiveKey = publishableKey || (isDevelopment ? 'pk_test_development_placeholder' : '');
 
 export function ClerkProviderWithTheme({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider
-      publishableKey={publishableKey}
+      publishableKey={effectiveKey}
       appearance={{
         // baseTheme: dark, // Using default light theme or explicitly set to light if available
 
