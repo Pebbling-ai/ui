@@ -1,3 +1,4 @@
+
 name: ui to Railway
 
 on:
@@ -52,6 +53,4 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           echo "Deploying with Railway..."
-          export RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-          railway up --detach
+          railway up --detach --project ${{ secrets.RAILWAY_PROJECT_ID }}
