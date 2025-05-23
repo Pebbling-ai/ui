@@ -63,4 +63,4 @@ jobs:
           # The Railway CLI will automatically use RAILWAY_TOKEN and RAILWAY_PROJECT from environment variables.
           # Add the --service flag and replace 'YOUR_SERVICE_NAME' with the actual name of your service.
           # You can find the service name in your Railway project dashboard or by running `railway services` locally.
-          railway up --detach --service calm-cat-ui
+          railway up --detach --service ui
