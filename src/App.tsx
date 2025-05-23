@@ -30,16 +30,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/hibiscus" element={
-            <>
-              <SignedIn>
-                <HibiscusPage />
-              </SignedIn>
-              <SignedOut>
-                <RedirectToSignIn />
-              </SignedOut>
-            </>
-          } />
+          <Route path="/hibiscus" element={<HibiscusPage />} />
           <Route path="/tokens" element={
             <>
               <SignedIn>
