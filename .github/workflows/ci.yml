@@ -29,9 +29,6 @@ jobs:
       - name: Run linters
         run: pnpm lint
 
-      # Uncomment if needed
-      # - name: Run tests
-      #   run: pnpm test
 
       - name: Build project
         run: pnpm build
