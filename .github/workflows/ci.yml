@@ -1,4 +1,4 @@
-name: ui to Railway
+name: Railway Deployment
 
 on:
   push:
