@@ -16,27 +16,29 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Updated to a more current LTS version, adjust if needed
+          node-version: '20' # LTS version
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8 # Or your project's pnpm version
+          version: 8
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Run linters
-        run: pnpm lint # Adjust if your lint script has a different name
+        run: pnpm lint
 
+      # Uncomment if you have tests
       # - name: Run tests
-      #   run: pnpm test # Adjust if your test script has a different name
+      #   run: pnpm test
 
       - name: Build project
-        run: pnpm build # Adjust if your build script has a different name
+        run: pnpm build
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -49,9 +51,5 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          # Login to Railway using the token
-          railway login ${{ secrets.RAILWAY_TOKEN }}
-          # Link the project using the service ID
           railway link ${{ secrets.RAILWAY_SERVICE_ID }}
-          # Deploy the application
           railway up --detach
