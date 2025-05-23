@@ -2,27 +2,50 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Bot, Network, BarChart3, Server, Users, Activity, Globe } from "lucide-react";
+import { ArrowRight, Bot, Network, BarChart3, Server, Users, Activity, Globe, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
+import { fetchAllStats } from "@/lib/stats";
 
 const ProductShowcase = () => {
-  // State for statistics data (would be fetched from API later)
+  // State for statistics data
   const [stats, setStats] = useState({
-    totalAgents: 1358,
-    activeAgents: 842,
-    mcpServers: 127,
-    globalNodes: 86
+    totalAgents: 0,
+    activeAgents: 0,
+    mcpServers: 0,
+    globalNodes: 0
   });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  // Dummy function to simulate future API call
+  // Function to fetch network stats from the API
+  const fetchNetworkStats = async () => {
+    try {
+      setIsLoading(true);
+      const data = await fetchAllStats();
+      setStats(data);
+      setLastUpdated(new Date());
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching network stats:', err);
+      setError('Failed to fetch network statistics');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Fetch stats on component mount and set up refresh interval
   useEffect(() => {
-    // This would be replaced with a real API call in the future
-    const fetchNetworkStats = () => {
-      // Mock data for now
-      console.log("Future implementation: This will fetch real network data");
-    };
-
+    // Initial fetch
     fetchNetworkStats();
+    
+    // Set up interval to refresh data every 60 seconds
+    const intervalId = setInterval(() => {
+      fetchNetworkStats();
+    }, 60000); // 60 seconds refresh interval
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   // Calculate percentage for bar chart visualization
@@ -248,6 +271,16 @@ const ProductShowcase = () => {
 
           {/* Network Status Banner */}
           <div className="relative w-full bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/30 border border-green-200 dark:border-green-800 rounded-xl p-4 flex items-center justify-between overflow-hidden group hover:shadow-md transition-all duration-300">
+            {isLoading && (
+              <div className="absolute inset-0 bg-white/50 dark:bg-black/50 flex items-center justify-center z-20">
+                <RefreshCw className="w-5 h-5 text-blue-600 dark:text-blue-400 animate-spin" />
+              </div>
+            )}
+            {error && (
+              <div className="absolute inset-0 bg-red-50/50 dark:bg-red-900/30 flex items-center justify-center z-20">
+                <p className="text-red-600 dark:text-red-400 text-sm">{error}</p>
+              </div>
+            )}
             {/* Animated pulse wave on hover */}
             <div className="absolute inset-0 bg-green-400/5 scale-0 group-hover:scale-100 rounded-full transition-all duration-700 origin-center"></div>
             
@@ -256,7 +289,14 @@ const ProductShowcase = () => {
                 <div className="absolute -inset-1 bg-green-400/30 rounded-full blur-sm animate-pulse"></div>
                 <Activity className="w-5 h-5 text-green-600 dark:text-green-400 relative" />
               </div>
-              <span className="ml-2 text-sm text-green-800 dark:text-green-300 font-medium">Network Status: Operational</span>
+              <span className="ml-2 text-sm text-green-800 dark:text-green-300 font-medium">
+                Network Status: Operational
+                {lastUpdated && (
+                  <span className="ml-2 text-xs text-green-600/70 dark:text-green-400/70">
+                    Updated: {lastUpdated.toLocaleTimeString()}
+                  </span>
+                )}
+              </span>
             </div>
             
             <div className="flex items-center relative z-10">
@@ -269,6 +309,14 @@ const ProductShowcase = () => {
                   {stats.mcpServers} Servers Online
                 </span>
               </span>
+              <button 
+                onClick={() => fetchNetworkStats()} 
+                className="ml-4 p-1 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                title="Refresh statistics"
+                disabled={isLoading}
+              >
+                <RefreshCw className={`w-3.5 h-3.5 text-blue-600 dark:text-blue-400 ${isLoading ? 'animate-spin' : ''}`} />
+              </button>
             </div>
           </div>
         </div>
