@@ -81,3 +81,12 @@ Simply open [Lovable](https://lovable.dev/projects/35d72d2e-6e25-40e5-9b0c-c0d1a
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+
+## Dependency maintenance with Renovate
+
+This project uses [Renovate](https://github.com/renovatebot/renovate) to keep dependencies up to date.
+
+1. Make sure the project's dependencies are installed with `npm install` (or `pnpm install`).
+2. Run `npm run renovate` to check for updates using the local Renovate CLI.
+
+Optionally, set the `RENOVATE_TOKEN` environment variable if you want Renovate to create pull requests in a hosted Git provider.
